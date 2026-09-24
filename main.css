@@ -61,10 +61,6 @@ a {
     padding: 14px 16px;
 }
 
-a:hover {
-    background-color: #0502b5;
-}
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -122,4 +118,18 @@ ul {
     to {
         opacity: 1;
     }
+}
+
+.downloadButton{
+    cursor: pointer;
+    background-color: #04AA6D;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
 }
