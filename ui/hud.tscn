@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://nmilbrut4nur"]
 
-[ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://balance/balance_hud.tscn" id="1_64ctp"]
+[ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://ui/balance_hud/balance_hud.tscn" id="1_64ctp"]
 [ext_resource type="PackedScene" uid="uid://bb2pmxlkyxyyk" path="res://phone/phone_hud.tscn" id="2_8sq4i"]
 [ext_resource type="Script" uid="uid://bt4p6np1dm6d7" path="res://ui/time_hud.gd" id="3_546lt"]
+
 
 [sub_resource type="SystemFont" id="SystemFont_2gk58"]
 font_names = PackedStringArray("Comic Sans MS")

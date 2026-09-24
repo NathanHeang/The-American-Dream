@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://da38xepouds6u"]
 
-[ext_resource type="Script" uid="uid://bj0g6qcrify2a" path="res://balance/balance_hud.gd" id="1_kesql"]
+[ext_resource type="Script" uid="uid://bj0g6qcrify2a" path="res://ui/balance_hud/balance_hud.gd" id="1_kesql"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv7w"]
 content_margin_left = 10.0

@@ -13,7 +13,8 @@ config_version=5
 config/name="The American Dream"
 run/main_scene="uid://db3x6hhv5s5yi"
 config/features=PackedStringArray("4.8", "Forward Plus")
-config/icon="res://goat dot.svg"
+boot_splash/image="uid://135w8l4axh12"
+config/icon="uid://135w8l4axh12"
 
 [autoload]
 

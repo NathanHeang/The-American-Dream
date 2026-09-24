@@ -29,5 +29,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.233082, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=135170100]
 environment = SubResource("Environment_h2yge")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=1594716732]
+[node name="City" type="Node3D" parent="." unique_id=1594716732]
 script = ExtResource("4_1bvp3")
