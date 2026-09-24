@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ba2n1auqdnujb"]
+
+[ext_resource type="Texture2D" uid="uid://xgsan03nl87p" path="res://ransom/stop.png" id="1_5k8n6"]
+
+[node name="stop" type="Window" unique_id=830866537]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(200, 200)
+always_on_top = true
+popup_window = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=629124593]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5k8n6")

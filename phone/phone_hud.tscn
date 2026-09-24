@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bb2pmxlkyxyyk"]
+
+[ext_resource type="Script" uid="uid://c0s1u5fj11ur0" path="res://phone/phone_hud.gd" id="1_i3mya"]
+[ext_resource type="PackedScene" uid="uid://cp1hoveppy1ru" path="res://ransom/ransom_spawner.tscn" id="2_jqsad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdkjh"]
+bg_color = Color(0.10865047, 0.12109375, 0.1192799, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0859375, 0.0859375, 0.0859375, 1)
+
+[node name="Phone" type="Control" unique_id=1844758454]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3mya")
+
+[node name="Back" type="Panel" parent="." unique_id=1729281140]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_top = -320.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cdkjh")
+
+[node name="Screen" type="Panel" parent="Back" unique_id=1404014364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -137.5
+offset_right = 87.5
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
+
+[node name="RansomSpawner" parent="Back/Screen" unique_id=703583804 instance=ExtResource("2_jqsad")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cp1hoveppy1ru"]
+
+[ext_resource type="Texture2D" uid="uid://xgsan03nl87p" path="res://ransom/stop.png" id="1_bvauw"]
+[ext_resource type="Material" uid="uid://hoiuvrbov0w0" path="res://ransom/glitch.tres" id="1_pcdk4"]
+[ext_resource type="Script" uid="uid://xusersdc6ern" path="res://ransom/ransom_spawner.gd" id="3_36ur8"]
+
+[node name="RansomSpawner" type="Button" unique_id=1797676808]
+material = ExtResource("1_pcdk4")
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1052.0
+offset_bottom = -548.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_bvauw")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_36ur8")
+
+[node name="Despawn" type="Timer" parent="." unique_id=1534736304]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://di2cyykwbppy3"]
+
+[ext_resource type="Script" uid="uid://8jc1bmuqarka" path="res://player/player.gd" id="1_oul6g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8t54v"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1889472271]
+script = ExtResource("1_oul6g")
+SPEED = 12.0
+JUMP_VELOCITY = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=164149252]
+shape = SubResource("CapsuleShape3D_8t54v")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=2016852101]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1786598392]

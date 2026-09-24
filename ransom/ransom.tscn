@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://xbqejn7xd0lm"]
+
+[ext_resource type="Script" uid="uid://b8cbcayojle8u" path="res://ransom/ransom.gd" id="1_dqee3"]
+[ext_resource type="Shader" uid="uid://c08iu0wdh6snt" path="res://ransom/glitch.gdshader" id="2_3tmcc"]
+[ext_resource type="Texture2D" uid="uid://hsxiehngwt54" path="res://ransom/face1.png" id="2_ffdne"]
+[ext_resource type="AudioStream" uid="uid://oiiasr5uqpgg" path="res://ransom/timer.mp3" id="3_3tmcc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqee3"]
+shader = ExtResource("2_3tmcc")
+shader_parameter/intensity = 0.14800000703
+shader_parameter/glitch_frequency = 10.0
+shader_parameter/glitch_duration = 0.00999999977648
+shader_parameter/red_displacement = 0.0430000020425
+shader_parameter/green_displacement = 0.02
+shader_parameter/blue_displacement = 0.0
+shader_parameter/scanline_intensity = 1.0
+shader_parameter/noise_intensity = 0.0
+shader_parameter/slice_intensity = 0.4
+shader_parameter/ghost_intensity = 0.5
+shader_parameter/negative_intensity = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="Ransom" type="Window" unique_id=1038898244]
+oversampling_override = 1.0
+position = Vector2i(700, 200)
+size = Vector2i(400, 300)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_dqee3")
+metadata/_custom_type_script = "uid://b8cbcayojle8u"
+
+[node name="Panel" type="Panel" parent="." unique_id=622242327]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1498370412]
+material = SubResource("ShaderMaterial_dqee3")
+layout_mode = 0
+offset_left = 23.0
+offset_top = 9.0
+offset_right = 179.0
+offset_bottom = 165.0
+texture = ExtResource("2_ffdne")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel" unique_id=378632466]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -218.0
+offset_top = 3.0
+offset_right = -13.0
+offset_bottom = 144.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 28
+text = "YOUR DEVICE
+HAS BEEN
+ENCRYPTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1348270289]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -11.0
+offset_right = 185.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="Label" type="Label" parent="Panel/Panel" unique_id=307770299]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 364.5
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 14
+text = "IF YOU DO NOT PAY THIS RANSOM, YOUR DEVICE
+WILL BE UNRECOVERABLE BY ANY MEANS.
+CLOSE THIS WINDOW WITH THE REQUIRED FUNDS."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Panel" unique_id=259627595]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = 91.0
+offset_right = -52.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="Price" type="Label" parent="Panel/Panel2" unique_id=1042801113]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 129.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 0.41568628, 1)
+theme_override_font_sizes/font_size = 32
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Panel" unique_id=244259812]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 91.0
+offset_right = 184.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
+
+[node name="Label" type="Label" parent="Panel/Panel3" unique_id=848001853]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 84.0
+offset_bottom = 22.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "TIME:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Panel/Panel3" unique_id=1188521563]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -22.5
+offset_bottom = 22.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "01:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=359943534]
+stream = ExtResource("3_3tmcc")
+volume_db = 24.0
+
+[node name="PopupTimer" type="Timer" parent="." unique_id=979357706]
+wait_time = 2.0
+autostart = true
+
+[node name="PositionTimer" type="Timer" parent="." unique_id=394142747]
+wait_time = 5.0
+autostart = true
+
+[node name="RansomTimer" type="Timer" parent="." unique_id=961714151]
+wait_time = 78.0
+one_shot = true
+autostart = true
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="timeout" from="PopupTimer" to="." method="spawn_popup"]
+[connection signal="timeout" from="PositionTimer" to="." method="randomize_position"]
+[connection signal="timeout" from="RansomTimer" to="." method="timeout"]

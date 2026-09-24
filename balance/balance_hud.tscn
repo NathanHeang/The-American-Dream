@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://da38xepouds6u"]
+
+[ext_resource type="Script" uid="uid://bj0g6qcrify2a" path="res://balance/balance_hud.gd" id="1_kesql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv7w"]
+content_margin_left = 10.0
+content_margin_right = 20.0
+bg_color = Color(0.2109375, 0.023737436, 0.10521293, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.31006217, 0.8, 0.55637395, 1)
+corner_radius_top_right = 24
+
+[node name="Balance" type="Control" unique_id=1545020258]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kesql")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2126006378]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -73.0
+offset_right = 208.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_brv7w")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1374501441]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6241871, 1, 0.7075882, 1)
+theme_override_font_sizes/font_size = 64
+text = "$100.50"
+horizontal_alignment = 1
+vertical_alignment = 1

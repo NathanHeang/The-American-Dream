@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
+
+[ext_resource type="PackedScene" uid="uid://xbqejn7xd0lm" path="res://ransom/ransom.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://nmilbrut4nur" path="res://hud.tscn" id="2_0xm2m"]
+
+[node name="Root" type="Node" unique_id=256912048]
+
+[node name="Ransom" parent="." unique_id=2145057194 instance=ExtResource("1_ig7tw")]
+
+[node name="HUD" parent="." unique_id=1517999083 instance=ExtResource("2_0xm2m")]

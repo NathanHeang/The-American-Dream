@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://behi4aqcwfho6"]
+
+[ext_resource type="Script" uid="uid://baof3kxvk4ge1" path="res://ui/pause_menu/pause_menu.gd" id="1_5hbt6"]
+[ext_resource type="Texture2D" uid="uid://135w8l4axh12" path="res://logo.png" id="2_jbgdu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
+bg_color = Color(0.21176471, 0.023529412, 0.105882354, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 50.0
+expand_margin_bottom = 50.0
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1371425667]
+process_mode = 3
+layer = 999
+script = ExtResource("1_5hbt6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1615184286]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -59.0
+offset_right = 70.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=288196290]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=136825928]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2015566803]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Give Up"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1566484819]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_right = 102.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_jbgdu")
+expand_mode = 1
+
+[connection signal="button_down" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]

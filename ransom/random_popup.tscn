@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://8r83m8dr6otb"]
+
+[ext_resource type="Script" uid="uid://1pesgypdrst4" path="res://ransom/random_popup.gd" id="1_gighf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yjdv"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Window" type="Window" unique_id=1135296136]
+oversampling_override = 1.0
+always_on_top = true
+popup_window = true
+script = ExtResource("1_gighf")
+
+[node name="Panel" type="Panel" parent="." unique_id=930552168]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0yjdv")
+
+[node name="Timer" type="Timer" parent="." unique_id=1620176753]
+wait_time = 3.0
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2062462224]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

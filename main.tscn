@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
+
+[ext_resource type="PackedScene" uid="uid://nmilbrut4nur" path="res://ui/hud.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://ui/pause_menu/pause_menu.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://di2cyykwbppy3" path="res://player/player.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city.gd" id="4_1bvp3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eu8wt"]
+ground_bottom_color = Color(0.08526526, 0.2, 0.14386074, 1)
+
+[sub_resource type="Sky" id="Sky_8t54v"]
+sky_material = SubResource("ProceduralSkyMaterial_eu8wt")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_8t54v")
+
+[node name="Root" type="Node" unique_id=256912048]
+
+[node name="HUD" parent="." unique_id=1517999083 instance=ExtResource("2_0xm2m")]
+
+[node name="PauseMenu" parent="HUD" unique_id=1371425667 instance=ExtResource("2_1bvp3")]
+offset = Vector2(0, 75)
+transform = Transform2D(1, 0, 0, 1, 0, 75)
+
+[node name="Player" parent="." unique_id=1889472271 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.233082, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=135170100]
+environment = SubResource("Environment_h2yge")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1594716732]
+script = ExtResource("4_1bvp3")

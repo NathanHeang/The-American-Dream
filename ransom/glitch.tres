@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://hoiuvrbov0w0"]
+
+[ext_resource type="Shader" uid="uid://c08iu0wdh6snt" path="res://ransom/glitch.gdshader" id="1_2og3r"]
+
+[resource]
+shader = ExtResource("1_2og3r")
+shader_parameter/intensity = 0.5
+shader_parameter/glitch_frequency = 2.0
+shader_parameter/glitch_duration = 0.1
+shader_parameter/red_displacement = 0.02
+shader_parameter/green_displacement = 0.02
+shader_parameter/blue_displacement = 0.02
+shader_parameter/scanline_intensity = 0.3
+shader_parameter/noise_intensity = 0.2
+shader_parameter/slice_intensity = 0.4
+shader_parameter/ghost_intensity = 0.1
+shader_parameter/negative_intensity = 0.0
