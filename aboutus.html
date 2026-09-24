@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>About Us</title>
+        <link rel="icon" type="image/png" href="E:\Game Project\Website\corruptedamerica.png">
+
+        <style>
+
+            body{
+                background-color: black;
+            }
+
+            ul{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #030170;
+                position: static;
+            }
+
+            ul li{
+                float: left;
+            }
+
+            ul li a{
+                display: block;
+                color: #FF0000;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-weight: bold;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+            }
+
+            ul li a:hover{
+                background-color: #0502b5;
+            }
+
+            p.header{
+                color: white;
+                text-align: center;
+                display: block;
+                font-size: 80px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                animation-name: fadeIn;
+                animation-duration: 2s;
+                opacity: 0;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes fadeIn {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+
+            .row{
+                display: flex;
+                margin-bottom: 16px;
+            }
+
+            .column{
+                flex: 50%;
+            }
+
+            .portrait{
+                width: 300px;
+                height: 500px;
+                border: 2px solid white;
+            }
+
+            .kevintext{
+                color: white;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 40px;
+                padding-left: 50px;
+                animation-name: fadeIn;
+                animation-duration: 2s;
+                opacity: 0;
+                animation-delay: 0.5s;
+                animation-fill-mode: forwards;
+                font-style: italic;
+            }
+
+            #kPortrait {
+                animation-name: fadeIn;
+                animation-duration: 2s;
+                opacity: 0;
+                animation-delay: 0.5s;
+                animation-fill-mode: forwards;
+            }
+
+            .nathantext{
+                color: white;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 40px;
+                padding-left: 50px;
+                animation-name: fadeIn;
+                animation-duration: 2s;
+                opacity: 0;
+                animation-delay: 1.0s;
+                animation-fill-mode: forwards;
+                font-style: italic;
+            }
+
+            #nPortrait{
+                animation-name: fadeIn;
+                animation-duration: 2s;
+                opacity: 0;
+                animation-delay: 1.0s;
+                animation-fill-mode: forwards;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <ul>
+            <li><a href="americandream.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="download.html">Download</a></li>
+       </ul>
+
+        <p class="header">About Us</p>
+
+        <div class="column">
+            <div class="row">
+                <img src="E:\Game Project\Website\kevinportrait.jpg" alt="kevin portrait" class="portrait" id="kPortrait"/>
+
+                <p class="kevintext">Hello! I'm Kevin Samon! I worked on this game as an artist and developed this website! Some things about me 
+                    are that I'm Khmer (I don't speak the langauge), I'm autistic, and an casual movie enjoyer.
+                    I hope you'll have fun playing The American "Dream" and have a great day!</p>
+            </div>
+
+            <div class="row">
+                <img src="E:\Game Project\Website\nathanportrait.jpg" alt="nathan portrait" class="portrait" id="nPortrait"/>
+
+                <p class="nathantext">Hello, I'm Nathan Heang. I've been making games for a while now, including this one. 
+                    I also composed the soundtrack for the game, though I had to learn to branch out from my usual style to fit the theme.
+                    Although it might not be perfect, I hope you'll enjoy playing The American "Dream."
+                </p>
+            </div>
+        </div>
+
+    </body>
+</html>
