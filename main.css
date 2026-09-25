@@ -11,7 +11,7 @@ body {
 
 h1 {
     color: #de201d;
-    font: bolder 2.5em Montserrat;
+    font: bolder 2.5em Monaco, "Lucida Console", monospace;
     & + h2 {
         letter-spacing: 1em;
     }
@@ -33,7 +33,7 @@ img{
 .fade_in{
     font-size:1.5em;
     color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
     animation-name: fadeIn;
     animation-duration: 2s;
     opacity: 0;
@@ -43,6 +43,7 @@ img{
 .title{
     font-size: 3em;
     color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #audience {
@@ -54,6 +55,11 @@ img{
 .btn{
     color: white;
     background-color: #0502b5;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    margin-top: 10px;
 }
 
 a {
@@ -80,6 +86,7 @@ ul {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             :hover {
                 background-color: #0502b5;
+                color: #db0000;
             }
         }
     }
@@ -124,12 +131,28 @@ ul {
     cursor: pointer;
     background-color: #04AA6D;
     font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Courier New', Courier, monospace, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     animation-name: fadeIn;
     animation-duration: 2s;
     opacity: 0;
     animation-fill-mode: forwards;
-    float: left;
     text-align: center;
-    margin-top: 50px;
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 2%;
+    display: block;
+    margin: 0 auto;
+}
+
+#downloadHeader, .title{
+    text-align: center;
+    margin: 50px;
+}
+
+#imgBtn{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 15px;
+    right: 7px;
 }
