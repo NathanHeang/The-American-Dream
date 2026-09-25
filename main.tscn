@@ -3,16 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://nmilbrut4nur" path="res://ui/hud.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://ui/pause_menu/pause_menu.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://di2cyykwbppy3" path="res://player/player.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="4_1bvp3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eu8wt"]
 ground_bottom_color = Color(0.08526526, 0.2, 0.14386074, 1)
+energy_multiplier = 1.5
 
 [sub_resource type="Sky" id="Sky_8t54v"]
 sky_material = SubResource("ProceduralSkyMaterial_eu8wt")
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 2
+background_energy_multiplier = 1.2
 sky = SubResource("Sky_8t54v")
 
 [node name="Root" type="Node" unique_id=256912048]
@@ -31,3 +33,4 @@ environment = SubResource("Environment_h2yge")
 
 [node name="City" type="Node3D" parent="." unique_id=1594716732]
 script = ExtResource("4_1bvp3")
+debug = true

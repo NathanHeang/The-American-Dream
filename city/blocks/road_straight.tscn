@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://x2vt2802jxke"]
+[gd_scene format=3 uid="uid://bdsc20tedo358"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
-size = Vector3(50, 1, 50)
+size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_08k08"]
-size = Vector3(50, 1, 50)
+size = Vector3(10, 1, 10)
 
 [node name="Block" type="Node3D" unique_id=896288671]
 
@@ -15,9 +15,3 @@ shape = SubResource("BoxShape3D_sbw5n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1641482840]
 mesh = SubResource("BoxMesh_08k08")
-
-[node name="Label3D" type="Label3D" parent="." unique_id=482950534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4790745, 0)
-billboard = 1
-text = "Blank"
-font_size = 320

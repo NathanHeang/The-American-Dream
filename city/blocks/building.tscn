@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://bc75355v80rl8"]
+[gd_scene format=3 uid="uid://d4lub43en4vsf"]
+
+[ext_resource type="PackedScene" uid="uid://0cyumnv7ksie" path="res://models/building.blend" id="1_cy58a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
-size = Vector3(50, 1, 50)
+size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_08k08"]
-size = Vector3(50, 1, 50)
+size = Vector3(10, 1, 10)
 
 [node name="Block" type="Node3D" unique_id=896288671]
 
@@ -16,8 +18,5 @@ shape = SubResource("BoxShape3D_sbw5n")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1641482840]
 mesh = SubResource("BoxMesh_08k08")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=834173666]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4790745, 0)
-billboard = 1
-text = "Spawn"
-font_size = 320
+[node name="building" parent="." unique_id=2099399125 instance=ExtResource("1_cy58a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, 0)

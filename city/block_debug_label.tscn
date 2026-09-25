@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dcm85hwlifsdx"]
+
+[node name="Label3D" type="Label3D" unique_id=468651947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+billboard = 1
+outline_modulate = Color(0.21176471, 0.023529412, 0.105882354, 1)
+text = "Blank"
+font_size = 320
+outline_size = 90

@@ -1,13 +1,14 @@
 extends Node3D
 
 @export var size:Vector2i = Vector2i(7, 5)
-@export var block_size:int = 50
-var start:Vector2i = Vector2i(randi_range(0, size.x -1), randi_range(0, size.y -1))
+@export var block_size:int = 10
+@export var debug:bool = false
 var city:Array
 @onready var block_scenes:Dictionary[String, PackedScene]
+const BLOCK_DEBUG_LABEL = preload("res://city/block_debug_label.tscn")
 
 func register_block_scenes():
-	var path = "res://blocks/"
+	var path = "res://city/blocks/"
 	var dir:DirAccess = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()
@@ -35,7 +36,8 @@ func generate_city() -> void:
 	for x in size.x:
 		city.append([])
 		for y in size.y:
-			city[x].append(0)
+			city[x].append("empty" if randi_range(0, 1) == 1 else "building")
+	city[size.y/2][size.y/2] = "home"
 
 func place_city() -> void:
 	for x in size.x:
@@ -48,6 +50,10 @@ func place_city() -> void:
 			var block:Node3D = block_scene.instantiate()
 			add_child(block)
 			block.position = Vector3i(x*block_size, 0, y*block_size)
+			if debug:
+				var label:Label3D = BLOCK_DEBUG_LABEL.instantiate()
+				label.text = block_id
+				block.add_child(label)
 
 func print_city() -> void:
 	var string:String= ""

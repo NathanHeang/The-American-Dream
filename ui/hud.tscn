@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bb2pmxlkyxyyk" path="res://phone/phone_hud.tscn" id="2_8sq4i"]
 [ext_resource type="Script" uid="uid://bt4p6np1dm6d7" path="res://ui/time_hud.gd" id="3_546lt"]
 
-
 [sub_resource type="SystemFont" id="SystemFont_2gk58"]
 font_names = PackedStringArray("Comic Sans MS")
 subpixel_positioning = 0
@@ -26,6 +25,8 @@ offset_right = 61.0
 offset_bottom = 67.0
 grow_horizontal = 2
 mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0.21176471, 0.023529412, 0.105882354, 1)
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = SubResource("SystemFont_2gk58")
 theme_override_font_sizes/font_size = 48
 text = "day 2 - 10:46 AM"

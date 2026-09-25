@@ -19,5 +19,4 @@ func _ready() -> void:
 	pass
 
 func _process(_dt: float) -> void:
-	money+=1
 	time+=1
