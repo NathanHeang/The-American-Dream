@@ -8,6 +8,9 @@ extends CharacterBody3D
 @onready var cam_pivot: Node3D = $CameraPivot
 @onready var camera_3d: Camera3D = $CameraPivot/Camera3D
 
+@onready var look: RayCast3D = $RayCast3D
+signal looked_at_interactable()
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -24,6 +27,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	
+	if look.is_colliding():
+		var hit = look.get_collider()
+		if hit.has_method("looked_at"):
+			hit.call("looked_at")
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("interact_alt"):
+			looked_at_interactable.emit()
+		if Input.is_action_just_pressed("interact") and hit.has_method("interact"):
+			hit.call("interact")
+		if Input.is_action_just_pressed("interact_alt") and hit.has_method("interact_alt"):
+			hit.call("interact_alt")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4lub43en4vsf"]
 
-[ext_resource type="PackedScene" uid="uid://0cyumnv7ksie" path="res://models/building.blend" id="1_cy58a"]
+[ext_resource type="PackedScene" uid="uid://kpv0rlg51fmj" path="res://building/building.tscn" id="1_cy58a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
 size = Vector3(10, 1, 10)
@@ -10,6 +10,9 @@ size = Vector3(10, 1, 10)
 
 [node name="Block" type="Node3D" unique_id=896288671]
 
+[node name="Building" parent="." unique_id=1487545225 instance=ExtResource("1_cy58a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
 [node name="Floor" type="StaticBody3D" parent="." unique_id=109478305]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=353470646]
@@ -17,6 +20,3 @@ shape = SubResource("BoxShape3D_sbw5n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1641482840]
 mesh = SubResource("BoxMesh_08k08")
-
-[node name="building" parent="." unique_id=2099399125 instance=ExtResource("1_cy58a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, 0)

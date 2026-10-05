@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bsfuhtbblny04"]
+
+[ext_resource type="Script" uid="uid://chhknohp6kj0j" path="res://cursor/cursor.gd" id="1_isnha"]
+[ext_resource type="Texture2D" uid="uid://de4naqmb3bhw4" path="res://textures/handpoint.png" id="2_g0wji"]
+
+[node name="Cursor" type="Control" unique_id=925991105]
+process_mode = 3
+z_index = 4096
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_isnha")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=50956819]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_g0wji")
+expand_mode = 2

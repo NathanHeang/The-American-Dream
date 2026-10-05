@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://kpv0rlg51fmj"]
+
+[ext_resource type="Script" uid="uid://44cy85jiv1x7" path="res://building/building.gd" id="1_s5ctk"]
+[ext_resource type="PackedScene" uid="uid://dx4w1q4bbh3ed" path="res://models/top_floor.blend" id="2_s5ctk"]
+[ext_resource type="PackedScene" uid="uid://rrhgcpymo07m" path="res://models/bottom_floor.blend" id="3_gnu22"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgp2u"]
+size = Vector3(10, 20.5, 10)
+
+[node name="Building" type="StaticBody3D" unique_id=174485448]
+script = ExtResource("1_s5ctk")
+
+[node name="top_floor" parent="." unique_id=465231427 instance=ExtResource("2_s5ctk")]
+
+[node name="bottom_floor" parent="." unique_id=1638996084 instance=ExtResource("3_gnu22")]
+
+[node name="hitbox" type="CollisionShape3D" parent="." unique_id=2109997092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_vgp2u")
