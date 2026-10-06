@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bc75355v80rl8"]
 
+[ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/block.gd" id="1_yfskt"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
 size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_08k08"]
 size = Vector3(10, 1, 10)
 
-[node name="Block" type="Node3D" unique_id=896288671]
+[node name="Block" type="Node3D" unique_id=994077912]
+script = ExtResource("1_yfskt")
+metadata/_custom_type_script = "uid://vg1qedie2nym"
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=109478305]
 

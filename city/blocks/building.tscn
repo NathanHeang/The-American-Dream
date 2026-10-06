@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d4lub43en4vsf"]
 
 [ext_resource type="PackedScene" uid="uid://kpv0rlg51fmj" path="res://building/building.tscn" id="1_cy58a"]
+[ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/block.gd" id="1_fkaop"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
 size = Vector3(10, 1, 10)
@@ -8,7 +9,9 @@ size = Vector3(10, 1, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_08k08"]
 size = Vector3(10, 1, 10)
 
-[node name="Block" type="Node3D" unique_id=896288671]
+[node name="Block" type="Node3D" unique_id=187224239]
+script = ExtResource("1_fkaop")
+metadata/_custom_type_script = "uid://vg1qedie2nym"
 
 [node name="Building" parent="." unique_id=1487545225 instance=ExtResource("1_cy58a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

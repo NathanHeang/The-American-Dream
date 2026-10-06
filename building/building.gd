@@ -6,7 +6,7 @@ const WINDOW_FLOOR = preload("res://models/window_floor.blend")
 @onready var hitbox: CollisionShape3D = $hitbox
 
 func _ready() -> void:
-	rotation = Vector3(0, deg_to_rad(randi_range(0, 3)*90), 0)
+	rotation_degrees = Vector3(0, randi_range(0, 3)*90, 0)
 	var floors = randi_range(3, 12)
 	for i in range(2, floors):
 		var new_floor = WINDOW_FLOOR.instantiate()

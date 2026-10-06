@@ -8,6 +8,7 @@ var city:Array
 var placed_city:Array
 @onready var block_scenes:Dictionary[String, PackedScene]
 const BLOCK_DEBUG_LABEL = preload("res://city/block_debug_label.tscn")
+signal city_placed()
 
 func register_block_scenes():
 	var path = "res://city/blocks/"
@@ -40,8 +41,10 @@ func _ready() -> void:
 func generate_city() -> void:
 	for x in size.x:
 		city.append([])
+		placed_city.append([])
 		for y in size.y:
 			city[x].append("road" if randi_range(0, 1) == 1 else "building")
+			placed_city[x].append(0)
 	city[size.y/2][size.y/2] = "home"
 
 func place_city() -> void:
@@ -60,6 +63,7 @@ func place_city() -> void:
 				var label:Label3D = BLOCK_DEBUG_LABEL.instantiate()
 				label.text = block_id
 				block.add_child(label)
+	city_placed.emit()
 
 func print_city() -> void:
 	var string:String= ""
@@ -68,3 +72,25 @@ func print_city() -> void:
 			string += "[" + str(city[x][y]) + "]"
 		string += "\n"
 	print(string)
+	
+func check_pos(pos:Vector2i) -> bool:
+	if pos.x >= 0 && pos.x < size.x && pos.y >= 0 && pos.y < size.y:
+		return true
+	return false
+	
+func get_block(pos:Vector2i) -> Block:
+	if check_pos(pos):
+		return placed_city[pos.x][pos.y]
+	return null
+
+func get_adjacent(pos:Vector2i) -> Dictionary:
+	var dirs = {}
+	var up = get_block(pos + Vector2i(0, 1))
+	if up: dirs["up"] = up
+	var down = get_block(pos + Vector2i(0, -1))
+	if down: dirs["down"] = down
+	var left = get_block(pos + Vector2i(-1, 0))
+	if left: dirs["left"] = left
+	var right = get_block(pos + Vector2i(1, 0))
+	if right: dirs["right"] = right
+	return dirs
