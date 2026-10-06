@@ -7,11 +7,11 @@ const WINDOW_FLOOR = preload("res://models/window_floor.blend")
 
 func _ready() -> void:
 	rotation = Vector3(0, deg_to_rad(randi_range(0, 3)*90), 0)
-	var floors = randi_range(1, 12)
-	for i in floors:
+	var floors = randi_range(3, 12)
+	for i in range(2, floors):
 		var new_floor = WINDOW_FLOOR.instantiate()
-		new_floor.position = Vector3(0, (i+2)*2, 0)
+		new_floor.position = Vector3(0, i*2, 0)
 		add_child(new_floor)
-	top_floor.position = Vector3(0, (floors+2)*2, 0)
-	(hitbox.shape as BoxShape3D).size = Vector3(10, (floors+3)*2.5, 10)
-	hitbox.position = Vector3(0, (floors+3)-.75, 0)
+	top_floor.position = Vector3(0, floors*2, 0)
+	(hitbox.shape as BoxShape3D).size = Vector3(10, floors*2, 10)
+	hitbox.position = Vector3(0, floors, 0)

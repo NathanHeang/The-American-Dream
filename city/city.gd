@@ -1,9 +1,11 @@
 extends Node3D
+class_name City
 
 @export var size:Vector2i = Vector2i(7, 5)
 @export var block_size:int = 10
 @export var debug:bool = false
 var city:Array
+var placed_city:Array
 @onready var block_scenes:Dictionary[String, PackedScene]
 const BLOCK_DEBUG_LABEL = preload("res://city/block_debug_label.tscn")
 
@@ -24,19 +26,22 @@ func register_block_scenes():
 	else:
 		print("An error occurred when trying to access the path.")
 		get_tree().quit()
-	print(block_scenes)
+	if debug:
+		print("Loaded blocks:")
+		print(block_scenes)
 
 func _ready() -> void:
 	register_block_scenes()
 	generate_city()
-	print_city()
+	if debug:
+		print_city()
 	place_city()
 
 func generate_city() -> void:
 	for x in size.x:
 		city.append([])
 		for y in size.y:
-			city[x].append("empty" if randi_range(0, 1) == 1 else "building")
+			city[x].append("road" if randi_range(0, 1) == 1 else "building")
 	city[size.y/2][size.y/2] = "home"
 
 func place_city() -> void:
@@ -48,8 +53,9 @@ func place_city() -> void:
 				print("Scene not found: " + block_id)
 				continue
 			var block:Node3D = block_scene.instantiate()
-			add_child(block)
 			block.position = Vector3i(x*block_size, 0, y*block_size)
+			add_child(block)
+			placed_city[x][y] = block
 			if debug:
 				var label:Label3D = BLOCK_DEBUG_LABEL.instantiate()
 				label.text = block_id

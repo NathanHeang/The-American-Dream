@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://rrhgcpymo07m" path="res://models/bottom_floor.blend" id="3_gnu22"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgp2u"]
-size = Vector3(10, 20.5, 10)
 
 [node name="Building" type="StaticBody3D" unique_id=174485448]
 script = ExtResource("1_s5ctk")

@@ -25,6 +25,7 @@ sky = SubResource("Sky_8t54v")
 [node name="Cursor" parent="HUD" unique_id=925991105 instance=ExtResource("2_lquwl")]
 
 [node name="PauseMenu" parent="HUD" unique_id=1371425667 instance=ExtResource("2_1bvp3")]
+layer = 1
 offset = Vector2(0, 75)
 transform = Transform2D(1, 0, 0, 1, 0, 75)
 

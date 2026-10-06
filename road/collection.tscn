@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://clo7fwg6c11bj"]
+
+[ext_resource type="PackedScene" uid="uid://c6ob7rvv48jfj" path="res://models/road_corner_edge.blend" id="1_2dceu"]
+[ext_resource type="PackedScene" uid="uid://j1mdlyv2abr0" path="res://models/road_no_edge.blend" id="2_c5xo8"]
+[ext_resource type="PackedScene" uid="uid://deb1n5gvrv1lh" path="res://models/road_one_edge.blend" id="3_63jf0"]
+[ext_resource type="PackedScene" uid="uid://b01caw44qwky2" path="res://models/road_parallel_edge.blend" id="4_xcwxq"]
+[ext_resource type="PackedScene" uid="uid://bpqsavpnago7g" path="res://models/road_three_edge.blend" id="5_q6n82"]
+
+[node name="Gridmap" type="Node3D" unique_id=1238607376]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="road_corner_edge" parent="." unique_id=1771402049 instance=ExtResource("1_2dceu")]
+
+[node name="road_no_edge" parent="." unique_id=417568686 instance=ExtResource("2_c5xo8")]
+
+[node name="road_one_edge" parent="." unique_id=1737024217 instance=ExtResource("3_63jf0")]
+
+[node name="road_parallel_edge" parent="." unique_id=1881165683 instance=ExtResource("4_xcwxq")]
+
+[node name="road_three_edge" parent="." unique_id=1277174416 instance=ExtResource("5_q6n82")]
