@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxswmx5o2o0yi"
-path.s3tc="res://.godot/imported/portrait.png-a527ecf200f326cdc61bba35a4d43a29.s3tc.ctex"
+uid="uid://dok0k7h52wt8k"
+path.s3tc="res://.godot/imported/full.png-530cd62f75d3bcc9717273e2f92707aa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://characters/arcanya/portrait.png"
-dest_files=["res://.godot/imported/portrait.png-a527ecf200f326cdc61bba35a4d43a29.s3tc.ctex"]
+source_file="res://characters/noob/full.png"
+dest_files=["res://.godot/imported/full.png-530cd62f75d3bcc9717273e2f92707aa.s3tc.ctex"]
 
 [params]
 

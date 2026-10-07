@@ -33,11 +33,11 @@ func timeout() -> void:
 	OS.alert("Something unexpected happened! Please restart your device and try again.")
 	
 func _on_close_requested() -> void:
-	if PlayerStats.money >= price:
+	if PlayerHandler.money >= price:
 		pay_ransom()
 	else:
 		get_parent().add_child(STOP.instantiate())
 		
 func pay_ransom() -> void:
-	PlayerStats.money -= price
+	PlayerHandler.money -= price
 	queue_free()

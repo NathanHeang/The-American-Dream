@@ -9,7 +9,6 @@ extends CharacterBody3D
 @onready var camera_3d: Camera3D = $CameraPivot/Camera3D
 
 @onready var look: RayCast3D = $RayCast3D
-signal looked_at_interactable()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -32,8 +31,8 @@ func _physics_process(delta: float) -> void:
 		var hit = look.get_collider()
 		if hit.has_method("looked_at"):
 			hit.call("looked_at")
-		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("interact_alt"):
-			looked_at_interactable.emit()
+		if hit.has_method("interact") or hit.has_method("interact_alt"):
+			pass
 		if Input.is_action_just_pressed("interact") and hit.has_method("interact"):
 			hit.call("interact")
 		if Input.is_action_just_pressed("interact_alt") and hit.has_method("interact_alt"):

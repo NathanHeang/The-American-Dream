@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://nmilbrut4nur" path="res://ui/hud.tscn" id="1_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://ui/cursor/cursor.tscn" id="2_l8v81"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://ui/pause_menu/pause_menu.tscn" id="3_vyht1"]
-[ext_resource type="PackedScene" uid="uid://di2cyykwbppy3" path="res://player/player.tscn" id="4_bf3um"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
+[ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://newplr/plr.tscn" id="5_jnlp7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eu8wt"]
 ground_bottom_color = Color(0.08526526, 0.2, 0.14386074, 1)
@@ -29,9 +29,6 @@ layer = 1
 offset = Vector2(0, 75)
 transform = Transform2D(1, 0, 0, 1, 0, 75)
 
-[node name="Player" parent="." unique_id=1889472271 instance=ExtResource("4_bf3um")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 125, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=135170100]
 environment = SubResource("Environment_h2yge")
 
@@ -39,3 +36,5 @@ environment = SubResource("Environment_h2yge")
 script = ExtResource("5_huihk")
 size = Vector2i(30, 50)
 debug = true
+
+[node name="Player2" parent="." unique_id=1039902304 instance=ExtResource("5_jnlp7")]

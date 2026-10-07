@@ -1,7 +1,7 @@
 extends Label
 
 func _ready() -> void:
-	PlayerStats.time_changed.connect(update)
+	PlayerHandler.time_changed.connect(update)
 
 func update(_old:int, new:int)->void:
 	var mins = (new / 60) % 60
