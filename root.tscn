@@ -37,4 +37,5 @@ environment = SubResource("Environment_h2yge")
 
 [node name="City" type="Node3D" parent="." unique_id=1594716732]
 script = ExtResource("5_huihk")
+size = Vector2i(30, 50)
 debug = true

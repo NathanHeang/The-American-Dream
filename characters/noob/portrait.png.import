@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs0m1m8k1ge4"
-path="res://.godot/imported/mcdialogtalk.png-249509affb92aded381e5cc6b7951781.ctex"
+uid="uid://0y00l5molqlo"
+path="res://.godot/imported/portrait.png-27ec057b443c750accb51079e15481be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/mcdialogtalk.png"
-dest_files=["res://.godot/imported/mcdialogtalk.png-249509affb92aded381e5cc6b7951781.ctex"]
+source_file="res://characters/noob/portrait.png"
+dest_files=["res://.godot/imported/portrait.png-27ec057b443c750accb51079e15481be.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtyoif5vqb78k"
-path="res://.godot/imported/noobdialogtalk.png-aa86a719ca562515e8f52e45dcb94928.ctex"
+uid="uid://cbh48u4h7fbo7"
+path="res://.godot/imported/portrait_talk.png-66539239caea9e9eea3ebd3d00097eff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/noobdialogtalk.png"
-dest_files=["res://.godot/imported/noobdialogtalk.png-aa86a719ca562515e8f52e45dcb94928.ctex"]
+source_file="res://characters/noob/portrait_talk.png"
+dest_files=["res://.godot/imported/portrait_talk.png-66539239caea9e9eea3ebd3d00097eff.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ieudm8fyybr"
-path="res://.godot/imported/noobdialogspeechless.png-925411b855f5ff6177caf2c81eec537b.ctex"
+uid="uid://dsqfl15nixiwa"
+path="res://.godot/imported/dialogue_box.png-630bb3b49dc179fc79045c28ff9ed16d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/noobdialogspeechless.png"
-dest_files=["res://.godot/imported/noobdialogspeechless.png-925411b855f5ff6177caf2c81eec537b.ctex"]
+source_file="res://dialogue/dialogue_box.png"
+dest_files=["res://.godot/imported/dialogue_box.png-630bb3b49dc179fc79045c28ff9ed16d.ctex"]
 
 [params]
 
