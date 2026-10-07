@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dmh3rk2f66gff"]
+
+[ext_resource type="Script" uid="uid://ylja1d1byg0v" path="res://city/city_library.gd" id="1_6yjr3"]
+[ext_resource type="PackedScene" uid="uid://bc28tual6meo4" path="res://city/blocks/road.tscn" id="2_6a60y"]
+[ext_resource type="PackedScene" uid="uid://d4lub43en4vsf" path="res://city/blocks/building.tscn" id="3_m8cjs"]
+
+[node name="CityLibrary" type="Node" unique_id=1491215996]
+script = ExtResource("1_6yjr3")
+scenes = Array[PackedScene]([ExtResource("2_6a60y"), ExtResource("3_m8cjs")])
+weights = [10.0, 2.0]

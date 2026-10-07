@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1aspr43tv5kt"
-path="res://.godot/imported/poster3.png-51290bcba64c2e336ac8a427cf9555f6.ctex"
+uid="uid://6cmpd8vik27l"
+path="res://.godot/imported/portrait_talk.png-702423286a41f483a6c9f8c73f35f3bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/poster3.png"
-dest_files=["res://.godot/imported/poster3.png-51290bcba64c2e336ac8a427cf9555f6.ctex"]
+source_file="res://npcs/arcanya/portrait_talk.png"
+dest_files=["res://.godot/imported/portrait_talk.png-702423286a41f483a6c9f8c73f35f3bf.ctex"]
 
 [params]
 
