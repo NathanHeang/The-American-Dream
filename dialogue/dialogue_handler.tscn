@@ -2,44 +2,60 @@
 
 [ext_resource type="Script" uid="uid://bf42nu1mxkqrf" path="res://dialogue/dialogue_handler.gd" id="1_r5bmg"]
 [ext_resource type="Texture2D" uid="uid://dsqfl15nixiwa" path="res://dialogue/dialogue_box.png" id="2_8f26l"]
+[ext_resource type="Texture2D" uid="uid://0y00l5molqlo" path="res://npcs/noob/portrait.png" id="3_f0qx8"]
+[ext_resource type="AudioStream" uid="uid://cmj1ye3q1f7ck" path="res://npcs/noob/talk.ogg" id="4_7hkdk"]
 
 [node name="DialogueHandler" type="Control" unique_id=412039055]
 z_index = 4096
 layout_mode = 3
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = 176.0
-offset_bottom = 176.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -190.0
+offset_right = 400.0
+offset_bottom = -40.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("1_r5bmg")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1645055071]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "NPC"
+vertical_alignment = 2
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1318223678]
-layout_mode = 0
-offset_left = -144.0
-offset_top = -28.0
-offset_right = 144.0
-offset_bottom = 28.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_8f26l")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1715644664]
 layout_mode = 1
-offset_left = -144.0
-offset_top = -28.0
-offset_right = 144.0
-offset_bottom = 28.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="SpeakerParent" type="Control" parent="HBoxContainer" unique_id=1636952792]
-custom_minimum_size = Vector2(56, 0)
-layout_mode = 2
-
-[node name="SpeakerSprite" type="Sprite2D" parent="HBoxContainer/SpeakerParent" unique_id=269296762]
+[node name="SpeakerSprite" type="TextureRect" parent="HBoxContainer" unique_id=1256170449]
 unique_name_in_owner = true
-position = Vector2(28, 28)
+custom_minimum_size = Vector2(125, 150)
+layout_mode = 2
+texture = ExtResource("3_f0qx8")
+expand_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1218194231]
 layout_mode = 2
@@ -49,7 +65,9 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
+text = "dialogue"
 scroll_active = false
 visible_characters_behavior = 1
 
@@ -59,4 +77,5 @@ visible = false
 layout_mode = 2
 
 [node name="TextSound" type="AudioStreamPlayer" parent="." unique_id=830103643]
+stream = ExtResource("4_7hkdk")
 max_polyphony = 1000

@@ -21,6 +21,7 @@ config/icon="uid://135w8l4axh12"
 PlayerHandler="*uid://ck2bblp4171wn"
 NPCLibrary="*uid://yoqsvm27txm7"
 CityLibrary="*uid://dmh3rk2f66gff"
+DialogueLibrary="*uid://cekw46112nsjm"
 
 [display]
 

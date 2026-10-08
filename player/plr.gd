@@ -101,7 +101,7 @@ func _handle_air_physics(dt:float)->void:
 			self.motion_mode = CharacterBody3D.MOTION_MODE_GROUNDED
 		clip_velocity(get_wall_normal(), 1, dt)
 
-func clip_velocity(normal:Vector3, overbounce:float, dt:float)->void:
+func clip_velocity(normal:Vector3, overbounce:float, _dt:float)->void:
 	var backoff:float = velocity.dot(normal) * overbounce
 	if backoff >= 0: return
 	
@@ -130,7 +130,7 @@ func _physics_process(dt: float) -> void:
 	else:
 		_handle_air_physics(dt)
 	camera.fov = clamp(lerp(camera.fov, base_fov*(velocity.length()/walk_speed), fov_transition_time), min_fov, max_fov)
-	speed_lines.set_shader_parameter("power", clamp(lerp(speed_lines.get_shader_parameter("power"), 4*velocity.length()/walk_speed, fov_transition_time), 0.0, 9.0))
+	speed_lines.set_shader_parameter("power", clamp(lerp(speed_lines.get_shader_parameter("power"), 2*velocity.length()/walk_speed, fov_transition_time), 0.0, 9.0))
 	move_and_slide()
 
 func headbob(dt):

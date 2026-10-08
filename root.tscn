@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://nmilbrut4nur" path="res://ui/hud.tscn" id="1_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://ui/cursor/cursor.tscn" id="2_l8v81"]
+[ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="2_vyht1"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://ui/pause_menu/pause_menu.tscn" id="3_vyht1"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
@@ -21,6 +22,11 @@ sky = SubResource("Sky_8t54v")
 [node name="Root" type="Node" unique_id=256912048]
 
 [node name="HUD" parent="." unique_id=1517999083 instance=ExtResource("1_jnlp7")]
+
+[node name="DialogueHandler" parent="HUD" unique_id=412039055 instance=ExtResource("2_vyht1")]
+visible = false
+offset_top = -268.0
+offset_bottom = -118.0
 
 [node name="Cursor" parent="HUD" unique_id=925991105 instance=ExtResource("2_l8v81")]
 

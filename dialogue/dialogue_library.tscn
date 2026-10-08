@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cekw46112nsjm"]
+
+[ext_resource type="Script" uid="uid://bxrgo68bxcx8u" path="res://dialogue/dialogue_library.gd" id="1_k28po"]
+[ext_resource type="Script" uid="uid://c3c1sfiywn57b" path="res://dialogue/dialogue_list.gd" id="2_mpgvq"]
+[ext_resource type="Script" uid="uid://brrk3v5qwyxw3" path="res://dialogue/dialogue.gd" id="3_iaowc"]
+[ext_resource type="Script" uid="uid://c6uuqsa5gf2c7" path="res://dialogue/dialogue_text.gd" id="4_hjv7v"]
+[ext_resource type="Texture2D" uid="uid://0y00l5molqlo" path="res://npcs/noob/portrait.png" id="5_iaowc"]
+[ext_resource type="AudioStream" uid="uid://cmj1ye3q1f7ck" path="res://npcs/noob/talk.ogg" id="6_hjv7v"]
+[ext_resource type="Texture2D" uid="uid://cbh48u4h7fbo7" path="res://npcs/noob/portrait_talk.png" id="7_hjv7v"]
+
+[sub_resource type="Resource" id="Resource_rxeks"]
+script = ExtResource("4_hjv7v")
+speaker_name = "AAAA"
+speaker_texture = ExtResource("5_iaowc")
+text = "afgdfgsdfgsdfh"
+text_sound = ExtResource("6_hjv7v")
+metadata/_custom_type_script = "uid://c6uuqsa5gf2c7"
+
+[sub_resource type="Resource" id="Resource_jqsad"]
+script = ExtResource("4_hjv7v")
+speaker_name = "AAAA"
+speaker_texture = ExtResource("7_hjv7v")
+text = "ABSFBSFBSFB"
+text_sound = ExtResource("6_hjv7v")
+metadata/_custom_type_script = "uid://c6uuqsa5gf2c7"
+
+[sub_resource type="Resource" id="Resource_i3mya"]
+script = ExtResource("2_mpgvq")
+list = Array[ExtResource("3_iaowc")]([SubResource("Resource_rxeks"), SubResource("Resource_jqsad")])
+metadata/_custom_type_script = "uid://c3c1sfiywn57b"
+
+[node name="DialogueLibrary" type="Node" unique_id=1135203572]
+script = ExtResource("1_k28po")
+dialogues = Dictionary[String, ExtResource("2_mpgvq")]({
+"test": SubResource("Resource_i3mya")
+})
