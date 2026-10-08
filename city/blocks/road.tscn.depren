@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bc28tual6meo4"]
 
 [ext_resource type="Script" uid="uid://8osq8kqgl0c5" path="res://city/road.gd" id="1_7nwe0"]
-[ext_resource type="PackedScene" uid="uid://j1mdlyv2abr0" path="res://blend_imports/road_no_edge.blend" id="2_7nwe0"]
+[ext_resource type="PackedScene" uid="uid://j1mdlyv2abr0" path="res://models/road_no_edge.blend" id="2_7nwe0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7nwe0"]
 size = Vector3(10, 1, 10)

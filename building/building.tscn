@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dx4w1q4bbh3ed" path="res://models/top_floor.blend" id="2_s5ctk"]
 [ext_resource type="PackedScene" uid="uid://rrhgcpymo07m" path="res://models/bottom_floor.blend" id="3_gnu22"]
 
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgp2u"]
 
 [node name="Building" type="StaticBody3D" unique_id=174485448]

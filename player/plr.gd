@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var model: Node3D = %WorldModel
 @onready var head: Node3D = %Head
@@ -10,6 +11,9 @@ extends CharacterBody3D
 @export var ground_accel:float = 14.0
 @export var ground_deccel:float = 10.0
 @export var ground_friction:float = 6.0
+
+@onready var walk_sfx: AudioStreamPlayer3D = $WalkSFX
+@onready var walk_sfx_timer: Timer = $WalkSFX/Timer
 
 @export_category("Jumping")
 @export var jump_velocity:float = 6.0
@@ -26,12 +30,14 @@ extends CharacterBody3D
 @export var HEADBOB_FREQUENCY:float = 2.4
 var headbob_time:float = 0.0
 
+var can_move:bool = true
 var wish_dir:Vector3 = Vector3.ZERO
 
 func get_move_speed()->float:
 	return sprint_speed if Input.is_action_pressed("sprint") else walk_speed
 
 func _ready() -> void:
+	add_to_group("player")
 	for child in model.find_children("*", "VisualInstance3D"):
 		child.set_layer_mask_value(1, false)
 		child.set_layer_mask_value(2, true) 
@@ -50,6 +56,11 @@ func _unhandled_input(e: InputEvent) -> void:
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _handle_ground_physics(dt:float)->void:
+	if walk_sfx_timer.time_left == 0 and wish_dir.length() > 0.2:
+		walk_sfx.pitch_scale = randf_range(.8, 1.2)
+		walk_sfx.play()
+		walk_sfx_timer.wait_time = 4/get_move_speed()
+		walk_sfx_timer.start()
 	var base_speed = velocity.dot(wish_dir)
 	var true_speed = get_move_speed() - base_speed
 	if true_speed > 0:

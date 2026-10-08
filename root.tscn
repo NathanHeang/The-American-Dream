@@ -37,16 +37,16 @@ environment = SubResource("Environment_h2yge")
 script = ExtResource("5_huihk")
 size = Vector2i(30, 50)
 block_size = null
-debug = true
 
 [node name="Player" parent="." unique_id=1039902304 instance=ExtResource("5_jnlp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
-walk_speed = 20.0
+walk_speed = 8.0
 sprint_speed = 20.0
 ground_accel = 18.0
 ground_deccel = 12.0
 ground_friction = 8.0
-air_accel = 900.0
+air_cap = 5.0
+air_accel = 200.0
 air_speed = 600.0
 look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075

@@ -8,8 +8,10 @@
 script = ExtResource("1_ppmss")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=151256720]
-pixel_size = 0.0075
+pixel_size = 0.075
 billboard = 2
+shaded = true
+double_sided = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1272038689]
 shape = SubResource("CapsuleShape3D_4apfu")
