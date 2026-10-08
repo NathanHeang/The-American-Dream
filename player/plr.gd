@@ -25,10 +25,16 @@ class_name Player
 @export var air_speed:float = 500.0
 
 @export_category("Camera")
+@onready var speed_lines: ShaderMaterial = %SpeedLines.material
+@export var base_fov:float = 75
+@export_range(0, 179, .5) var min_fov:float = 75
+@export_range(0, 179, .5) var max_fov:float = 150
+@export var fov_transition_time:float = 1
 @export var look_sensitivity:float = 0.005
 @export var HEADBOB_STRENGTH:float = 0.05
 @export var HEADBOB_FREQUENCY:float = 2.4
 var headbob_time:float = 0.0
+
 
 var can_move:bool = true
 var wish_dir:Vector3 = Vector3.ZERO
@@ -61,6 +67,7 @@ func _handle_ground_physics(dt:float)->void:
 		walk_sfx.play()
 		walk_sfx_timer.wait_time = 4/get_move_speed()
 		walk_sfx_timer.start()
+	
 	var base_speed = velocity.dot(wish_dir)
 	var true_speed = get_move_speed() - base_speed
 	if true_speed > 0:
@@ -122,6 +129,8 @@ func _physics_process(dt: float) -> void:
 		_handle_ground_physics(dt)
 	else:
 		_handle_air_physics(dt)
+	camera.fov = clamp(lerp(camera.fov, base_fov*(velocity.length()/walk_speed), fov_transition_time), min_fov, max_fov)
+	speed_lines.set_shader_parameter("power", clamp(lerp(speed_lines.get_shader_parameter("power"), 4*velocity.length()/walk_speed, fov_transition_time), 0.0, 9.0))
 	move_and_slide()
 
 func headbob(dt):

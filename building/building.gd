@@ -1,8 +1,9 @@
 extends StaticBody3D
 
+const WINDOW_FLOOR = preload("res://models/window_floor.blend")
+
 @onready var bottom_floor: Node3D = $bottom_floor
 @onready var top_floor: Node3D = $top_floor
-const WINDOW_FLOOR = preload("res://models/window_floor.blend")
 @onready var hitbox: CollisionShape3D = $hitbox
 
 func _ready() -> void:

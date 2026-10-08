@@ -75,9 +75,9 @@ func text_dialogue(d:DialogueText)->void:
 		
 		char_timer += get_process_delta_time()
 		if char_timer >= (1.0/d.text_speed) or cleaned[label.visible_characters] == "":
-			var char:String = cleaned[label.visible_characters]
+			var c:String = cleaned[label.visible_characters]
 			label.visible_characters += 1
-			if char != "":
+			if c != "":
 				text_sound.pitch_scale = randf_range(d.text_min_pitch, d.text_max_pitch)
 				text_sound.play()
 				if d.speaker_hframes !=1:

@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://ui/pause_menu/pause_menu.tscn" id="3_vyht1"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
-[ext_resource type="PackedScene" uid="uid://qv2q6m208dhh" path="res://npcs/npc.tscn" id="6_l8v81"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eu8wt"]
 ground_bottom_color = Color(0.08526526, 0.2, 0.14386074, 1)
@@ -40,37 +39,12 @@ block_size = null
 
 [node name="Player" parent="." unique_id=1039902304 instance=ExtResource("5_jnlp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
-walk_speed = 8.0
 sprint_speed = 20.0
 ground_accel = 18.0
 ground_deccel = 12.0
 ground_friction = 8.0
-air_cap = 5.0
-air_accel = 200.0
+air_cap = 10.0
+air_accel = 100.0
 air_speed = 600.0
 look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075
-
-[node name="Npc" parent="." unique_id=1967252165 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
-
-[node name="Npc2" parent="." unique_id=535946646 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
-
-[node name="Npc3" parent="." unique_id=53352030 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
-
-[node name="Npc4" parent="." unique_id=1441141898 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
-
-[node name="Npc5" parent="." unique_id=1702913555 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
-
-[node name="Npc6" parent="." unique_id=911800130 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
-
-[node name="Npc7" parent="." unique_id=209247038 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
-
-[node name="Npc8" parent="." unique_id=50983006 instance=ExtResource("6_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 334.00488, 0)
