@@ -1,14 +1,23 @@
 [gd_scene format=3 uid="uid://nmilbrut4nur"]
 
+[ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://ui/cursor/cursor.tscn" id="1_1v5rv"]
 [ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://ui/balance_hud/balance_hud.tscn" id="1_64ctp"]
 [ext_resource type="PackedScene" uid="uid://bb2pmxlkyxyyk" path="res://phone/phone_hud.tscn" id="2_8sq4i"]
+[ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://ui/pause_menu/pause_menu.tscn" id="2_q43x7"]
 [ext_resource type="Script" uid="uid://bt4p6np1dm6d7" path="res://ui/time_hud.gd" id="3_546lt"]
+[ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="3_srpbi"]
 
 [sub_resource type="SystemFont" id="SystemFont_2gk58"]
 font_names = PackedStringArray("Comic Sans MS")
 subpixel_positioning = 0
 
 [node name="HUD" type="CanvasLayer" unique_id=1517999083]
+
+[node name="Cursor" parent="." unique_id=925991105 instance=ExtResource("1_1v5rv")]
+
+[node name="PauseMenu" parent="." unique_id=1371425667 instance=ExtResource("2_q43x7")]
+
+[node name="DialogueHandler" parent="." unique_id=412039055 instance=ExtResource("3_srpbi")]
 
 [node name="Balance" parent="." unique_id=1545020258 instance=ExtResource("1_64ctp")]
 mouse_filter = 1

@@ -1,4 +1,4 @@
 extends Resource
 class_name DialogueList
 
-@export var list:Array[Dialogue]
+@export var list:Array[DialoguePart]

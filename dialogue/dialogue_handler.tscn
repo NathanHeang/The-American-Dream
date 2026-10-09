@@ -19,9 +19,10 @@ offset_right = 400.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 script = ExtResource("1_r5bmg")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1645055071]
+[node name="SpeakerName" type="RichTextLabel" parent="." unique_id=1645055071]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

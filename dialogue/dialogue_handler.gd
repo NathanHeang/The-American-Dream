@@ -1,14 +1,16 @@
 extends Control
+class_name DialogueHandler
 
 const DIALOGUE_BUTTON = preload("res://dialogue/dialogue_button.tscn")
 
 @onready var label: RichTextLabel = %Text
+@onready var speaker_name_label: RichTextLabel = $SpeakerName
 @onready var speaker_sprite: TextureRect = %SpeakerSprite
 @onready var button_container: HBoxContainer = %ButtonContainer
 
 @onready var text_sound: AudioStreamPlayer = $TextSound
 
-var dialogue:Array[Dialogue]
+var dialogue:Array[DialoguePart]
 var current_dialogue:int=0
 var next_item:bool=false
 
@@ -16,26 +18,26 @@ func _ready() -> void:
 	visible = false
 	button_container.visible = false
 	
-	begin("test")
-	
 func begin(id:String)->void:
 	dialogue = DialogueLibrary.dialogues[id].list
 	next_item = true
 	
 func _process(_dt: float) -> void:
-	if current_dialogue == dialogue.size()-1:
-		next_item = false
 	if next_item:
 		next_item = false
-		var i = dialogue[current_dialogue]
+		if current_dialogue >= dialogue.size():
+			visible = false
+			return
 		visible = true
-		if i is DialogueText:
-			text_dialogue(i)
-		elif i is DialogueChoice:
-			choice_dialogue(i)
-		elif i is DialogueFunction:
-			function_dialogue(i)
-			visible = not i.hide_box
+		var d = dialogue[current_dialogue]
+		speaker_name_label.text = d.speaker_name
+		if d is DialogueText:
+			text_dialogue(d)
+		elif d is DialogueChoice:
+			choice_dialogue(d)
+		elif d is DialogueFunction:
+			function_dialogue(d)
+			visible = not d.hide_box
 		else:
 			print("wrong resource type!")
 			current_dialogue +=1
@@ -44,12 +46,12 @@ func _process(_dt: float) -> void:
 func text_dialogue(d:DialogueText)->void:
 	text_sound.stream = d.text_sound
 	text_sound.volume_db = d.text_volume
-		
-	if !d.speaker_texture:
+	
+	if !d.speaker_textures:
 		speaker_sprite.visible = false
 	else:
 		speaker_sprite.visible = true
-		speaker_sprite.texture = d.speaker_texture
+		speaker_sprite.texture = d.get_current_texture()
 		
 	label.visible_characters = 0
 	label.text = d.text
@@ -68,6 +70,7 @@ func text_dialogue(d:DialogueText)->void:
 			if c != "":
 				text_sound.pitch_scale = randf_range(d.text_min_pitch, d.text_max_pitch)
 				text_sound.play()
+				speaker_sprite.texture = d.get_current_texture()
 			char_timer = 0.0
 			
 		await get_tree().process_frame
@@ -80,29 +83,16 @@ func text_dialogue(d:DialogueText)->void:
 				next_item = true
 	
 func clean_text(t:String)->String:
-	var res:String = ""
-	var inside_bracket:bool = false
-	
-	for i in t:
-		if i == "[":
-			inside_bracket = true
-			continue
-		
-		if i == "]":
-			inside_bracket = false
-			continue
-		
-		if !inside_bracket:
-			res +=i
-	
-	return res
+	var regex = RegEx.new()
+	regex.compile("\\[.*?\\]")
+	return regex.sub(t, "", true)
 	
 func choice_dialogue(d:DialogueChoice)->void:
 	label.text = d.text
 	label.visible_characters = -1
 	if d.speaker_texture:
 		speaker_sprite.visible = true
-		speaker_sprite.texture = d.speaker_texture
+		speaker_sprite.texture = d.get_current_texture()
 	else:
 		speaker_sprite.visible = false
 	button_container.visible = true

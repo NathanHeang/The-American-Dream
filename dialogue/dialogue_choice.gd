@@ -1,8 +1,5 @@
-extends Dialogue
+extends DialoguePart
 class_name DialogueChoice
-
-@export var speaker_name:String
-@export var speaker_texture:Texture
 
 @export_multiline var text:String
 

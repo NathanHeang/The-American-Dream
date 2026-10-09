@@ -1,4 +1,4 @@
-extends Dialogue
+extends DialoguePart
 class_name DialogueFunction
 
 @export var target_path:NodePath
