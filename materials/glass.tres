@@ -1,4 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cwov6cbi4w47x"]
 
+[ext_resource type="Texture2D" uid="uid://drvu2i6bg3x3g" path="res://textures/poster4.png" id="1_2wd1j"]
+
 [resource]
 albedo_color = Color(0.60422766, 0.7462491, 0.886718, 1)
+albedo_texture = ExtResource("1_2wd1j")
+metallic = 1.0
+metallic_texture = ExtResource("1_2wd1j")
+roughness = 0.15

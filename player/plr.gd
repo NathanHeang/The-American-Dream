@@ -52,7 +52,6 @@ func _ready() -> void:
 	
 func _process(_dt: float) -> void:
 	if get_interactable():
-		print("a")
 		get_interactable().hover_cursor(self)
 		if Input.is_action_just_pressed("interact"):
 			get_interactable().interact()

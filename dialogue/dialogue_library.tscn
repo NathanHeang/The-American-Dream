@@ -1,30 +1,6 @@
 [gd_scene format=3 uid="uid://cekw46112nsjm"]
 
 [ext_resource type="Script" uid="uid://bxrgo68bxcx8u" path="res://dialogue/dialogue_library.gd" id="1_k28po"]
-[ext_resource type="Script" uid="uid://c3c1sfiywn57b" path="res://dialogue/dialogue_list.gd" id="2_mpgvq"]
-[ext_resource type="Script" uid="uid://brrk3v5qwyxw3" path="res://dialogue/dialogue.gd" id="3_iaowc"]
-[ext_resource type="Script" uid="uid://c6uuqsa5gf2c7" path="res://dialogue/dialogue_text.gd" id="4_hjv7v"]
-[ext_resource type="Texture2D" uid="uid://cxswmx5o2o0yi" path="res://npcs/arcanya/portrait.png" id="5_hjv7v"]
-[ext_resource type="Texture2D" uid="uid://6cmpd8vik27l" path="res://npcs/arcanya/portrait_talk.png" id="6_kapp7"]
-[ext_resource type="AudioStream" uid="uid://chhvd7024va8u" path="res://npcs/arcanya/talk.ogg" id="7_4wiux"]
-
-[sub_resource type="Resource" id="Resource_blrnf"]
-script = ExtResource("4_hjv7v")
-text = "free money"
-text_speed = 15.0
-text_sound = ExtResource("7_4wiux")
-text_volume = 0.3
-speaker_name = "Arcanya"
-speaker_textures = Array[Texture]([ExtResource("5_hjv7v"), ExtResource("6_kapp7")])
-metadata/_custom_type_script = "uid://c6uuqsa5gf2c7"
-
-[sub_resource type="Resource" id="Resource_nle11"]
-script = ExtResource("2_mpgvq")
-list = Array[ExtResource("3_iaowc")]([SubResource("Resource_blrnf")])
-metadata/_custom_type_script = "uid://c3c1sfiywn57b"
 
 [node name="DialogueLibrary" type="Node" unique_id=1135203572]
 script = ExtResource("1_k28po")
-dialogues = Dictionary[String, ExtResource("2_mpgvq")]({
-"test": SubResource("Resource_nle11")
-})

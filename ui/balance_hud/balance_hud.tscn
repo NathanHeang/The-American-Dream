@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://da38xepouds6u"]
 
 [ext_resource type="Script" uid="uid://bj0g6qcrify2a" path="res://ui/balance_hud/balance_hud.gd" id="1_kesql"]
-
+[ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://textures/dollar.png" id="2_7urik"]
+[ext_resource type="Texture2D" uid="uid://cfa1hkpvf8tay" path="res://textures/coin.png" id="3_v3dwd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv7w"]
 content_margin_left = 10.0
@@ -14,29 +15,93 @@ border_width_bottom = 4
 border_color = Color(0.31006217, 0.8, 0.55637395, 1)
 corner_radius_top_right = 24
 
+[sub_resource type="Curve" id="Curve_v3dwd"]
+_limits = [-500.0, 500.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9042554, -5.617981), 0.0, 0.0, 0, 0, Vector2(1, 500), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_7urik"]
+_data = [Vector2(0, 0.50561804), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_v3dwd"]
+colors = PackedColorArray(1, 1, 1, 1, 0.58431375, 0.58431375, 0.58431375, 0.43529412)
+
 [node name="Balance" type="Control" unique_id=1545020258]
 layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+offset_right = 208.0
+grow_vertical = 0
+script = ExtResource("1_kesql")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2126006378]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kesql")
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2126006378]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -73.0
-offset_right = 208.0
-grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_brv7w")
 
 [node name="Label" type="Label" parent="PanelContainer" unique_id=1374501441]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6241871, 1, 0.7075882, 1)
 theme_override_font_sizes/font_size = 64
-text = "$100.50"
+text = "$0.00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CashParticle" type="CPUParticles2D" parent="." unique_id=237738050]
+position = Vector2(104, 47)
+emitting = false
+amount = 16
+texture = ExtResource("2_7urik")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 5)
+initial_velocity_min = 6.25
+initial_velocity_max = 500.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+orbit_velocity_max = 0.5
+orbit_velocity_curve = SubResource("Curve_v3dwd")
+linear_accel_max = 50.0
+damping_min = 10.0
+damping_max = 200.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+scale_amount_curve = SubResource("Curve_7urik")
+color_ramp = SubResource("Gradient_v3dwd")
+
+[node name="CoinParticle" type="CPUParticles2D" parent="." unique_id=499339653]
+position = Vector2(104, 47)
+emitting = false
+amount = 16
+texture = ExtResource("3_v3dwd")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 6.25
+initial_velocity_max = 500.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+orbit_velocity_max = 0.5
+orbit_velocity_curve = SubResource("Curve_v3dwd")
+linear_accel_max = 50.0
+damping_min = 10.0
+damping_max = 200.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+scale_amount_curve = SubResource("Curve_7urik")
+color_ramp = SubResource("Gradient_v3dwd")

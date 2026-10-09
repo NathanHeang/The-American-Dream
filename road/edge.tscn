@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://62lxrbxvxorx"]
+
+[ext_resource type="Texture2D" uid="uid://da3q2n4dnirhd" path="res://textures/metal.jpeg" id="1_d211s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d211s"]
+albedo_texture = ExtResource("1_d211s")
+albedo_texture_msdf = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ang4f"]
+material = SubResource("StandardMaterial3D_d211s")
+size = Vector3(14, 0.25, 2)
+
+[node name="Edge" type="MeshInstance3D" unique_id=22174259]
+mesh = SubResource("BoxMesh_ang4f")

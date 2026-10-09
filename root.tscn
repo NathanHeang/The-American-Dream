@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
-[ext_resource type="PackedScene" uid="uid://d1at6r7batfu4" path="res://npcs/arc_npc.tscn" id="1_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://d1at6r7batfu4" path="res://npcs/arcanya/npc_arcanya.tscn" id="1_vvh5c"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
 
@@ -15,10 +15,13 @@ sky_material = SubResource("ProceduralSkyMaterial_eu8wt")
 background_mode = 2
 background_energy_multiplier = 1.2
 sky = SubResource("Sky_8t54v")
+reflected_light_source = 2
+ssao_enabled = true
+ssao_intensity = 10.4
+glow_enabled = true
+fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
 
 [node name="Root" type="Node" unique_id=256912048]
-
-[node name="Npc" parent="." unique_id=1967252165 instance=ExtResource("1_vvh5c")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=135170100]
 environment = SubResource("Environment_h2yge")
@@ -39,3 +42,6 @@ air_accel = 100.0
 air_speed = 600.0
 look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075
+
+[node name="Npc" parent="." unique_id=1967252165 instance=ExtResource("1_vvh5c")]
+visible = false

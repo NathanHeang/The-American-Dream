@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d1at6r7batfu4"]
+
+[ext_resource type="Script" uid="uid://bcbqpt07nkwxt" path="res://npcs/arcanya/npc_arcanya.gd" id="1_hk0lr"]
+[ext_resource type="Script" uid="uid://c3c1sfiywn57b" path="res://dialogue/dialogue.gd" id="2_s5b08"]
+[ext_resource type="Script" uid="uid://brrk3v5qwyxw3" path="res://dialogue/dialogue_part.gd" id="3_a7qj2"]
+[ext_resource type="Texture2D" uid="uid://cwo6tp0vshyav" path="res://npcs/arcanya/full.png" id="4_anodu"]
+[ext_resource type="Script" uid="uid://ddmhc7ld2h5tm" path="res://interactable/InteractableComponent.gd" id="5_22gtr"]
+
+[sub_resource type="Resource" id="Resource_8t54v"]
+script = ExtResource("2_s5b08")
+metadata/_custom_type_script = "uid://c3c1sfiywn57b"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4apfu"]
+
+[node name="Npc" type="RigidBody3D" unique_id=1109186467]
+script = ExtResource("1_hk0lr")
+dialogues = Array[ExtResource("2_s5b08")]([SubResource("Resource_8t54v")])
+loop = false
+metadata/_custom_type_script = "uid://db1etvwobj7ih"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=151256720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+pixel_size = 0.00625
+billboard = 2
+shaded = true
+double_sided = false
+texture = ExtResource("4_anodu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1272038689]
+shape = SubResource("CapsuleShape3D_4apfu")
+
+[node name="InteractableComponent" type="Node" parent="." unique_id=132379545]
+script = ExtResource("5_22gtr")
+metadata/_custom_type_script = "uid://ddmhc7ld2h5tm"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://erooy5ysa3xr"
-path="res://.godot/imported/portrait.png-bcb559a6ad7a9da754521d74374d9e2b.ctex"
+uid="uid://c0kkb7eauw3g2"
+path="res://.godot/imported/full.png-fb25a88a538dcfa84b20f167c48ad99c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npcs/boss/portrait.png"
-dest_files=["res://.godot/imported/portrait.png-bcb559a6ad7a9da754521d74374d9e2b.ctex"]
+source_file="res://npcs/basic_3/full.png"
+dest_files=["res://.godot/imported/full.png-fb25a88a538dcfa84b20f167c48ad99c.ctex"]
 
 [params]
 
@@ -26,8 +26,6 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-mipmaps/preserve_alpha_test_coverage=false
-mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

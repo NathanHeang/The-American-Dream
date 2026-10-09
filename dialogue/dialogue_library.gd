@@ -1,2 +1,2 @@
 extends Node
-@export var dialogues:Dictionary[String, DialogueList]
+@export var dialogues:Dictionary[String, Dialogue]

@@ -10,26 +10,30 @@ const DIALOGUE_BUTTON = preload("res://dialogue/dialogue_button.tscn")
 
 @onready var text_sound: AudioStreamPlayer = $TextSound
 
-var dialogue:Array[DialoguePart]
+var dialogue:Dialogue
 var current_dialogue:int=0
 var next_item:bool=false
 
 func _ready() -> void:
 	visible = false
 	button_container.visible = false
-	
-func begin(id:String)->void:
-	dialogue = DialogueLibrary.dialogues[id].list
+
+func begin(_dialogue:Dialogue)->void:
+	dialogue = _dialogue
+	next_item = true
+
+func begin_library(id:String)->void:
+	dialogue = DialogueLibrary.dialogues[id]
 	next_item = true
 	
 func _process(_dt: float) -> void:
 	if next_item:
 		next_item = false
-		if current_dialogue >= dialogue.size():
+		if current_dialogue >= dialogue.parts.size():
 			visible = false
 			return
 		visible = true
-		var d = dialogue[current_dialogue]
+		var d = dialogue.parts[current_dialogue]
 		speaker_name_label.text = d.speaker_name
 		if d is DialogueText:
 			text_dialogue(d)
@@ -42,6 +46,11 @@ func _process(_dt: float) -> void:
 			print("wrong resource type!")
 			current_dialogue +=1
 			next_item = true
+			
+func clean_text(t:String)->String:
+	var regex = RegEx.new()
+	regex.compile("\\[.*?\\]")
+	return regex.sub(t, "", true)
 
 func text_dialogue(d:DialogueText)->void:
 	text_sound.stream = d.text_sound
@@ -78,19 +87,14 @@ func text_dialogue(d:DialogueText)->void:
 	while true:
 		await get_tree().process_frame
 		if label.visible_characters == total_chars:
-			if Input.is_action_just_pressed("ui_accept"):
-				current_dialogue +=1
+			if Input.is_action_just_pressed("interact"):
+				current_dialogue += 1
 				next_item = true
-	
-func clean_text(t:String)->String:
-	var regex = RegEx.new()
-	regex.compile("\\[.*?\\]")
-	return regex.sub(t, "", true)
 	
 func choice_dialogue(d:DialogueChoice)->void:
 	label.text = d.text
 	label.visible_characters = -1
-	if d.speaker_texture:
+	if d.speaker_textures:
 		speaker_sprite.visible = true
 		speaker_sprite.texture = d.get_current_texture()
 	else:
