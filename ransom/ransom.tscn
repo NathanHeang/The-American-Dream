@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://xbqejn7xd0lm"]
 
 [ext_resource type="Script" uid="uid://b8cbcayojle8u" path="res://ransom/ransom.gd" id="1_dqee3"]
-[ext_resource type="Shader" uid="uid://c08iu0wdh6snt" path="res://ransom/glitch.gdshader" id="2_3tmcc"]
+[ext_resource type="Shader" uid="uid://c08iu0wdh6snt" path="res://shaders/glitch.gdshader" id="2_3tmcc"]
 [ext_resource type="Texture2D" uid="uid://hsxiehngwt54" path="res://ransom/face1.png" id="2_ffdne"]
 [ext_resource type="AudioStream" uid="uid://oiiasr5uqpgg" path="res://ransom/timer.mp3" id="3_3tmcc"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(1, 0, 0, 1)

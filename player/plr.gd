@@ -15,6 +15,8 @@ class_name Player
 @onready var walk_sfx: AudioStreamPlayer3D = $WalkSFX
 @onready var walk_sfx_timer: Timer = $WalkSFX/Timer
 
+@onready var wind_sfx: AudioStreamPlayer3D = $WindSFX
+
 @export_category("Jumping")
 @export var jump_velocity:float = 6.0
 @export var auto_jump:bool = true
@@ -29,8 +31,9 @@ class_name Player
 @export var base_fov:float = 75
 @export_range(0, 179, .5) var min_fov:float = 75
 @export_range(0, 179, .5) var max_fov:float = 150
-@export var fov_transition_time:float = 1.5
 @export var look_sensitivity:float = 0.005
+@export var min_vertical_look_direction:int = -75
+@export var max_vertical_look_direction:int = 75
 @export var HEADBOB_STRENGTH:float = 0.05
 @export var HEADBOB_FREQUENCY:float = 2.4
 var headbob_time:float = 0.0
@@ -74,7 +77,7 @@ func _unhandled_input(e: InputEvent) -> void:
 		if e is InputEventMouseMotion:
 			rotate_y(-e.relative.x * look_sensitivity)
 			head.rotate_x(-e.relative.y * look_sensitivity)
-			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+			head.rotation.x = clamp(head.rotation.x, deg_to_rad(min_vertical_look_direction), deg_to_rad(max_vertical_look_direction))
 
 func _handle_ground_physics(dt:float)->void:
 	if walk_sfx_timer.time_left == 0 and wish_dir.length() > 0.2:
@@ -144,8 +147,10 @@ func _physics_process(dt: float) -> void:
 		_handle_ground_physics(dt)
 	else:
 		_handle_air_physics(dt)
-	camera.fov = clamp(lerp(camera.fov, base_fov*(velocity.length()/walk_speed), fov_transition_time), min_fov, max_fov)
-	speed_lines.set_shader_parameter("power", clamp(lerp(speed_lines.get_shader_parameter("power"), 2*velocity.length()/walk_speed, fov_transition_time), 0.0, 9.0))
+	var speed_modifier = velocity.length()/walk_speed/4
+	camera.fov = lerp(min_fov, max_fov, clamp(speed_modifier, 0, 1))
+	speed_lines.set_shader_parameter("power", lerp(0.0, 9.0, clamp(speed_modifier, 0, 1)))
+	wind_sfx.max_db = lerp(-24.0, 3.0, clamp(speed_modifier, 0, 1)) if speed_modifier > 1 else -24
 	move_and_slide()
 
 func headbob(dt):
