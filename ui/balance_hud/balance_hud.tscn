@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bj0g6qcrify2a" path="res://ui/balance_hud/balance_hud.gd" id="1_kesql"]
 [ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://textures/dollar.png" id="2_7urik"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://materials/blur.tres" id="2_cdpxn"]
 [ext_resource type="Texture2D" uid="uid://cfa1hkpvf8tay" path="res://textures/coin.png" id="3_v3dwd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv7w"]
 content_margin_left = 10.0
 content_margin_right = 20.0
-bg_color = Color(0.2109375, 0.023737436, 0.10521293, 1)
+bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 4
@@ -38,6 +39,7 @@ grow_vertical = 0
 script = ExtResource("1_kesql")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2126006378]
+material = ExtResource("2_cdpxn")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://baof3kxvk4ge1" path="res://ui/pause_menu/pause_menu.gd" id="1_5hbt6"]
 [ext_resource type="Texture2D" uid="uid://135w8l4axh12" path="res://textures/logo.png" id="2_jbgdu"]
-
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://materials/blur.tres" id="2_le02u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
-bg_color = Color(0.21176471, 0.023529412, 0.105882354, 1)
+bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -20,53 +20,64 @@ expand_margin_top = 50.0
 expand_margin_right = 50.0
 expand_margin_bottom = 50.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8g5nh"]
+
 [node name="PauseMenu" type="CanvasLayer" unique_id=1371425667]
 process_mode = 3
 layer = 999
 script = ExtResource("1_5hbt6")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1615184286]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -59.0
-offset_right = 70.0
-offset_bottom = 59.0
+[node name="Control" type="Control" parent="." unique_id=1558530067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1615184286]
+material = ExtResource("2_le02u")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=288196290]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=1856034083]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+
+[node name="Icon" type="TextureRect" parent="Control/PanelContainer/HBoxContainer" unique_id=1566484819]
+material = SubResource("ShaderMaterial_8g5nh")
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("2_jbgdu")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer" unique_id=288196290]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=136825928]
+[node name="Resume" type="Button" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=136825928]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Resume"
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2015566803]
+[node name="Quit" type="Button" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=2015566803]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Give Up"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1566484819]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.0
-offset_right = 102.0
-offset_bottom = 200.0
-grow_horizontal = 2
-texture = ExtResource("2_jbgdu")
-expand_mode = 1
-
-[connection signal="button_down" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
-[connection signal="button_down" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="Control/PanelContainer/HBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="Control/PanelContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]

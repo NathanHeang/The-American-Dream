@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" uid="uid://c08iu0wdh6snt" path="res://shaders/glitch.gdshader" id="1_2og3r"]
 
-
 [resource]
 shader = ExtResource("1_2og3r")
 shader_parameter/intensity = 0.5

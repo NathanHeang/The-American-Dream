@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
 [ext_resource type="Shader" uid="uid://c7kcavsojji7y" path="res://shaders/sky.gdshader" id="1_28aoi"]
-[ext_resource type="PackedScene" uid="uid://d1at6r7batfu4" path="res://npcs/arcanya/npc_arcanya.tscn" id="1_vvh5c"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
 
@@ -55,5 +54,3 @@ air_accel = 100.0
 air_speed = 600.0
 look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075
-
-[node name="Npc" parent="." unique_id=1967252165 instance=ExtResource("1_vvh5c")]
