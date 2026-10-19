@@ -64,7 +64,7 @@ expand_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer" unique_id=288196290]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 32
+theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Resume" type="Button" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=136825928]
@@ -79,11 +79,44 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Give Up"
 
-[node name="VolumeSelect" type="HSlider" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1009077616]
+[node name="VolumeContainer2" type="HBoxContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=230879840]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
 
-[node name="ResolutionSelect" type="OptionButton" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=624229393]
+[node name="VolumeLabel" type="Label" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/VolumeContainer2" unique_id=1824455323]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Volume"
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/VolumeContainer2" unique_id=271063340]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VolumeSelect" type="HSlider" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/VolumeContainer2/Panel" unique_id=1009077616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -60.0
+max_value = 60.0
+
+[node name="ResolutionContainer" type="HBoxContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=36923543]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="ResolutionLabel" type="Label" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/ResolutionContainer" unique_id=1233517384]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Resolution"
+
+[node name="ResolutionSelect" type="OptionButton" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/ResolutionContainer" unique_id=624229393]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 selected = 0
 item_count = 3
 popup/item_0/text = "1920x1080"
@@ -95,5 +128,5 @@ popup/item_2/id = 2
 
 [connection signal="button_down" from="Control/PanelContainer/HBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="Control/PanelContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
-[connection signal="value_changed" from="Control/PanelContainer/HBoxContainer/VBoxContainer/VolumeSelect" to="." method="_on_volume_value_changed"]
-[connection signal="item_selected" from="Control/PanelContainer/HBoxContainer/VBoxContainer/ResolutionSelect" to="." method="_on_resolution_selected"]
+[connection signal="value_changed" from="Control/PanelContainer/HBoxContainer/VBoxContainer/VolumeContainer2/Panel/VolumeSelect" to="." method="_on_volume_value_changed"]
+[connection signal="item_selected" from="Control/PanelContainer/HBoxContainer/VBoxContainer/ResolutionContainer/ResolutionSelect" to="." method="_on_resolution_selected"]

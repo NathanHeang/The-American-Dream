@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cekw46112nsjm"]
-
-[ext_resource type="Script" uid="uid://bxrgo68bxcx8u" path="res://dialogue/dialogue_library.gd" id="1_k28po"]
-
-[node name="DialogueLibrary" type="Node" unique_id=1135203572]
-script = ExtResource("1_k28po")

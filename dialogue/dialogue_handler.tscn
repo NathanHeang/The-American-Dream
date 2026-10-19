@@ -2,8 +2,43 @@
 
 [ext_resource type="Script" uid="uid://bf42nu1mxkqrf" path="res://dialogue/dialogue_handler.gd" id="1_r5bmg"]
 [ext_resource type="Texture2D" uid="uid://dsqfl15nixiwa" path="res://dialogue/dialogue_box.png" id="2_8f26l"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://materials/blur.tres" id="2_w21ug"]
 [ext_resource type="Texture2D" uid="uid://0y00l5molqlo" path="res://npcs/noob/portrait.png" id="3_f0qx8"]
+[ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://shaders/pattern_bg.gdshader" id="3_yakfk"]
 [ext_resource type="AudioStream" uid="uid://cmj1ye3q1f7ck" path="res://npcs/noob/talk.ogg" id="4_7hkdk"]
+[ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://textures/dollar.png" id="4_w21ug"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
+bg_color = Color(1, 1, 1, 0.49019608)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8t54v"]
+shader = ExtResource("3_yakfk")
+shader_parameter/pattern = ExtResource("4_w21ug")
+shader_parameter/pattern_color = Color(0.75390625, 0.75390625, 0.75390625, 1)
+shader_parameter/tiling = 150.0
+shader_parameter/speed = Vector2(0.1, 0.5)
+shader_parameter/rotation = -0.2001851930826497
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yakfk"]
+shader = ExtResource("3_yakfk")
+shader_parameter/pattern = ExtResource("4_w21ug")
+shader_parameter/pattern_color = Color(1, 1, 1, 1)
+shader_parameter/tiling = 100.0
+shader_parameter/speed = Vector2(1.5, 0.5)
+shader_parameter/rotation = 0.0
 
 [node name="DialogueHandler" type="Control" unique_id=412039055]
 z_index = 4096
@@ -21,6 +56,16 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("1_r5bmg")
+
+[node name="Border" type="Panel" parent="." unique_id=876496938]
+material = ExtResource("2_w21ug")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
 
 [node name="SpeakerName" type="RichTextLabel" parent="." unique_id=1645055071]
 layout_mode = 1
@@ -44,6 +89,26 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_8f26l")
 expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect" unique_id=158822714]
+material = SubResource("ShaderMaterial_8t54v")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect" unique_id=66281701]
+material = SubResource("ShaderMaterial_yakfk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1715644664]
 layout_mode = 1
@@ -78,7 +143,6 @@ visible_characters_behavior = 1
 
 [node name="ButtonContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1891414875]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="TextSound" type="AudioStreamPlayer" parent="." unique_id=830103643]

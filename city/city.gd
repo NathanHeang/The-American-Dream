@@ -14,7 +14,7 @@ func generate_city() -> void:
 	for x in size.x:
 		city.append([])
 		for y in size.y:
-			var block = CityLibrary.get_random().instantiate()
+			var block = BlockLibrary.get_random().instantiate()
 			city[x].append(block)
 			block.position = Vector3i(x*block_size, 0, y*block_size)
 			add_child(block)

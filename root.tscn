@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
 [ext_resource type="Shader" uid="uid://c7kcavsojji7y" path="res://shaders/sky.gdshader" id="1_28aoi"]
-[ext_resource type="PackedScene" uid="uid://d2amjkcxq8xse" path="res://objects/Cube.tscn" id="4_28aoi"]
+[ext_resource type="PackedScene" uid="uid://d2amjkcxq8xse" path="res://interaction/objects/Cube.tscn" id="4_28aoi"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
+[ext_resource type="PackedScene" uid="uid://bf6fr8jbbmqsk" path="res://interaction/objects/Ball.tscn" id="5_l8v81"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yu4kh"]
 shader = ExtResource("1_28aoi")
@@ -58,3 +59,6 @@ HEADBOB_STRENGTH = 0.075
 
 [node name="Cube" parent="." unique_id=329692021 instance=ExtResource("4_28aoi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 75.80143, 0)
+
+[node name="Ball" parent="." unique_id=1844155168 instance=ExtResource("5_l8v81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5740776, 90.73731, -1.9983635)
