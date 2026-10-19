@@ -38,8 +38,6 @@ class_name Player
 @export var HEADBOB_FREQUENCY:float = 2.4
 var headbob_time:float = 0.0
 
-@onready var interact_cast: ShapeCast3D = %InteractShapeCast3D
-
 var can_move:bool = true
 var wish_dir:Vector3 = Vector3.ZERO
 
@@ -52,21 +50,7 @@ func _ready() -> void:
 		child.set_layer_mask_value(1, false)
 		child.set_layer_mask_value(2, true) 
 	pass
-	
-func _process(_dt: float) -> void:
-	if get_interactable():
-		get_interactable().hover_cursor(self)
-		if Input.is_action_just_pressed("interact"):
-			get_interactable().interact()
-	
-func get_interactable()->InteractableComponent:
-	for i in interact_cast.get_collision_count():
-		if i > 0 and interact_cast.get_collider(0) != $".":
-			return null
-		if interact_cast.get_collider(i).get_node_or_null("InteractableComponent") is InteractableComponent:
-			return interact_cast.get_collider(i).get_node_or_null("InteractableComponent")
-	return null
-	
+
 func _unhandled_input(e: InputEvent) -> void:
 	if e is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -79,5 +79,21 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Give Up"
 
+[node name="VolumeSelect" type="HSlider" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1009077616]
+layout_mode = 2
+
+[node name="ResolutionSelect" type="OptionButton" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=624229393]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
 [connection signal="button_down" from="Control/PanelContainer/HBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="Control/PanelContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="value_changed" from="Control/PanelContainer/HBoxContainer/VBoxContainer/VolumeSelect" to="." method="_on_volume_value_changed"]
+[connection signal="item_selected" from="Control/PanelContainer/HBoxContainer/VBoxContainer/ResolutionSelect" to="." method="_on_resolution_selected"]

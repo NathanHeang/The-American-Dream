@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d2amjkcxq8xse"]
+
+[ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="1_72haa"]
+[ext_resource type="Texture2D" uid="uid://8k56uye2jrga" path="res://textures/poster4.png" id="1_uduwk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3lq0"]
+albedo_texture = ExtResource("1_uduwk")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cge51"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72haa"]
+size = Vector3(5, 5, 5)
+
+[node name="Cube" type="RigidBody3D" unique_id=329692021]
+mass = 0.75
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=480516799]
+material_override = SubResource("StandardMaterial3D_e3lq0")
+mesh = SubResource("BoxMesh_cge51")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=509375237]
+shape = SubResource("BoxShape3D_72haa")
+
+[node name="InteractionComponent" parent="." unique_id=1156491162 node_paths=PackedStringArray("obj_ref") instance=ExtResource("1_72haa")]
+obj_ref = NodePath("..")
