@@ -1,6 +1,25 @@
 [gd_scene format=3 uid="uid://bc75355v80rl8"]
 
 [ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/block.gd" id="1_yfskt"]
+[ext_resource type="PackedScene" uid="uid://byoc7c751uis0" path="res://models/home.blend" id="2_pux6i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qmg2b"]
+size = Vector3(0.5, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qwhs"]
+size = Vector3(8, 5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32wgt"]
+size = Vector3(3, 5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxdsl"]
+size = Vector3(8, 1.5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pux6i"]
+size = Vector3(8, 0.5, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxwup"]
+size = Vector3(1, 0.2, 0.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
 size = Vector3(10, 1, 10)
@@ -10,7 +29,57 @@ size = Vector3(10, 1, 10)
 
 [node name="Block" type="Node3D" unique_id=994077912]
 script = ExtResource("1_yfskt")
+random_rotation = true
 metadata/_custom_type_script = "uid://vg1qedie2nym"
+
+[node name="House" type="StaticBody3D" parent="." unique_id=737565643]
+
+[node name="home" parent="House" unique_id=994723806 instance=ExtResource("2_pux6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1.75)
+
+[node name="col_wall" type="CollisionShape3D" parent="House" unique_id=1315120792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 3, -1.75)
+shape = SubResource("BoxShape3D_qmg2b")
+
+[node name="col_wall2" type="CollisionShape3D" parent="House" unique_id=1064892077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 3, -1.75)
+shape = SubResource("BoxShape3D_qmg2b")
+
+[node name="col_wall3" type="CollisionShape3D" parent="House" unique_id=1124360444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -4)
+shape = SubResource("BoxShape3D_1qwhs")
+
+[node name="col_wall4" type="CollisionShape3D" parent="House" unique_id=1201641888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3, 0.5)
+shape = SubResource("BoxShape3D_32wgt")
+
+[node name="col_wall5" type="CollisionShape3D" parent="House" unique_id=1922621637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3, 0.5)
+shape = SubResource("BoxShape3D_32wgt")
+
+[node name="col_floor" type="CollisionShape3D" parent="House" unique_id=628747644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.75)
+shape = SubResource("BoxShape3D_oxdsl")
+
+[node name="col_floor2" type="CollisionShape3D" parent="House" unique_id=1861936906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+shape = SubResource("BoxShape3D_pux6i")
+
+[node name="col_stair" type="CollisionShape3D" parent="House" unique_id=979329873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 1.2)
+shape = SubResource("BoxShape3D_mxwup")
+
+[node name="col_stair2" type="CollisionShape3D" parent="House" unique_id=886670500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0.625)
+shape = SubResource("BoxShape3D_mxwup")
+
+[node name="col_stair3" type="CollisionShape3D" parent="House" unique_id=106509121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 3.9)
+shape = SubResource("BoxShape3D_mxwup")
+
+[node name="col_stair4" type="CollisionShape3D" parent="House" unique_id=2041976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 3.4)
+shape = SubResource("BoxShape3D_mxwup")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=109478305]
 

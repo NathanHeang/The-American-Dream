@@ -11,6 +11,7 @@ size = Vector3(10, 1, 10)
 
 [node name="Block" type="Node3D" unique_id=187224239]
 script = ExtResource("1_fkaop")
+random_rotation = true
 metadata/_custom_type_script = "uid://vg1qedie2nym"
 
 [node name="Building" parent="." unique_id=1487545225 instance=ExtResource("1_cy58a")]

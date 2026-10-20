@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmxcauhn2w0lx"]
+
+[ext_resource type="Texture2D" uid="uid://p3nvnmge2vqh" path="res://textures/wood.jpeg" id="1_01q1h"]
+
+[resource]
+albedo_texture = ExtResource("1_01q1h")
+uv1_triplanar = true
+distance_fade_min_distance = 364.99

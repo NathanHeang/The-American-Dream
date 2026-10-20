@@ -40,7 +40,55 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Floor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood3.tres",
+"use_external/path": "uid://dhk1es7ebtpkv"
+},
+"Porch Accent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood7.tres",
+"use_external/path": "uid://cm4jc3q8k8qbu"
+},
+"Porch Floor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood5.tres",
+"use_external/path": "uid://deo242xr462ik"
+},
+"Roof": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood4.tres",
+"use_external/path": "uid://b2bb2c7345pt"
+},
+"Roof Accent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood8.tres",
+"use_external/path": "uid://bnqac6yct6eym"
+},
+"Stairs": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood6.tres",
+"use_external/path": "uid://4i1552d3poda"
+},
+"Wall Accent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood2.tres",
+"use_external/path": "uid://82ugbcupc4mv"
+},
+"Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/wood.tres",
+"use_external/path": "uid://cmxcauhn2w0lx"
+},
+"Window": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/glass.tres",
+"use_external/path": "uid://cwov6cbi4w47x"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
