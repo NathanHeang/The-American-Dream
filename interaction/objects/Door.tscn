@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://beeh480gywyxx"]
+
+[ext_resource type="Material" uid="uid://cmxcauhn2w0lx" path="res://materials/wood.tres" id="1_0dhna"]
+[ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="2_jqphq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0dhna"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pwtw"]
+size = Vector3(1, 2, 0.1)
+
+[node name="Door" type="Node3D" unique_id=250909130]
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1514287632]
+unique_name_in_owner = true
+
+[node name="Door" type="StaticBody3D" parent="Pivot" unique_id=747983424]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Door" unique_id=736341447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0)
+mesh = SubResource("BoxMesh_0dhna")
+surface_material_override/0 = ExtResource("1_0dhna")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pivot/Door" unique_id=826236426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0)
+shape = SubResource("BoxShape3D_0pwtw")
+
+[node name="InteractionComponent" parent="Pivot/Door" unique_id=1156491162 node_paths=PackedStringArray("obj_ref") instance=ExtResource("2_jqphq")]
+obj_ref = NodePath("..")
+interaction_type = 1

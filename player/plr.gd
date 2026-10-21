@@ -38,6 +38,8 @@ class_name Player
 @export var HEADBOB_FREQUENCY:float = 2.4
 var headbob_time:float = 0.0
 
+@onready var interaction_controller: Node = %InteractionController
+
 var can_move:bool = true
 var wish_dir:Vector3 = Vector3.ZERO
 
@@ -58,7 +60,7 @@ func _unhandled_input(e: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if e is InputEventMouseMotion:
+		if e is InputEventMouseMotion and not interaction_controller.is_cam_locked():
 			rotate_y(-e.relative.x * look_sensitivity)
 			head.rotate_x(-e.relative.y * look_sensitivity)
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(min_vertical_look_direction), deg_to_rad(max_vertical_look_direction))
