@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://qv2q6m208dhh"]
 
 [ext_resource type="Script" uid="uid://b6wfis44io5lu" path="res://npcs/npc.gd" id="1_ppmss"]
+[ext_resource type="Texture2D" uid="uid://dok0k7h52wt8k" path="res://npcs/noob/full.png" id="2_cqejd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4apfu"]
 
-[node name="Npc" type="RigidBody3D" unique_id=1967252165]
+[node name="NPC" type="RigidBody3D" unique_id=1967252165]
 script = ExtResource("1_ppmss")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=151256720]
-pixel_size = 0.075
+pixel_size = 0.0075
 billboard = 2
 shaded = true
 double_sided = false
+texture = ExtResource("2_cqejd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1272038689]
 shape = SubResource("CapsuleShape3D_4apfu")

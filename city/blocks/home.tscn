@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/block.gd" id="1_yfskt"]
 [ext_resource type="PackedScene" uid="uid://beeh480gywyxx" path="res://interaction/objects/Door.tscn" id="2_oxdsl"]
 [ext_resource type="PackedScene" uid="uid://byoc7c751uis0" path="res://models/home.blend" id="2_pux6i"]
+[ext_resource type="PackedScene" uid="uid://qv2q6m208dhh" path="res://npcs/npc.tscn" id="3_mxwup"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mxwup"]
+size = Vector3(1.05, 2.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nmo76"]
+size = Vector3(1.05, 2.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qmg2b"]
 size = Vector3(0.5, 5, 5)
@@ -20,7 +27,10 @@ size = Vector3(8, 1.5, 5)
 size = Vector3(8, 0.5, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mxwup"]
-size = Vector3(1, 0.2, 0.75)
+size = Vector3(2, 0.2, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1bgp"]
+size = Vector3(8, 0.2, 4.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
 size = Vector3(10, 1, 10)
@@ -36,10 +46,16 @@ metadata/_custom_type_script = "uid://vg1qedie2nym"
 [node name="Door" parent="." unique_id=250909130 instance=ExtResource("2_oxdsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, 0.75)
 
-[node name="Door2" parent="." unique_id=1351752314 instance=ExtResource("2_oxdsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5809011, 6.726531)
+[node name="MeshInstance3D" parent="Door/Pivot/Door" parent_id_path=PackedInt32Array(250909130, 747983424) index="0" unique_id=736341447]
+mesh = SubResource("BoxMesh_mxwup")
+
+[node name="CollisionShape3D2" parent="Door/Pivot/Door" parent_id_path=PackedInt32Array(250909130, 747983424) index="1" unique_id=826236426]
+shape = SubResource("BoxShape3D_nmo76")
 
 [node name="House" type="StaticBody3D" parent="." unique_id=737565643]
+
+[node name="NPC" parent="House" unique_id=1967252165 instance=ExtResource("3_mxwup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.835797, 3.4456344, 2.4671028)
 
 [node name="home" parent="House" unique_id=994723806 instance=ExtResource("2_pux6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1.75)
@@ -72,21 +88,21 @@ shape = SubResource("BoxShape3D_oxdsl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
 shape = SubResource("BoxShape3D_pux6i")
 
-[node name="col_stair" type="CollisionShape3D" parent="House" unique_id=979329873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 1.2)
+[node name="col_stair" type="CollisionShape3D" parent="House" unique_id=1328270438]
+transform = Transform3D(1, 0, 0, 0, 0.8153769, -0.57893056, 0, 0.57893056, 0.8153769, 0, 1.213324, 1.3005121)
 shape = SubResource("BoxShape3D_mxwup")
 
-[node name="col_stair2" type="CollisionShape3D" parent="House" unique_id=886670500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0.625)
+[node name="col_stair2" type="CollisionShape3D" parent="House" unique_id=106509121]
+transform = Transform3D(1, 0, 0, 0, 0.8153769, -0.57893056, 0, 0.57893056, 0.8153769, 0, 0.72737724, 3.8001232)
 shape = SubResource("BoxShape3D_mxwup")
 
-[node name="col_stair3" type="CollisionShape3D" parent="House" unique_id=106509121]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 3.9)
-shape = SubResource("BoxShape3D_mxwup")
+[node name="col_roof" type="CollisionShape3D" parent="House" unique_id=2017820283]
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, -2, 7, -0.375)
+shape = SubResource("BoxShape3D_h1bgp")
 
-[node name="col_stair4" type="CollisionShape3D" parent="House" unique_id=2041976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 3.4)
-shape = SubResource("BoxShape3D_mxwup")
+[node name="col_roof2" type="CollisionShape3D" parent="House" unique_id=943912603]
+transform = Transform3D(-4.371139e-08, 0.5, -0.8660254, 0, 0.8660254, 0.5, 1, 2.1855694e-08, -3.7855173e-08, 2, 7, -0.375)
+shape = SubResource("BoxShape3D_h1bgp")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=109478305]
 
@@ -95,3 +111,5 @@ shape = SubResource("BoxShape3D_sbw5n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1641482840]
 mesh = SubResource("BoxMesh_08k08")
+
+[editable path="Door"]

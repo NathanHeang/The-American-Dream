@@ -22,7 +22,7 @@ var pivot:Node3D
 func _ready()->void:
 	match interaction_type:
 		InteractionType.DOOR:
-			pivot = get_tree().get_current_scene().find_child("Pivot", true, false)
+			pivot = get_parent().get_parent().get_parent().find_child("Pivot", true, false)
 			start_rot = pivot.rotation.x
 			max_rot = deg_to_rad(rad_to_deg(start_rot)+max_rot)
 			

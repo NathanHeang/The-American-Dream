@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://beeh480gywyxx"]
 
-[ext_resource type="Material" uid="uid://cmxcauhn2w0lx" path="res://materials/wood.tres" id="1_0dhna"]
+[ext_resource type="Material" uid="uid://b2bb2c7345pt" path="res://materials/wood4.tres" id="1_jqphq"]
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="2_jqphq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0dhna"]
@@ -19,7 +19,7 @@ unique_name_in_owner = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Door" unique_id=736341447]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0)
 mesh = SubResource("BoxMesh_0dhna")
-surface_material_override/0 = ExtResource("1_0dhna")
+surface_material_override/0 = ExtResource("1_jqphq")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Pivot/Door" unique_id=826236426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0)
