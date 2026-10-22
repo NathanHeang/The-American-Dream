@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0y00l5molqlo"
+uid="uid://d01ax82ypynqx"
 path="res://.godot/imported/portrait.png-3ebd811d34c5f49b757e5204b2b53a61.ctex"
 metadata={
 "vram_texture": false
@@ -26,8 +26,6 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-mipmaps/preserve_alpha_test_coverage=false
-mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

@@ -10,14 +10,6 @@ var current_obj:Object
 var last_potential_obj:Object
 var interaction_component:InteractionComponent
 
-func _ready() -> void:
-	default_reticle.position.x = get_viewport().size.x/2 - default_reticle.texture.get_size().x/2
-	default_reticle.position.y = get_viewport().size.y/2 - default_reticle.texture.get_size().y/2
-	highlight_reticle.position.x = get_viewport().size.x/2 - highlight_reticle.texture.get_size().x/2
-	highlight_reticle.position.y = get_viewport().size.y/2 - highlight_reticle.texture.get_size().y/2
-	interacting_reticle.position.x = get_viewport().size.x/2 - interacting_reticle.texture.get_size().x/2
-	interacting_reticle.position.y = get_viewport().size.y/2 - interacting_reticle.texture.get_size().y/2
-
 func _process(_dt:float)->void:
 	if interaction_component and interaction_component.is_interacting:
 		default_reticle.visible = false
