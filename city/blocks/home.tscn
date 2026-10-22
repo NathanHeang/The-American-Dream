@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/block.gd" id="1_yfskt"]
 [ext_resource type="PackedScene" uid="uid://beeh480gywyxx" path="res://interaction/objects/Door.tscn" id="2_oxdsl"]
 [ext_resource type="PackedScene" uid="uid://byoc7c751uis0" path="res://models/home.blend" id="2_pux6i"]
-[ext_resource type="PackedScene" uid="uid://qv2q6m208dhh" path="res://npcs/npc.tscn" id="3_mxwup"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mxwup"]
 size = Vector3(1.05, 2.5, 0.1)
@@ -44,7 +43,7 @@ random_rotation = true
 metadata/_custom_type_script = "uid://vg1qedie2nym"
 
 [node name="Door" parent="." unique_id=250909130 instance=ExtResource("2_oxdsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, 0.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, 1.375)
 
 [node name="MeshInstance3D" parent="Door/Pivot/Door" parent_id_path=PackedInt32Array(250909130, 747983424) index="0" unique_id=736341447]
 mesh = SubResource("BoxMesh_mxwup")
@@ -53,9 +52,7 @@ mesh = SubResource("BoxMesh_mxwup")
 shape = SubResource("BoxShape3D_nmo76")
 
 [node name="House" type="StaticBody3D" parent="." unique_id=737565643]
-
-[node name="NPC" parent="House" unique_id=1967252165 instance=ExtResource("3_mxwup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.835797, 3.4456344, 2.4671028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.625)
 
 [node name="home" parent="House" unique_id=994723806 instance=ExtResource("2_pux6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1.75)

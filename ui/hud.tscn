@@ -14,6 +14,7 @@ subpixel_positioning = 0
 [node name="HUD" type="CanvasLayer" unique_id=1517999083]
 
 [node name="Cursor" parent="." unique_id=925991105 instance=ExtResource("1_1v5rv")]
+script = null
 
 [node name="PauseMenu" parent="." unique_id=1371425667 instance=ExtResource("2_q43x7")]
 

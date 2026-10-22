@@ -1,44 +1,11 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
-[ext_resource type="Shader" uid="uid://c7kcavsojji7y" path="res://shaders/sky.gdshader" id="1_28aoi"]
-[ext_resource type="PackedScene" uid="uid://d2amjkcxq8xse" path="res://interaction/objects/Cube.tscn" id="4_28aoi"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
-[ext_resource type="PackedScene" uid="uid://bf6fr8jbbmqsk" path="res://interaction/objects/Ball.tscn" id="5_l8v81"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yu4kh"]
-shader = ExtResource("1_28aoi")
-shader_parameter/top_color = Color(0.15, 0.4, 0.75, 1)
-shader_parameter/bottom_color = Color(0.55, 0.7, 0.85, 1)
-shader_parameter/cloud_color = Color(1, 1, 1, 1)
-shader_parameter/cloud_speed = 0.400000019
-shader_parameter/cloud_coverage = 0.7
-shader_parameter/cloud_scale = 5.0
-shader_parameter/cloud_brightness = 1.0
-shader_parameter/cloud_sharpness = 0.3
-shader_parameter/horizon_glow = 0.800000038
-shader_parameter/enable_stars = false
-shader_parameter/stars_intensity = 1.0
-shader_parameter/star_color = Color(1, 1, 1, 1)
-shader_parameter/twinkle_speed = 2.0
-
-[sub_resource type="Sky" id="Sky_8t54v"]
-sky_material = SubResource("ShaderMaterial_yu4kh")
-
-[sub_resource type="Environment" id="Environment_h2yge"]
-background_mode = 2
-background_energy_multiplier = 1.2
-sky = SubResource("Sky_8t54v")
-reflected_light_source = 2
-ssao_enabled = true
-ssao_intensity = 10.4
-glow_enabled = true
-fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
 
 [node name="Root" type="Node" unique_id=256912048]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=135170100]
-environment = SubResource("Environment_h2yge")
 
 [node name="City" type="Node3D" parent="." unique_id=1594716732]
 script = ExtResource("5_huihk")
@@ -56,9 +23,3 @@ air_accel = 100.0
 air_speed = 600.0
 look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075
-
-[node name="Cube" parent="." unique_id=329692021 instance=ExtResource("4_28aoi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 75.80143, 0)
-
-[node name="Ball" parent="." unique_id=1844155168 instance=ExtResource("5_l8v81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5740776, 90.73731, -1.9983635)

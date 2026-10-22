@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bg0x0nm0i3scn"]
+
+[ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="1_sb23v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mjycv"]
+size = Vector3(0.1, 0.75, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mjycv"]
+size = Vector3(0.1, 0.75, 0.1)
+
+[node name="Lever" type="Node3D" unique_id=1494633211]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=558172852]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2123865848]
+mesh = SubResource("BoxMesh_mjycv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1178543734]
+shape = SubResource("BoxShape3D_mjycv")
+
+[node name="InteractionComponent" parent="StaticBody3D" unique_id=1156491162 node_paths=PackedStringArray("obj_ref") instance=ExtResource("1_sb23v")]
+obj_ref = NodePath("..")
+interaction_type = 2
