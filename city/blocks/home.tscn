@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bc75355v80rl8"]
 
 [ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/block.gd" id="1_yfskt"]
-[ext_resource type="PackedScene" uid="uid://beeh480gywyxx" path="res://interaction/objects/Door.tscn" id="2_oxdsl"]
+[ext_resource type="PackedScene" uid="uid://beeh480gywyxx" path="res://interaction/objects/door/door.tscn" id="2_oxdsl"]
 [ext_resource type="PackedScene" uid="uid://byoc7c751uis0" path="res://models/home.blend" id="2_pux6i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mxwup"]

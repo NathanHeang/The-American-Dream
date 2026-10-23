@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://j7r5uw3qsh2p"]
 
-[ext_resource type="Texture2D" uid="uid://8k56uye2jrga" path="res://textures/poster4.png" id="1_uvyv4"]
+[ext_resource type="Texture2D" uid="uid://8k56uye2jrga" path="res://images/poster4.png" id="1_uvyv4"]
 
 [resource]
 transparency = 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://nmilbrut4nur"]
 
 [ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://ui/cursor/cursor.tscn" id="1_1v5rv"]
-[ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://ui/balance_hud/balance_hud.tscn" id="1_64ctp"]
+[ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://money/balance_hud/balance_hud.tscn" id="1_64ctp"]
 [ext_resource type="PackedScene" uid="uid://bb2pmxlkyxyyk" path="res://phone/phone_hud.tscn" id="2_8sq4i"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://ui/pause_menu/pause_menu.tscn" id="2_q43x7"]
 [ext_resource type="Script" uid="uid://bt4p6np1dm6d7" path="res://ui/time_hud.gd" id="3_546lt"]
@@ -14,7 +14,6 @@ subpixel_positioning = 0
 [node name="HUD" type="CanvasLayer" unique_id=1517999083]
 
 [node name="Cursor" parent="." unique_id=925991105 instance=ExtResource("1_1v5rv")]
-script = null
 
 [node name="PauseMenu" parent="." unique_id=1371425667 instance=ExtResource("2_q43x7")]
 

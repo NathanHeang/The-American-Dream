@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
-[ext_resource type="Environment" uid="uid://dolvpp3jtect7" path="res://environment.tres" id="1_vvh5c"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
 
 [node name="Root" type="Node" unique_id=256912048]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=135170100]
-environment = ExtResource("1_vvh5c")
 
 [node name="City" type="Node3D" parent="." unique_id=1594716732]
 script = ExtResource("5_huihk")

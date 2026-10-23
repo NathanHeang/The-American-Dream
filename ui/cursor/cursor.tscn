@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsfuhtbblny04"]
 
-[ext_resource type="Texture2D" uid="uid://de4naqmb3bhw4" path="res://textures/handpoint.png" id="2_g0wji"]
-[ext_resource type="Texture2D" uid="uid://by8sd8eakaahp" path="res://textures/highfive.png" id="2_o2uqn"]
+[ext_resource type="Texture2D" uid="uid://de4naqmb3bhw4" path="res://ui/cursor/hand_point.png" id="2_g0wji"]
+[ext_resource type="Texture2D" uid="uid://by8sd8eakaahp" path="res://ui/cursor/hand_open.png" id="2_o2uqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
 bg_color = Color(1, 1, 1, 1)
