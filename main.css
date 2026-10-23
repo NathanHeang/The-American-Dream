@@ -156,3 +156,30 @@ ul {
     top: 15px;
     right: 7px;
 }
+
+table, th, td{
+    border: 1px solid white;
+    color: white;
+    border-collapse: collapse;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+td{
+    width: 300px;
+}
+
+th, td{
+    padding: 10px 10px 10px 10px;
+}
+
+.controls{
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
