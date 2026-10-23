@@ -22,7 +22,7 @@ PlayerHandler="*uid://ck2bblp4171wn"
 NPCLibrary="*uid://yoqsvm27txm7"
 DialogueLibrary="*uid://cekw46112nsjm"
 Hud="*uid://nmilbrut4nur"
-BlockLibrary="*uid://dmh3rk2f66gff"
+CityPartLibrary="*uid://dmh3rk2f66gff"
 
 [display]
 

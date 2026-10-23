@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bf42nu1mxkqrf" path="res://dialogue/dialogue_handler.gd" id="1_r5bmg"]
 [ext_resource type="Texture2D" uid="uid://dsqfl15nixiwa" path="res://dialogue/dialogue_box.png" id="2_8f26l"]
-[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://materials/blur.tres" id="2_w21ug"]
-[ext_resource type="Texture2D" uid="uid://d01ax82ypynqx" path="res://npcs/noob/portrait.png" id="3_f0qx8"]
-[ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://shaders/pattern_bg.gdshader" id="3_yakfk"]
-[ext_resource type="AudioStream" uid="uid://cmj1ye3q1f7ck" path="res://npcs/noob/talk.ogg" id="4_7hkdk"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_w21ug"]
+[ext_resource type="Texture2D" uid="uid://d01ax82ypynqx" path="res://dialogue/portraits/noob.png" id="3_f0qx8"]
+[ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://generic/shaders/pattern_bg.gdshader" id="3_yakfk"]
+[ext_resource type="AudioStream" uid="uid://cmj1ye3q1f7ck" path="res://dialogue/talk_sfx/oof.ogg" id="4_7hkdk"]
 [ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://money/dollar.png" id="4_w21ug"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
 bg_color = Color(1, 1, 1, 0.49019608)

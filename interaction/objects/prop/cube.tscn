@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://d2amjkcxq8xse"]
 
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="1_72haa"]
-[ext_resource type="Texture2D" uid="uid://8k56uye2jrga" path="res://images/poster4.png" id="1_uduwk"]
+[ext_resource type="Texture2D" uid="uid://8k56uye2jrga" path="res://posters/king.png" id="1_uduwk"]
+
 
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3lq0"]

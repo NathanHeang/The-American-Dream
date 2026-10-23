@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b2noc0bdlmiab"]
+
+[ext_resource type="Shader" uid="uid://df008vrmtrytt" path="res://generic/shaders/color_camera.gdshader" id="1_wspn4"]
+
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wspn4")
+shader_parameter/edge_colour = Color(0, 0, 0, 1)
+shader_parameter/edge_width = 2.0
+shader_parameter/depth_edge_threshold = 0.86
+shader_parameter/max_dist = 171.0
+shader_parameter/colour_pallet = PackedColorArray(0.39, 0.2808, 0.3718, 1, 0.6056052, 0.30356094, 0.45310497, 1, 0.6471499, 0.22532248, 0.2978262, 1, 0.82136685, 0.36056843, 0.31478983, 1, 0.84483814, 0.36863598, 0.14736187, 1)
+shader_parameter/use_converted_pallet = true
+shader_parameter/converted_pallet = PackedColorArray(0.67058825, 0.23529412, 0.12941177, 1, 0.7058824, 0.34509805, 0.14117648, 1, 0.9137255, 0.69411767, 0.2784314, 1, 1, 0.8025, 0.20999998, 1, 1, 0.971, 0.71000004, 1)
+shader_parameter/shadow_edge_width = 4.0
+shader_parameter/miniumum_darkness = 2.352

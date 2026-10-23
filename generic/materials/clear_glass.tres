@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://j7r5uw3qsh2p"]
+
+[ext_resource type="Texture2D" uid="uid://b0tqssaujn28t" path="res://posters/ball.png" id="1_r3u5d"]
+[ext_resource type="Texture2D" uid="uid://8k56uye2jrga" path="res://posters/king.png" id="1_uvyv4"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.6039216, 0.74509805, 0.8862745, 0.49019608)
+albedo_texture = ExtResource("1_r3u5d")
+metallic = 1.0
+metallic_texture = ExtResource("1_uvyv4")
+roughness = 0.15

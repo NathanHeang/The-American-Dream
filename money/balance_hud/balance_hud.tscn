@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bj0g6qcrify2a" path="res://money/balance_hud/balance_hud.gd" id="1_kesql"]
 [ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://money/dollar.png" id="2_7urik"]
-[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://materials/blur.tres" id="2_cdpxn"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_cdpxn"]
 [ext_resource type="Texture2D" uid="uid://cfa1hkpvf8tay" path="res://money/coin.png" id="3_v3dwd"]
+
 
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv7w"]

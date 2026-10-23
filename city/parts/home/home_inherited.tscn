@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cad8xprflhok2"]
+
+[ext_resource type="PackedScene" uid="uid://byoc7c751uis0" path="res://city/parts/home/home.blend" id="1_ty83y"]
+[ext_resource type="Script" uid="uid://4tyrjrj1upph" path="res://city/parts/home/home.gd" id="2_i5413"]
+
+[node name="home" unique_id=1938124772 instance=ExtResource("1_ty83y")]
+script = ExtResource("2_i5413")

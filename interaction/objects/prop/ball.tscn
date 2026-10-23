@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bf6fr8jbbmqsk"]
 
-[ext_resource type="Texture2D" uid="uid://b0tqssaujn28t" path="res://images/poster5.png" id="1_kdidm"]
+[ext_resource type="Texture2D" uid="uid://b0tqssaujn28t" path="res://posters/ball.png" id="1_kdidm"]
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="2_kp238"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1nsd"]
 albedo_texture = ExtResource("1_kdidm")

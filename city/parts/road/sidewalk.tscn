@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bxqp135ys787r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cuju6"]
+size = Vector3(14, 1, 2)
+
+[node name="Sidewalk" type="MeshInstance3D" unique_id=1438465501]
+mesh = SubResource("BoxMesh_cuju6")

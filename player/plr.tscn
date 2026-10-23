@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://c2h82806ok7wp"]
 
 [ext_resource type="Script" uid="uid://chqpg44ls7v2p" path="res://player/plr.gd" id="1_ciwrl"]
-[ext_resource type="Material" uid="uid://b2noc0bdlmiab" path="res://materials/color_camera.tres" id="2_ud1qf"]
-[ext_resource type="Shader" uid="uid://b1noomystr2ek" path="res://shaders/speed_lines.gdshader" id="2_uvp5r"]
+[ext_resource type="Material" uid="uid://b2noc0bdlmiab" path="res://generic/materials/color_camera.tres" id="2_ud1qf"]
+[ext_resource type="Shader" uid="uid://b1noomystr2ek" path="res://generic/shaders/speed_lines.gdshader" id="2_uvp5r"]
 [ext_resource type="AudioStream" uid="uid://dak61srxr8tr7" path="res://player/speed_wind.mp3" id="3_ce3ab"]
 [ext_resource type="PackedScene" uid="uid://cqa5ryusvt5t4" path="res://interaction/interaction_controller.tscn" id="5_sg1cb"]
+
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0gus3"]
 

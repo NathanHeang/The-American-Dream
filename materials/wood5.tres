@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://deo242xr462ik"]
-
-[ext_resource type="Texture2D" uid="uid://p3nvnmge2vqh" path="res://material_textures/wood.jpeg" id="1_xytmw"]
-
-[resource]
-albedo_color = Color(0.51953125, 0.38197798, 0.35471046, 1)
-albedo_texture = ExtResource("1_xytmw")
-uv1_triplanar = true

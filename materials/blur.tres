@@ -1,7 +1,0 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://dlurdwsdvwjan"]
-
-[ext_resource type="Shader" uid="uid://buf3duttiuhdi" path="res://shaders/transparent_bg.gdshader" id="1_a8xmd"]
-
-[resource]
-shader = ExtResource("1_a8xmd")
-shader_parameter/blur_lod = 3.5
