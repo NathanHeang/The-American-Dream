@@ -1,6 +1,8 @@
 extends Node3D
 class_name City
 
+const NPC = preload("res://npc/npc.tscn")
+
 @export var size:Vector2i = Vector2i(7, 5)
 @export var part_size:int = 10
 
@@ -9,7 +11,17 @@ signal city_generated()
 
 func _ready() -> void:
 	generate_city()
-
+	populate_city()
+	
+func populate_city()->void:
+	for x in size.x:
+		for y in size.y:
+			var part = city[x][y]
+			if part is Road and randi_range(0, 1) == 1:
+				var npc:RigidBody3D = NPC.instantiate()
+				npc.position = Vector3(x*part_size+randf_range(-part_size/2.0, part_size/2.0), 20, y*part_size+randf_range(-part_size/2.0, part_size/2.0))
+				add_child(npc)
+				
 func generate_city() -> void:
 	for x in size.x:
 		city.append([])

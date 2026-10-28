@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
-[ext_resource type="PackedScene" uid="uid://qv2q6m208dhh" path="res://npc/npc.tscn" id="3_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://c4xgkholh7m0p" path="res://Environment.tscn" id="1_vvh5c"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="5_huihk"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_jnlp7"]
 
 [node name="Root" type="Node" unique_id=256912048]
+
+[node name="WorldEnvironment" parent="." unique_id=1814207673 instance=ExtResource("1_vvh5c")]
 
 [node name="City" type="Node3D" parent="." unique_id=1594716732]
 script = ExtResource("5_huihk")
@@ -21,12 +23,3 @@ air_accel = 100.0
 air_speed = 600.0
 look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075
-
-[node name="NPC" parent="." unique_id=1967252165 instance=ExtResource("3_vvh5c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.092113, 101.85871, 17.639812)
-
-[node name="NPC2" parent="." unique_id=642480367 instance=ExtResource("3_vvh5c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.752674, 100.776146, 12.436134)
-
-[node name="NPC3" parent="." unique_id=1613844824 instance=ExtResource("3_vvh5c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.717247, 142.44359, 17.780777)
