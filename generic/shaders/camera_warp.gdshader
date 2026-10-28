@@ -19,7 +19,6 @@ void fragment() {
 	
 	float dist_sq = dot(corrected_uv - center, corrected_uv - center);
 	
-	// 2D gaussian function f(x,y) = exp(-(x^2 + y^2) / (2 * sigma^2))
 	float gauss = exp(-dist_sq / (2.0 * gaussian_sigma * gaussian_sigma));
 	
 	vec2 offset = (uv - vec2(0.5)) * gauss * power;

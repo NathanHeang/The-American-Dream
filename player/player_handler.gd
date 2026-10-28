@@ -20,3 +20,4 @@ func _ready() -> void:
 
 func _process(_dt: float) -> void:
 	time+=1
+	money+=1

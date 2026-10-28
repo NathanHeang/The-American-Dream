@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://beeh480gywyxx" path="res://interaction/objects/door/door.tscn" id="2_oxdsl"]
 [ext_resource type="PackedScene" uid="uid://cad8xprflhok2" path="res://city/parts/home/home_inherited.tscn" id="3_rsn7x"]
 
+
 [sub_resource type="BoxMesh" id="BoxMesh_mxwup"]
 size = Vector3(1.05, 2.5, 0.1)
 

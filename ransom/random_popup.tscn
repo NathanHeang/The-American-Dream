@@ -6,9 +6,14 @@
 bg_color = Color(1, 0, 0, 1)
 
 [node name="Window" type="Window" unique_id=1135296136]
+process_mode = 3
 oversampling_override = 1.0
+unresizable = true
 always_on_top = true
+unfocusable = true
 popup_window = true
+mouse_passthrough = true
+sharp_corners = true
 script = ExtResource("1_gighf")
 
 [node name="Panel" type="Panel" parent="." unique_id=930552168]

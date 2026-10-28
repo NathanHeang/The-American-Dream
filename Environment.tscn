@@ -1,9 +1,9 @@
-[gd_resource type="Environment" format=3 uid="uid://dolvpp3jtect7"]
+[gd_scene format=3 uid="uid://c4xgkholh7m0p"]
 
-[ext_resource type="Shader" uid="uid://c7kcavsojji7y" path="res://generic/shaders/sky.gdshader" id="1_0wybp"]
+[ext_resource type="Shader" uid="uid://c7kcavsojji7y" path="res://generic/shaders/sky.gdshader" id="1_ecc80"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yu4kh"]
-shader = ExtResource("1_0wybp")
+shader = ExtResource("1_ecc80")
 shader_parameter/top_color = Color(0.15, 0.4, 0.75, 1)
 shader_parameter/bottom_color = Color(0.55, 0.7, 0.85, 1)
 shader_parameter/cloud_color = Color(1, 1, 1, 1)
@@ -21,10 +21,18 @@ shader_parameter/twinkle_speed = 2.0
 [sub_resource type="Sky" id="Sky_8t54v"]
 sky_material = SubResource("ShaderMaterial_yu4kh")
 
-[resource]
+[sub_resource type="Environment" id="Environment_28aoi"]
 background_mode = 2
 background_energy_multiplier = 1.2
 sky = SubResource("Sky_8t54v")
 reflected_light_source = 2
 ssao_intensity = 10.4
 fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vvh5c"]
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=1814207673]
+environment = SubResource("Environment_28aoi")
+camera_attributes = SubResource("CameraAttributesPractical_vvh5c")

@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dak61srxr8tr7" path="res://player/speed_wind.mp3" id="3_ce3ab"]
 [ext_resource type="PackedScene" uid="uid://cqa5ryusvt5t4" path="res://interaction/interaction_controller.tscn" id="5_sg1cb"]
 
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0gus3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0gus3"]
@@ -71,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.996
 cull_mask = 1048573
 current = true
 
-[node name="evil evil shader" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1127905294]
+[node name="red_shader" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1127905294]
 visible = false
 mesh = SubResource("PlaneMesh_28aoi")
 surface_material_override/0 = ExtResource("2_ud1qf")
