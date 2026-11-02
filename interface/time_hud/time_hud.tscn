@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ckv43aclwk4yi"]
+
+[ext_resource type="Script" uid="uid://bt4p6np1dm6d7" path="res://interface/time_hud/time_hud.gd" id="1_pmttm"]
+
+[sub_resource type="SystemFont" id="SystemFont_2gk58"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[node name="Time" type="Label" unique_id=425463166]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_right = 61.0
+offset_bottom = 67.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0.21176471, 0.023529412, 0.105882354, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("SystemFont_2gk58")
+theme_override_font_sizes/font_size = 48
+text = "day 2 - 10:46 AM"
+horizontal_alignment = 1
+script = ExtResource("1_pmttm")
+theme_override_colors/font_outline_color = Color(0.21176471, 0.023529412, 0.105882354, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("SystemFont_2gk58")
+theme_override_font_sizes/font_size = 48

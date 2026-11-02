@@ -2,29 +2,30 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4naqmb3bhw4"
-path="res://.godot/imported/hand_point.png-31f0e2c827899dbe7f759c058431cac9.ctex"
+uid="uid://bn6g5xx8gs8wm"
+path.s3tc="res://.godot/imported/concrete_normal.jpeg-8b438bd1b1c7cafef141c322ebc97bbe.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://ui/cursor/hand_point.png"
-dest_files=["res://.godot/imported/hand_point.png-31f0e2c827899dbe7f759c058431cac9.ctex"]
+source_file="res://generic/materials/concrete_normal.jpeg"
+dest_files=["res://.godot/imported/concrete_normal.jpeg-8b438bd1b1c7cafef141c322ebc97bbe.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 mipmaps/preserve_alpha_test_coverage=false
 mipmaps/alpha_test_threshold=0.5
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

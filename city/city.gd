@@ -11,7 +11,7 @@ signal city_generated()
 
 func _ready() -> void:
 	generate_city()
-	populate_city()
+	#populate_city()
 	
 func populate_city()->void:
 	for x in size.x:

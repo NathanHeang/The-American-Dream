@@ -14,7 +14,7 @@ func _ready() -> void:
 	#(cam.get_node("blue_shader") as MeshInstance3D).visible = true
 
 func _process(_dt: float) -> void:
-	if not broken and music.get_playback_position() >= 13.72:
+	if not broken and music.get_playback_position() >= 13.75:
 		broken = true
 		icon.texture = shattered_logo
 	

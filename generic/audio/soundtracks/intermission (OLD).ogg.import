@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bq1tqs5txsic1"
+path="res://.godot/imported/intermission (OLD).ogg-06ec14e9d7aa9fbb977e7270a1fb2499.oggvorbisstr"
+
+[deps]
+
+source_file="res://generic/audio/soundtracks/intermission (OLD).ogg"
+dest_files=["res://.godot/imported/intermission (OLD).ogg-06ec14e9d7aa9fbb977e7270a1fb2499.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=170.0
+beat_count=0
+bar_beats=4

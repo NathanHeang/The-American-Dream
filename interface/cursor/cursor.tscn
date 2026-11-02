@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bsfuhtbblny04"]
 
-[ext_resource type="Texture2D" uid="uid://de4naqmb3bhw4" path="res://ui/cursor/hand_point.png" id="2_g0wji"]
-[ext_resource type="Texture2D" uid="uid://by8sd8eakaahp" path="res://ui/cursor/hand_open.png" id="2_o2uqn"]
+[ext_resource type="Script" uid="uid://bp6elpw0a28ok" path="res://interface/cursor/cursor.gd" id="1_eg5ip"]
+[ext_resource type="Texture2D" uid="uid://de4naqmb3bhw4" path="res://interface/cursor/hand_point.png" id="2_g0wji"]
+[ext_resource type="Texture2D" uid="uid://by8sd8eakaahp" path="res://interface/cursor/hand_open.png" id="2_o2uqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
 bg_color = Color(1, 1, 1, 1)
@@ -28,6 +29,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_eg5ip")
 
 [node name="Hand" type="Control" parent="." unique_id=2128836735]
 layout_mode = 1

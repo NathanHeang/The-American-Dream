@@ -43,18 +43,19 @@ func timeout() -> void:
 	get_tree().quit(66)
 		
 func pay_ransom() -> void:
-	PlayerHandler.money -= price
+	#PlayerHandler.money -= price
 	queue_free()
 
 func attempt_payment() -> void:
-	if PlayerHandler.money >= price:
-		pay_ransom()
-		get_tree().set_auto_accept_quit(true)
-		var cam:Camera3D = get_tree().get_current_scene().find_child("Camera3D", true, false)
-		if cam:
-			var shader:MeshInstance3D = cam.get_node_or_null("red_shader")
-			if shader:
-				shader.visible = false
-	else:
-		#get_parent().add_child(STOP.instantiate())
-		OS.alert("Insufficient Funds!")
+	pass
+	#if PlayerHandler.money >= price:
+	#	pay_ransom()
+	#	get_tree().set_auto_accept_quit(true)
+	#	var cam:Camera3D = get_tree().get_current_scene().find_child("Camera3D", true, false)
+	#	if cam:
+	#		var shader:MeshInstance3D = cam.get_node_or_null("red_shader")
+	#		if shader:
+	#			shader.visible = false
+	#else:
+	#	#get_parent().add_child(STOP.instantiate())
+	#	OS.alert("Insufficient Funds!")

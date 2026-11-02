@@ -18,8 +18,6 @@ config/icon="uid://135w8l4axh12"
 
 [autoload]
 
-PlayerHandler="*uid://ck2bblp4171wn"
-Hud="*uid://nmilbrut4nur"
 CityPartLibrary="*uid://dmh3rk2f66gff"
 
 [display]
@@ -304,4 +302,3 @@ joypads/ignore_joypad_on_unfocused_application=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"

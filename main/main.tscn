@@ -3,17 +3,36 @@
 [ext_resource type="Script" uid="uid://b6j3laqovxdtb" path="res://main/game.gd" id="1_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://c4xgkholh7m0p" path="res://main/env.tscn" id="1_c651c"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="2_3wy1v"]
+[ext_resource type="AudioStream" uid="uid://ci3ct7li35nta" path="res://generic/audio/soundtracks/nightmare_day.ogg" id="2_bsumw"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="3_kfbq2"]
-[ext_resource type="PackedScene" uid="uid://dbxqbnyc1t0ia" path="res://ui/title_screen/title_screen.tscn" id="4_4dugh"]
+[ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://interface/cursor/cursor.tscn" id="5_0i4oc"]
+[ext_resource type="PackedScene" uid="uid://dbxqbnyc1t0ia" path="res://interface/title_screen/title_screen.tscn" id="6_bsumw"]
+[ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="7_fwcvl"]
+[ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="8_na0o7"]
+[ext_resource type="PackedScene" uid="uid://ckv43aclwk4yi" path="res://interface/time_hud/time_hud.tscn" id="9_73k8k"]
+[ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://interface/balance_hud/balance_hud.tscn" id="10_5xyti"]
 
 [node name="Game" type="Node" unique_id=256912048]
 script = ExtResource("1_3wy1v")
 
+[node name="System" type="Node" parent="." unique_id=1957905962]
+
+[node name="EventTimer" type="Timer" parent="System" unique_id=2067884916]
+unique_name_in_owner = true
+
+[node name="Audio" type="Node" parent="." unique_id=1457674082]
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="Audio" unique_id=97903917]
+stream = ExtResource("2_bsumw")
+parameters/looping = true
+
 [node name="World" type="Node3D" parent="." unique_id=1024536112]
 
-[node name="WorldEnvironment" parent="World" unique_id=1814207673 instance=ExtResource("1_c651c")]
+[node name="Map" type="Node3D" parent="World" unique_id=1124539867]
 
-[node name="City" type="Node3D" parent="World" unique_id=1594716732]
+[node name="WorldEnvironment" parent="World/Map" unique_id=1814207673 instance=ExtResource("1_c651c")]
+
+[node name="City" type="Node3D" parent="World/Map" unique_id=1594716732]
 script = ExtResource("2_3wy1v")
 size = Vector2i(30, 50)
 
@@ -29,10 +48,34 @@ air_speed = 600.0
 look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075
 
-[node name="GUI" type="Control" parent="." unique_id=2125169921]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1952002842]
+layer = 999
 
-[node name="PauseMenu" parent="GUI" unique_id=1371425667 instance=ExtResource("4_4dugh")]
+[node name="Cursor" parent="Interface" unique_id=925991105 instance=ExtResource("5_0i4oc")]
+offset_left = 940.0
+offset_top = 520.0
+offset_right = 940.0
+offset_bottom = 520.0
+
+[node name="TitleScreen" parent="Interface" unique_id=1371425667 instance=ExtResource("6_bsumw")]
+visible = false
+z_index = 1000
+
+[node name="PauseMenu" parent="Interface" unique_id=1499448151 instance=ExtResource("7_fwcvl")]
+visible = false
+z_index = 999
+
+[node name="DialogueHandler" parent="Interface" unique_id=412039055 instance=ExtResource("8_na0o7")]
+visible = false
+z_index = 500
+y_sort_enabled = true
+
+[node name="Time" parent="Interface" unique_id=425463166 instance=ExtResource("9_73k8k")]
+y_sort_enabled = true
+offset_left = -193.0
+offset_right = 193.0
+
+[node name="Balance" parent="Interface" unique_id=1545020258 instance=ExtResource("10_5xyti")]
+y_sort_enabled = true
+
+[connection signal="timeout" from="System/EventTimer" to="." method="_on_event"]

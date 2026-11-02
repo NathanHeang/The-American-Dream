@@ -4,9 +4,6 @@ extends Control
 @onready var cash_particle: CPUParticles2D = $CashParticle
 @onready var coin_particle: CPUParticles2D = $CoinParticle
 
-func _ready() -> void:
-	PlayerHandler.balance_changed.connect(update)
-
 func update(old:float, new:float)->void:
 	var dollars = int(new)
 	var cents = int(new*100) % 100

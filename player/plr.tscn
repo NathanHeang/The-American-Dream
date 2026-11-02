@@ -112,3 +112,5 @@ grow_vertical = 2
 
 [node name="InteractionController" parent="." unique_id=203229138 instance=ExtResource("5_sg1cb")]
 unique_name_in_owner = true
+
+[connection signal="focused" from="InteractionController" to="." method="_on_focused"]
