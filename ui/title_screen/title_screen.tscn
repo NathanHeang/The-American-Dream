@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://dbxqbnyc1t0ia"]
+
+[ext_resource type="Script" uid="uid://bl1i2qgku7g2h" path="res://ui/title_screen/title_screen.gd" id="1_rhiq2"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_kp51c"]
+[ext_resource type="Texture2D" uid="uid://tprdi2osdwu2" path="res://generic/textures/logo2.png" id="3_2er51"]
+[ext_resource type="Material" uid="uid://hoiuvrbov0w0" path="res://ransom/glitch.tres" id="3_ca08b"]
+[ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://generic/shaders/pattern_bg.gdshader" id="5_lgnx5"]
+[ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://money/dollar.png" id="6_1djn3"]
+[ext_resource type="AudioStream" uid="uid://gb6rlqb6qxc5" path="res://generic/audio/soundtracks/title.ogg" id="7_ca08b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
+bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 50.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp51c"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhiq2"]
+shader = ExtResource("5_lgnx5")
+shader_parameter/pattern = ExtResource("6_1djn3")
+shader_parameter/pattern_color = Color(0.27322236, 0.43988907, 0.1342079, 1)
+shader_parameter/tiling = 200.0
+shader_parameter/speed = Vector2(0.2, 1)
+shader_parameter/rotation = 0.06481481950484991
+
+[node name="TitleScreen" type="CanvasLayer" unique_id=1371425667]
+process_mode = 3
+layer = 999
+script = ExtResource("1_rhiq2")
+
+[node name="Control" type="Control" parent="." unique_id=1558530067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1615184286]
+material = ExtResource("2_kp51c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=679478266]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+
+[node name="Icon" type="TextureRect" parent="Control/PanelContainer/HBoxContainer" unique_id=1566484819]
+material = ExtResource("3_ca08b")
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("3_2er51")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/HBoxContainer" unique_id=2104580251]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Play" type="Button" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=136825928]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Wake Up"
+
+[node name="Quit" type="Button" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=2015566803]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Give Up"
+
+[node name="Panel" type="Panel" parent="Control" unique_id=776886056]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kp51c")
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel" unique_id=2079974494]
+material = SubResource("ShaderMaterial_rhiq2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=82386520]
+unique_name_in_owner = true
+stream = ExtResource("7_ca08b")
+parameters/looping = true
+
+[connection signal="button_down" from="Control/PanelContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]

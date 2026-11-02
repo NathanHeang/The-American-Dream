@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://c2h82806ok7wp"]
 
 [ext_resource type="Script" uid="uid://chqpg44ls7v2p" path="res://player/plr.gd" id="1_ciwrl"]
-[ext_resource type="Material" uid="uid://b2noc0bdlmiab" path="res://generic/materials/color_camera.tres" id="2_ud1qf"]
+[ext_resource type="Material" uid="uid://b2noc0bdlmiab" path="res://generic/materials/red.tres" id="2_ud1qf"]
 [ext_resource type="Shader" uid="uid://b1noomystr2ek" path="res://generic/shaders/speed_lines.gdshader" id="2_uvp5r"]
 [ext_resource type="AudioStream" uid="uid://dak61srxr8tr7" path="res://player/speed_wind.mp3" id="3_ce3ab"]
+[ext_resource type="Material" uid="uid://b0q6lktjnn0ne" path="res://generic/materials/blue.tres" id="3_p2jbg"]
 [ext_resource type="PackedScene" uid="uid://cqa5ryusvt5t4" path="res://interaction/interaction_controller.tscn" id="5_sg1cb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0gus3"]
@@ -74,6 +75,11 @@ current = true
 visible = false
 mesh = SubResource("PlaneMesh_28aoi")
 surface_material_override/0 = ExtResource("2_ud1qf")
+
+[node name="blue_shader" type="MeshInstance3D" parent="Head/Camera3D" unique_id=2107236887]
+visible = false
+mesh = SubResource("PlaneMesh_28aoi")
+surface_material_override/0 = ExtResource("3_p2jbg")
 
 [node name="Hand" type="Marker3D" parent="Head/Camera3D" unique_id=373655381]
 unique_name_in_owner = true

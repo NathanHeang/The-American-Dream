@@ -77,7 +77,7 @@ text = "Resume"
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-text = "Give Up"
+text = "Return to Title"
 
 [node name="VolumeContainer2" type="HBoxContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=230879840]
 layout_mode = 2
