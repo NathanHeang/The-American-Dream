@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://dbxqbnyc1t0ia"]
 
 [ext_resource type="Script" uid="uid://bl1i2qgku7g2h" path="res://interface/title_screen/title_screen.gd" id="1_gj216"]
+[ext_resource type="Shader" uid="uid://bclq40xjcoi6i" path="res://generic/shaders/edge.gdshader" id="2_4w3h1"]
 [ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_kp51c"]
 [ext_resource type="Texture2D" uid="uid://tprdi2osdwu2" path="res://generic/textures/logo2.png" id="3_2er51"]
 [ext_resource type="Material" uid="uid://hoiuvrbov0w0" path="res://ransom/glitch.tres" id="3_ca08b"]
 [ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://generic/shaders/pattern_bg.gdshader" id="5_lgnx5"]
 [ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://money/dollar.png" id="6_1djn3"]
 [ext_resource type="AudioStream" uid="uid://gb6rlqb6qxc5" path="res://generic/audio/soundtracks/title.ogg" id="7_ca08b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jmm7"]
+shader = ExtResource("2_4w3h1")
+shader_parameter/hex_size = 0.16
+shader_parameter/mirror_segments = 3
+shader_parameter/rotation_speed = 0.2
+shader_parameter/source_zoom = 0.20000000298023
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/vignette_start = 0.10000000475
+shader_parameter/vignette_end = 0.8
+shader_parameter/darken_amount = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
 bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
@@ -43,6 +55,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gj216")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1370469660]
+layer = 65964579
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1874365467]
+material = SubResource("ShaderMaterial_0jmm7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1615184286]
 material = ExtResource("2_kp51c")

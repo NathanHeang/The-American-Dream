@@ -2,8 +2,8 @@ shader_type spatial;
 render_mode unshaded;
 
 uniform sampler2D SCREEN_TEXTURE : source_color, hint_screen_texture, repeat_disable, filter_nearest;
-uniform float gaussian_sigma : hint_range(0.1, 1.0) = 0.3; // Standard deviation; modifies the area of the effect
-uniform float power : hint_range(-2.0, 2.0) = 0.5; // Warp effect strength (negative to warp in, positive to warp out)
+uniform float gaussian_sigma : hint_range(0.1, 1.0) = 0.3;
+uniform float power : hint_range(-2.0, 2.0) = 0.5;
 
 void vertex() {
 	POSITION = vec4(VERTEX.xy, 1.0, 1.0);
