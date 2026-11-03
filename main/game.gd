@@ -5,6 +5,12 @@ extends Node
 signal balance_changed(old, new)
 signal time_changed(old, new)
 
+@export var day_sky_color:Color
+@export var day_sky_color_2:Color
+@export var night_sky_color:Color
+@export var night_sky_color_2:Color
+@onready var environment:ShaderMaterial = %WorldEnvironment.environment.sky.sky_material
+
 var started:bool = false
 
 var money:float = 0: #in cents
@@ -26,7 +32,11 @@ func _ready() -> void:
 func _process(_dt: float) -> void:
 	if started:
 		time+=1
-
+		
+	var day_percentage = 1/86400
+	environment.set_shader_parameter("Top Color", lerp(day_sky_color, night_sky_color, day_percentage))
+	environment.set_shader_parameter("Bottom Color", lerp(day_sky_color_2, night_sky_color_2, day_percentage))
+	
 func start_day()->void:
 	started = true
 	event_timer.start()
@@ -36,6 +46,7 @@ func end_day()->void:
 	started = false
 	event_timer.stop()
 	pass
+	
 var a = false
 func _on_event() -> void:
 	event_timer.wait_time = randf_range(2.0, 3.0)

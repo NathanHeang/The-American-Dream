@@ -14,6 +14,10 @@
 
 [node name="Game" type="Node" unique_id=256912048]
 script = ExtResource("1_3wy1v")
+day_sky_color = Color(0.16896874, 0.38495046, 0.72371906, 1)
+day_sky_color_2 = Color(0.5806526, 0.7598287, 0.88361794, 1)
+night_sky_color = Color(0.20154339, 0.24575835, 0.4985165, 1)
+night_sky_color_2 = Color(0.045385756, 0.09647948, 0.23367703, 1)
 
 [node name="System" type="Node" parent="." unique_id=1957905962]
 
@@ -28,9 +32,18 @@ parameters/looping = true
 
 [node name="World" type="Node3D" parent="." unique_id=1024536112]
 
-[node name="Map" type="Node3D" parent="World" unique_id=1124539867]
+[node name="Environment" type="Node" parent="World" unique_id=1228509946]
 
-[node name="WorldEnvironment" parent="World/Map" unique_id=1814207673 instance=ExtResource("1_c651c")]
+[node name="WorldEnvironment" parent="World/Environment" unique_id=1814207673 instance=ExtResource("1_c651c")]
+unique_name_in_owner = true
+
+[node name="Sun" type="Node3D" parent="World/Environment" unique_id=617939518]
+transform = Transform3D(-4.371139e-08, -1, 0, -1, 4.371139e-08, 8.742278e-08, -8.742278e-08, 3.821371e-15, -1, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/Environment/Sun" unique_id=1983525695]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Map" type="Node3D" parent="World" unique_id=1124539867]
 
 [node name="City" type="Node3D" parent="World/Map" unique_id=1594716732]
 script = ExtResource("2_3wy1v")
