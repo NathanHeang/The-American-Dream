@@ -41,5 +41,5 @@ func _on_event() -> void:
 	event_timer.wait_time = randf_range(2.0, 3.0)
 	if a == false:
 		a = true
-		add_child(RansomWindow.new())
+		#add_child(RansomWindow.new())
 	pass

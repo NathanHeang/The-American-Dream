@@ -1,11 +1,7 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(dt: float) -> void:
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		global_position = lerp(global_position, get_viewport_rect().size/2, 16.5*dt)
+	else:
+		global_position = lerp(global_position, get_global_mouse_position(), 16.5*dt)

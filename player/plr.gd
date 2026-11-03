@@ -47,18 +47,18 @@ func get_move_speed()->float:
 	return sprint_speed if Input.is_action_pressed("sprint") else walk_speed
 
 func _ready() -> void:
-	add_to_group("player")
+	add_to_group("plr")
 	for child in model.find_children("*", "VisualInstance3D"):
 		child.set_layer_mask_value(1, false)
 		child.set_layer_mask_value(2, true) 
 	pass
 
-func _unhandled_input(e: InputEvent) -> void:
+func _input(e: InputEvent) -> void:
 	if e is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif e.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if e is InputEventMouseMotion and not interaction_controller.is_cam_locked():
 			rotate_y(-e.relative.x * look_sensitivity)

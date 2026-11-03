@@ -1,7 +1,4 @@
-extends CanvasLayer
-
-func _ready() -> void:
-	toggle()
+extends Control
 
 func _process(_dt:float) -> void:
 	if Input.is_action_just_pressed("pause"):

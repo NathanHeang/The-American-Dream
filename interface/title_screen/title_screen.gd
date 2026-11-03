@@ -1,10 +1,10 @@
-extends CanvasLayer
+extends Control
 
 @onready var music: AudioStreamPlayer = %Music
-@onready var icon: TextureRect = $Control/PanelContainer/HBoxContainer/Icon
+@onready var icon: TextureRect = %Icon
 const shattered_logo = preload("res://generic/textures/logo3.png")
 
-#@onready var plr:Player = get_tree().get_first_node_in_group("player")
+#@onready var plr:Player = get_tree().get_first_node_in_group("plr")
 #@onready var cam:Camera3D = plr.get_node("%Camera3D")
 
 var broken:bool = false

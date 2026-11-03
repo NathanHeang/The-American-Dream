@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://behi4aqcwfho6"]
 
+[ext_resource type="Script" uid="uid://baof3kxvk4ge1" path="res://interface/pause_menu/pause_menu.gd" id="1_twx4v"]
 [ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_le02u"]
 [ext_resource type="Texture2D" uid="uid://g1s5xldfowln" path="res://generic/textures/logo3.png" id="3_le02u"]
 
@@ -22,12 +23,14 @@ expand_margin_bottom = 50.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8g5nh"]
 
 [node name="PauseMenu" type="Control" unique_id=1558530067]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_twx4v")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1615184286]
 material = ExtResource("2_le02u")

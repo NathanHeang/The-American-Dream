@@ -38,14 +38,6 @@ size = Vector2i(30, 50)
 
 [node name="Player" parent="World" unique_id=1039902304 instance=ExtResource("3_kfbq2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
-sprint_speed = 20.0
-ground_accel = 18.0
-ground_deccel = 12.0
-ground_friction = 8.0
-air_cap = 10.0
-air_accel = 100.0
-air_speed = 600.0
-look_sensitivity = 0.008
 HEADBOB_STRENGTH = 0.075
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=1952002842]

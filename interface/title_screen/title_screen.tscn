@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dbxqbnyc1t0ia"]
 
+[ext_resource type="Script" uid="uid://bl1i2qgku7g2h" path="res://interface/title_screen/title_screen.gd" id="1_gj216"]
 [ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_kp51c"]
 [ext_resource type="Texture2D" uid="uid://tprdi2osdwu2" path="res://generic/textures/logo2.png" id="3_2er51"]
 [ext_resource type="Material" uid="uid://hoiuvrbov0w0" path="res://ransom/glitch.tres" id="3_ca08b"]
@@ -41,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gj216")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1615184286]
 material = ExtResource("2_kp51c")
@@ -62,6 +64,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 64
 
 [node name="Icon" type="TextureRect" parent="PanelContainer/HBoxContainer" unique_id=1566484819]
+unique_name_in_owner = true
 material = ExtResource("3_ca08b")
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
