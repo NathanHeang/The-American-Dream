@@ -3,6 +3,7 @@ class_name InteractionComponent
 
 enum InteractionType{
 	DEFAULT,
+	BUTTON,
 	DOOR,
 	LEVER,
 	WHEEL
@@ -60,6 +61,8 @@ func interact()->void:
 	match interaction_type:
 		InteractionType.DEFAULT:
 			interact_default()
+		InteractionType.BUTTON:
+			notify(100)
 
 func aux_interact()->void:
 	if not can_interact:

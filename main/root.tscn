@@ -38,16 +38,13 @@ reflected_light_source = 2
 ssao_intensity = 10.4
 fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vvh5c"]
-dof_blur_far_enabled = true
-dof_blur_near_enabled = true
-
 [node name="Root" type="Node" unique_id=256912048]
 
 [node name="Audio" type="Node" parent="." unique_id=1457674082]
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="Audio" unique_id=97903917]
 stream = ExtResource("2_4vlnp")
+autoplay = true
 parameters/looping = true
 
 [node name="World" type="Node3D" parent="." unique_id=1024536112]
@@ -55,7 +52,6 @@ parameters/looping = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1814207673]
 unique_name_in_owner = true
 environment = SubResource("Environment_28aoi")
-camera_attributes = SubResource("CameraAttributesPractical_vvh5c")
 script = ExtResource("4_4vlnp")
 day_sky_color = Color(0.2406801, 0.3386681, 0.77463084, 1)
 day_sky_color_2 = Color(0.53542715, 0.75992084, 0.8822973, 1)

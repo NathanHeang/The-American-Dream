@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dfkit01lv8ha0"]
+
+[ext_resource type="Texture2D" uid="uid://chuwgieswwu23" path="res://generic/materials/brick2.png" id="1_gfxfd"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_gfxfd")
+uv1_scale = Vector3(32, 24, 8)
+uv1_triplanar = true

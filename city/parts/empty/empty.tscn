@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c8ol38ifbx34h"]
+
+[ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/city_part.gd" id="1_2r1p5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_08k08"]
+size = Vector3(10, 1, 10)
+
+[node name="CityPart" type="Node3D" unique_id=994077912]
+script = ExtResource("1_2r1p5")
+random_rotation = true
+metadata/_custom_type_script = "uid://vg1qedie2nym"
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=109478305]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=353470646]
+shape = SubResource("BoxShape3D_sbw5n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1641482840]
+mesh = SubResource("BoxMesh_08k08")

@@ -2,10 +2,13 @@ extends Node3D
 class_name City
 
 const NPC = preload("res://npc/npc.tscn")
+const OFFICE = preload("res://city/parts/office/office.tscn")
+const ROAD = preload("res://city/parts/road/road.tscn")
+const EMPTY = preload("res://city/parts/empty/empty.tscn")
 
-@export var size:Vector2i = Vector2i(7, 5)
+@export var size:Vector2i = Vector2i(13, 7)
 @export var part_size:int = 10
-
+@export var office_pos:Vector2i = Vector2i(5, 7)
 var city:Array
 signal city_generated()
 
@@ -26,7 +29,15 @@ func generate_city() -> void:
 	for x in size.x:
 		city.append([])
 		for y in size.y:
-			var part = CityPartLibrary.get_random().instantiate()
+			var part:CityPart
+			if x == office_pos.x and y == office_pos.y:
+				part = OFFICE.instantiate()
+			elif x > office_pos.x-4 and x < office_pos.x+4 and y > office_pos.y-2 and y < office_pos.y+2:
+				part = EMPTY.instantiate()
+			elif x > office_pos.x-7 and x < office_pos.x+7 and y > office_pos.y-5 and y < office_pos.y+5:
+				part = ROAD.instantiate()
+			else:
+				part = CityPartLibrary.get_random().instantiate()
 			city[x].append(part)
 			part.position = Vector3i(x*part_size, 0, y*part_size)
 			add_child(part)

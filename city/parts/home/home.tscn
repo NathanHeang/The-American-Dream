@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bc75355v80rl8"]
 
 [ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/city_part.gd" id="1_yfskt"]
-[ext_resource type="PackedScene" uid="uid://beeh480gywyxx" path="res://interaction/objects/door/door.tscn" id="2_oxdsl"]
+[ext_resource type="PackedScene" uid="uid://beeh480gywyxx" path="res://objects/door/door.tscn" id="2_oxdsl"]
 [ext_resource type="PackedScene" uid="uid://cad8xprflhok2" path="res://city/parts/home/home_inherited.tscn" id="3_rsn7x"]
+
 
 [sub_resource type="BoxMesh" id="BoxMesh_mxwup"]
 size = Vector3(1.05, 2.5, 0.1)

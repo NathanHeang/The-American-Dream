@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://vg1qedie2nym" path="res://city/city_part.gd" id="1_53hvq"]
 [ext_resource type="PackedScene" uid="uid://ywi70u8lmpxd" path="res://generic/models/office.blend" id="2_53oda"]
+[ext_resource type="PackedScene" uid="uid://bgi7337c63t5i" path="res://generic/models/cubicle.blend" id="3_6f5qi"]
+[ext_resource type="PackedScene" uid="uid://b5xkge13k46kn" path="res://generic/models/keyboard.blend" id="5_rrrpn"]
+[ext_resource type="PackedScene" uid="uid://bqa5di1b4g4jv" path="res://objects/monitor/monitor.tscn" id="6_6f5qi"]
+[ext_resource type="PackedScene" uid="uid://che54feuchnjh" path="res://generic/models/mouse.blend" id="6_8ll6l"]
+[ext_resource type="PackedScene" uid="uid://cu4rgpuhcsrsu" path="res://objects/elevator/elevator.tscn" id="7_ep348"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbw5n"]
 size = Vector3(10, 1, 10)
@@ -9,14 +14,23 @@ size = Vector3(10, 1, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_08k08"]
 size = Vector3(10, 1, 10)
 
+[sub_resource type="Curve3D" id="Curve3D_ep348"]
+resource_local_to_scene = true
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="CityPart" type="Node3D" unique_id=187224239]
 script = ExtResource("1_53hvq")
-weight = 12.0
-random_rotation = true
+enabled = false
+weight = 0.0
 metadata/_custom_type_script = "uid://vg1qedie2nym"
 
 [node name="office" parent="." unique_id=1619840256 instance=ExtResource("2_53oda")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 53, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.6, 0)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=109478305]
 
@@ -25,3 +39,240 @@ shape = SubResource("BoxShape3D_sbw5n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1641482840]
 mesh = SubResource("BoxMesh_08k08")
+
+[node name="row" type="Node3D" parent="." unique_id=1843681488]
+
+[node name="cubicle" parent="row" unique_id=2024856164 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 17.92279, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle" unique_id=818471605 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle" unique_id=1468109989 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle" unique_id=1459913935 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle2" parent="row" unique_id=1839693595 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 13.151417, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle2" unique_id=2135392889 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle2" unique_id=2041573093 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle2" unique_id=854046689 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle3" parent="row" unique_id=1300063107 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 8.374807, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle3" unique_id=1752921312 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle3" unique_id=114609509 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle3" unique_id=1260778141 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle4" parent="row" unique_id=1736756886 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 3.5576591, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle4" unique_id=790107305 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle4" unique_id=1757730968 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle4" unique_id=989711346 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle5" parent="row" unique_id=175641138 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -1.2300307, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle5" unique_id=805374426 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle5" unique_id=792450710 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle5" unique_id=1313393844 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle6" parent="row" unique_id=828703599 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -6.0299625, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle6" unique_id=1986730924 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle6" unique_id=278973367 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle6" unique_id=873749017 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle7" parent="row" unique_id=1284378007 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -10.796099, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle7" unique_id=1094055725 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle7" unique_id=1262700486 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle7" unique_id=1347414082 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle8" parent="row" unique_id=1890366488 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -15.597139, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle8" unique_id=364568570 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle8" unique_id=1711353990 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle8" unique_id=481472102 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle9" parent="row" unique_id=2098643863 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -20.377089, 12.622134, -11.24073)
+
+[node name="monitor" parent="row/cubicle9" unique_id=1748555820 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row/cubicle9" unique_id=2054185281 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row/cubicle9" unique_id=1979206402 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="row2" type="Node3D" parent="." unique_id=1171117001]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.4178381)
+
+[node name="cubicle" parent="row2" unique_id=804960969 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 17.92279, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle" unique_id=965058381 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle" unique_id=886871396 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle" unique_id=411038936 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle2" parent="row2" unique_id=540219625 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 13.151417, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle2" unique_id=1625204728 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle2" unique_id=794943809 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle2" unique_id=1261283712 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle3" parent="row2" unique_id=611586402 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 8.374807, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle3" unique_id=100082898 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle3" unique_id=61969629 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle3" unique_id=2125392988 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle4" parent="row2" unique_id=1309096108 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 3.5576591, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle4" unique_id=792176611 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle4" unique_id=1908618046 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle4" unique_id=847570093 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle5" parent="row2" unique_id=475189478 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -1.2300307, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle5" unique_id=2091524680 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle5" unique_id=2037408914 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle5" unique_id=364065155 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle6" parent="row2" unique_id=892069411 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -6.0299625, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle6" unique_id=1452745661 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle6" unique_id=1392017861 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle6" unique_id=1663094448 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle7" parent="row2" unique_id=2104312629 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -10.796099, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle7" unique_id=410800566 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle7" unique_id=1092539594 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle7" unique_id=1772554780 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle8" parent="row2" unique_id=661756226 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -15.597139, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle8" unique_id=603222264 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle8" unique_id=1754353462 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle8" unique_id=517233735 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="cubicle9" parent="row2" unique_id=1285410573 instance=ExtResource("3_6f5qi")]
+transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -20.377089, 12.622134, -11.24073)
+
+[node name="monitor" parent="row2/cubicle9" unique_id=1620344336 instance=ExtResource("6_6f5qi")]
+transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
+
+[node name="keyboard" parent="row2/cubicle9" unique_id=960517049 instance=ExtResource("5_rrrpn")]
+transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
+
+[node name="mouse" parent="row2/cubicle9" unique_id=1893161724 instance=ExtResource("6_8ll6l")]
+transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=894061659]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12, 40, -12)
+pixel_size = 0.03
+modulate = Color(0.6015625, 0.2250486, 0.21607193, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "TIA Systems"
+font_size = 128
+outline_size = 16
+
+[node name="Elevator" parent="." unique_id=384074855 instance=ExtResource("7_ep348")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, -5.25)
+
+[node name="Elevator2" parent="." unique_id=2126298352 instance=ExtResource("7_ep348")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, 5.35)
+curve = SubResource("Curve3D_ep348")

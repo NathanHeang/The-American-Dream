@@ -12,8 +12,8 @@ func toggle()->void:
 func _on_resume_button_down() -> void:
 	toggle()
 	
-func _on_quit_button_down() -> void:
-	get_tree().quit()
+func _on_return_button_down() -> void:
+	get_tree().change_scene_to_file("res://interface/title_screen/title_screen.tscn")
 
 func _on_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(0, value)
