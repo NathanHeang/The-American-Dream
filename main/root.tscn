@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
 
-[ext_resource type="PackedScene" uid="uid://cjttduyfuqkj4" path="res://main/system.tscn" id="1_o1hu8"]
 [ext_resource type="AudioStream" uid="uid://ci3ct7li35nta" path="res://generic/audio/soundtracks/nightmare_day.ogg" id="2_4vlnp"]
 [ext_resource type="Shader" uid="uid://c7kcavsojji7y" path="res://generic/shaders/sky.gdshader" id="3_o1hu8"]
 [ext_resource type="Script" uid="uid://7if2qn711pxj" path="res://main/environment.gd" id="4_4vlnp"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="4_f5dlx"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_0n2ln"]
 [ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://interface/cursor/cursor.tscn" id="6_l4f45"]
-[ext_resource type="PackedScene" uid="uid://dbxqbnyc1t0ia" path="res://interface/title_screen/title_screen.tscn" id="7_xl303"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="8_s472e"]
 [ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="9_b0ecn"]
 [ext_resource type="PackedScene" uid="uid://ckv43aclwk4yi" path="res://interface/time_hud/time_hud.tscn" id="10_h2wah"]
@@ -46,8 +44,6 @@ dof_blur_near_enabled = true
 
 [node name="Root" type="Node" unique_id=256912048]
 
-[node name="System" parent="." unique_id=55206194 instance=ExtResource("1_o1hu8")]
-
 [node name="Audio" type="Node" parent="." unique_id=1457674082]
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="Audio" unique_id=97903917]
@@ -84,10 +80,6 @@ offset_left = 940.0
 offset_top = 520.0
 offset_right = 940.0
 offset_bottom = 520.0
-
-[node name="TitleScreen" parent="Interface" unique_id=1371425667 instance=ExtResource("7_xl303")]
-visible = false
-z_index = 1000
 
 [node name="PauseMenu" parent="Interface" unique_id=1499448151 instance=ExtResource("8_s472e")]
 visible = false

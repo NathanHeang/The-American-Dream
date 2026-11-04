@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://by6e11gbgv488" path="res://generic/materials/wood2.png" id="1_01q1h"]
 
 [resource]
+cull_mode = 2
 albedo_color = Color(1, 0.78039217, 0.60784316, 1)
 albedo_texture = ExtResource("1_01q1h")
 uv1_scale = Vector3(3.571, 3.571, 2.5)

@@ -2,9 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://da3q2n4dnirhd" path="res://generic/materials/metal.jpeg" id="1_km6jk"]
 
-
 [resource]
+cull_mode = 2
 albedo_color = Color(0.59872216, 0.6366823, 0.73810875, 1)
 albedo_texture = ExtResource("1_km6jk")
 albedo_texture_force_srgb = true
 metallic = 0.75
+uv1_scale = Vector3(4, 3, 1)
+stencil_flags = 2
+stencil_color = Color(0.96474224, 0.96474224, 0.9647421, 1)
