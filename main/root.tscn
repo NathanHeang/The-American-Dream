@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://db3x6hhv5s5yi"]
+
+[ext_resource type="PackedScene" uid="uid://cjttduyfuqkj4" path="res://main/system.tscn" id="1_o1hu8"]
+[ext_resource type="AudioStream" uid="uid://ci3ct7li35nta" path="res://generic/audio/soundtracks/nightmare_day.ogg" id="2_4vlnp"]
+[ext_resource type="Shader" uid="uid://c7kcavsojji7y" path="res://generic/shaders/sky.gdshader" id="3_o1hu8"]
+[ext_resource type="Script" uid="uid://7if2qn711pxj" path="res://main/environment.gd" id="4_4vlnp"]
+[ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="4_f5dlx"]
+[ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_0n2ln"]
+[ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://interface/cursor/cursor.tscn" id="6_l4f45"]
+[ext_resource type="PackedScene" uid="uid://dbxqbnyc1t0ia" path="res://interface/title_screen/title_screen.tscn" id="7_xl303"]
+[ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="8_s472e"]
+[ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="9_b0ecn"]
+[ext_resource type="PackedScene" uid="uid://ckv43aclwk4yi" path="res://interface/time_hud/time_hud.tscn" id="10_h2wah"]
+[ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://interface/balance_hud/balance_hud.tscn" id="11_nd8au"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yu4kh"]
+shader = ExtResource("3_o1hu8")
+shader_parameter/top_color = Color(0.15, 0.4, 0.75, 1)
+shader_parameter/bottom_color = Color(0.55, 0.7, 0.85, 1)
+shader_parameter/cloud_color = Color(1, 1, 1, 1)
+shader_parameter/cloud_speed = 0.400000019
+shader_parameter/cloud_coverage = 0.7
+shader_parameter/cloud_scale = 5.0
+shader_parameter/cloud_brightness = 1.0
+shader_parameter/cloud_sharpness = 0.3
+shader_parameter/horizon_glow = 0.800000038
+shader_parameter/enable_stars = false
+shader_parameter/stars_intensity = 1.0
+shader_parameter/star_color = Color(1, 1, 1, 1)
+shader_parameter/twinkle_speed = 2.0
+
+[sub_resource type="Sky" id="Sky_8t54v"]
+sky_material = SubResource("ShaderMaterial_yu4kh")
+
+[sub_resource type="Environment" id="Environment_28aoi"]
+background_mode = 2
+background_energy_multiplier = 1.2
+sky = SubResource("Sky_8t54v")
+reflected_light_source = 2
+ssao_intensity = 10.4
+fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vvh5c"]
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[node name="Root" type="Node" unique_id=256912048]
+
+[node name="System" parent="." unique_id=55206194 instance=ExtResource("1_o1hu8")]
+
+[node name="Audio" type="Node" parent="." unique_id=1457674082]
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="Audio" unique_id=97903917]
+stream = ExtResource("2_4vlnp")
+parameters/looping = true
+
+[node name="World" type="Node3D" parent="." unique_id=1024536112]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1814207673]
+unique_name_in_owner = true
+environment = SubResource("Environment_28aoi")
+camera_attributes = SubResource("CameraAttributesPractical_vvh5c")
+script = ExtResource("4_4vlnp")
+day_sky_color = Color(0.2406801, 0.3386681, 0.77463084, 1)
+day_sky_color_2 = Color(0.53542715, 0.75992084, 0.8822973, 1)
+night_sky_color = Color(0.021158038, 0.053105615, 0.12638855, 1)
+night_sky_color_2 = Color(0.18566525, 0.20150667, 0.32072333, 1)
+
+[node name="Map" type="Node3D" parent="World" unique_id=1124539867]
+
+[node name="City" type="Node3D" parent="World/Map" unique_id=1594716732]
+script = ExtResource("4_f5dlx")
+size = Vector2i(30, 50)
+
+[node name="Player" parent="World" unique_id=1039902304 instance=ExtResource("5_0n2ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
+HEADBOB_STRENGTH = 0.075
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1952002842]
+layer = 999
+
+[node name="Cursor" parent="Interface" unique_id=925991105 instance=ExtResource("6_l4f45")]
+offset_left = 940.0
+offset_top = 520.0
+offset_right = 940.0
+offset_bottom = 520.0
+
+[node name="TitleScreen" parent="Interface" unique_id=1371425667 instance=ExtResource("7_xl303")]
+visible = false
+z_index = 1000
+
+[node name="PauseMenu" parent="Interface" unique_id=1499448151 instance=ExtResource("8_s472e")]
+visible = false
+z_index = 999
+
+[node name="DialogueHandler" parent="Interface" unique_id=412039055 instance=ExtResource("9_b0ecn")]
+visible = false
+z_index = 500
+y_sort_enabled = true
+
+[node name="Time" parent="Interface" unique_id=425463166 instance=ExtResource("10_h2wah")]
+y_sort_enabled = true
+offset_left = -193.0
+offset_right = 193.0
+
+[node name="Balance" parent="Interface" unique_id=1545020258 instance=ExtResource("11_nd8au")]
+y_sort_enabled = true

@@ -4,7 +4,10 @@ extends Control
 @onready var cash_particle: CPUParticles2D = $CashParticle
 @onready var coin_particle: CPUParticles2D = $CoinParticle
 
-func update(old:float, new:float)->void:
+func _ready() -> void:
+	System.time_changed.connect(balance_changed)
+
+func balance_changed(old:float, new:float)->void:
 	var dollars = int(new)
 	var cents = int(new*100) % 100
 	label.text = "$%d.%02d" % [dollars, cents]

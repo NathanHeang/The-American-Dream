@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cjttduyfuqkj4"]
+
+[ext_resource type="Script" uid="uid://b6j3laqovxdtb" path="res://main/system.gd" id="1_24lf8"]
+
+[node name="System" type="Node" unique_id=55206194]
+script = ExtResource("1_24lf8")
+
+[node name="EventTimer" type="Timer" parent="." unique_id=648550439]
+unique_name_in_owner = true

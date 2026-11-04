@@ -13,4 +13,5 @@ func choose_random()->void:
 
 func _ready() -> void:
 	size = Vector3(randf_range(.5, 2), randf_range(.5, 2), randf_range(.5, 2))
+	rotation_degrees = Vector3(randi_range(0, 3)*90, randi_range(0, 3)*90, randi_range(0, 3)*90)
 	choose_random()
