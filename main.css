@@ -41,7 +41,9 @@ hr {
 }
 
 img{
-    width: 25%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     margin: 0px 16px;
 }
 
@@ -178,7 +180,7 @@ ul {
 }
 
 table, th, td{
-    border: 1px solid black;
+    border: 1.5px solid black;
     border-collapse: collapse;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
@@ -193,9 +195,24 @@ th, td{
     padding: 10px 10px 10px 10px;
 }
 
-#table_caption{
+div.table_caption{
+    display: flex;
+    justify-content: center;
+}
+
+#goal_title{
+    text-align: center;
+    color: #de201d;
+    font: bolder 2.5em Monaco, "Lucida Console", monospace;
+    & + h2 {
+        letter-spacing: 1em;
+    }
+}
+
+.table_caption{
     background-color: rgba(255, 255, 255, 0.5);
     font-size: 1.5rem;
+    border: 1.5px solid black;
 }
 
 .controls{
@@ -218,5 +235,5 @@ th, td{
 #goal{
     font-size: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    word-spacing: 2px;
+    word-spacing: 4px;
 }
