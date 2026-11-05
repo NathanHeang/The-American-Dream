@@ -202,11 +202,10 @@ div.table_caption{
 
 #goal_title{
     text-align: center;
-    color: #de201d;
-    font: bolder 2.5em Monaco, "Lucida Console", monospace;
-    & + h2 {
-        letter-spacing: 1em;
-    }
+    color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+    font-weight: lighter;
 }
 
 .table_caption{
