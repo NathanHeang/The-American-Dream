@@ -1,0 +1,9 @@
+join player left
+join boss (default) right
+boss: Meet me in my office on the 5th floor.
+player (talk): Did I get a raise?
+update player (default)
+boss (talk): I'm terminating your contract. You're fired.
+leave boss
+[wait time="1.0"]
+player (talk): Right...

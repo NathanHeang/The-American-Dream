@@ -6,11 +6,6 @@ const SIDEWALK = preload("res://city/parts/road/sidewalk.tscn")
 func _ready()->void:
 	var city = get_parent() as City
 	city.city_generated.connect(on_city_generated)
-	for i in range(5):
-		if randi_range(0, 2) == 0:
-			var poster:Poster = Poster.new()
-			poster.position = position + Vector3(randf_range(-4, 4), 0, randf_range(-4, 4))
-			add_child(poster)
 	
 func on_city_generated() -> void:
 	var city = get_parent() as City

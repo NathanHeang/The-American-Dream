@@ -7,4 +7,5 @@ class_name CityPart
 @export var random_rotation:bool = false
 
 func _ready() -> void:
-	rotation_degrees = Vector3(0, randi_range(0, 3)*90, 0)
+	if random_rotation:
+		rotation_degrees = Vector3(0, randi_range(0, 3)*90, 0)

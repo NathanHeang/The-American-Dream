@@ -1,0 +1,40 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "default",
+&"description": "",
+&"display_name": "Mr. Baus",
+&"mirror": false,
+&"nicknames": ["Boss"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"default": {
+"export_overrides": {
+"image": "\"res://dialogue/portraits/boss.webp\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn"
+},
+"talk": {
+"export_overrides": {
+"image": "\"res://dialogue/portraits/boss_talk.webp\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn"
+}
+},
+&"scale": 0.5
+}

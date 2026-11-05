@@ -1,7 +1,7 @@
 extends Node3D
 class_name City
 
-const NPC = preload("res://npc/npc.tscn")
+const NPC = preload("res://npcs/npc.tscn")
 const OFFICE = preload("res://city/parts/office/office.tscn")
 const ROAD = preload("res://city/parts/road/road.tscn")
 const EMPTY = preload("res://city/parts/empty/empty.tscn")
