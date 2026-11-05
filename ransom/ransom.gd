@@ -9,7 +9,7 @@ const FACE_2 = preload("res://ransom/face2.png")
 @onready var price_label: Button = %Price
 @onready var face: TextureRect = %Face
 
-@export var price: float = randf_range(100, 500)
+var price: float = randf_range(50, 500)
 
 func _ready() -> void:
 	randomize_position()
@@ -43,6 +43,7 @@ func timeout() -> void:
 	get_tree().quit(66)
 		
 func pay_ransom() -> void:
+	Input.mouse_mode = System.mouse_mode
 	System.money -= price
 	queue_free()
 

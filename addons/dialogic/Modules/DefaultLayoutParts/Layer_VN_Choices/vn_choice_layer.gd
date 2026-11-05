@@ -44,7 +44,7 @@ extends DialogicLayoutLayer
 @export var maximum_choices: int = 10
 @export_file('*.tscn') var choices_custom_button: String = ""
 
-func get_choices() -> VBoxContainer:
+func get_choices() -> HBoxContainer:
 	return $Choices
 
 

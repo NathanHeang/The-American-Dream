@@ -7,8 +7,7 @@ enum InteractionType{
 	DOOR,
 	LEVER,
 	WHEEL,
-	DIALOGUE,
-	VIEWPORT
+	DIALOGUE
 }
 
 @export var obj_ref:Node3D
@@ -55,7 +54,7 @@ func pre_interact(hand:Marker3D)->void:
 		InteractionType.WHEEL:
 			lock_cam = true
 			prev_mouse_pos = get_viewport().get_mouse_position()
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func interact()->void:
 	if not can_interact:
@@ -71,10 +70,6 @@ func interact()->void:
 				return
 			Dialogic.start(dialogue_id)
 			get_viewport().set_input_as_handled()
-		InteractionType.VIEWPORT:
-			obj_ref.set_select(true)
-			set_physics_process(false)
-		
 
 func aux_interact()->void:
 	if not can_interact:
@@ -87,7 +82,7 @@ func aux_interact()->void:
 func post_interact()->void:
 	is_interacting = false
 	lock_cam = false
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = System.mouse_mode
 
 func _input(e: InputEvent) -> void:
 	if is_interacting:

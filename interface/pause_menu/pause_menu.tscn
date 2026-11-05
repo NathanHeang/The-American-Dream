@@ -101,6 +101,7 @@ min_value = -60.0
 max_value = 60.0
 
 [node name="ResolutionContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=36923543]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 16

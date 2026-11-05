@@ -6,7 +6,7 @@ func _process(_dt:float) -> void:
 		
 func toggle()->void:
 	visible = not visible
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN if visible else System.mouse_mode
 	get_tree().paused = visible
 	
 func _on_resume_button_down() -> void:

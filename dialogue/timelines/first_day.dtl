@@ -1,0 +1,10 @@
+join boss rightmost
+join player leftmost
+boss: You're late.
+- Ask for help
+	player: What do I do?
+	boss: What have you been doing before? I hired you a month ago.
+	boss: Take the elevator to the next floor up, and write that sorting program.
+	boss: I emailed you the details.
+- Apologize
+	player: Sorry, won't happen again...

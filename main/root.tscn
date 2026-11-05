@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="4_f5dlx"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_0n2ln"]
 [ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://interface/cursor/cursor.tscn" id="6_l4f45"]
+[ext_resource type="Script" uid="uid://qtulwlyrupbe" path="res://interface/interface.gd" id="6_o1hu8"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="8_s472e"]
 [ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="9_b0ecn"]
 [ext_resource type="PackedScene" uid="uid://ckv43aclwk4yi" path="res://interface/time_hud/time_hud.tscn" id="10_h2wah"]
@@ -50,7 +51,6 @@ parameters/looping = true
 [node name="World" type="Node3D" parent="." unique_id=1024536112]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1814207673]
-unique_name_in_owner = true
 environment = SubResource("Environment_28aoi")
 script = ExtResource("4_4vlnp")
 day_sky_color = Color(0.2406801, 0.3386681, 0.77463084, 1)
@@ -68,8 +68,8 @@ size = Vector2i(30, 50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=1952002842]
-unique_name_in_owner = true
 layer = 999
+script = ExtResource("6_o1hu8")
 
 [node name="Cursor" parent="Interface" unique_id=925991105 instance=ExtResource("6_l4f45")]
 offset_left = 940.0

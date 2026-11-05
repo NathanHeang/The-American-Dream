@@ -31,7 +31,8 @@ directories/dch_directory={
 "player": "res://dialogue/characters/player.dch"
 }
 directories/dtl_directory={
-"timeline": "res://dialogue/timelines/timeline.dtl"
+"fired": "res://dialogue/timelines/fired.dtl",
+"first_day": "res://dialogue/timelines/first_day.dtl"
 }
 layout/style_directory={
 "": "res://dialogue/styles/default.tres",
@@ -446,4 +447,3 @@ joypads/ignore_joypad_on_unfocused_application=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"

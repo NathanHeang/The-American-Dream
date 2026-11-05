@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://baxy4m65bx1n1"]
 
 [ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="1_vck7m"]
+[ext_resource type="Script" uid="uid://cprc3xks5p4da" path="res://objects/monitor/monitor_ui.gd" id="1_wb14r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o37i"]
 bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
@@ -13,10 +14,64 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
-expand_margin_left = 50.0
-expand_margin_top = 50.0
-expand_margin_right = 50.0
-expand_margin_bottom = 50.0
+expand_margin_left = 25.0
+expand_margin_top = 15.0
+expand_margin_right = 25.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak75r"]
+bg_color = Color(0.6, 0.29803923, 0.3137255, 0.1764706)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.5882353, 0.6862745, 1)
+border_blend = true
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khvpk"]
+bg_color = Color(0.12941177, 0, 0.031235158, 0.57254905)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i82mo"]
+content_margin_left = 25.0
+content_margin_right = 25.0
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0.62352943)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wkss"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.29411766, 0.019607844, 0.05882353, 0.49019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb14r"]
+bg_color = Color(0.5882353, 0.19607843, 0.29411766, 0.49019608)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_att4d"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.5882353, 0.19607843, 0.29411766, 0.49019608)
+skew = Vector2(1, 0)
+border_width_left = 4
+border_width_top = 1
+border_width_right = 4
+border_width_bottom = 1
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Terminal" type="Control" unique_id=1562590722]
 layout_mode = 3
@@ -25,6 +80,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wb14r")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1016216731]
 material = ExtResource("1_vck7m")
@@ -32,17 +88,143 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = 100.0
-offset_right = -100.0
-offset_bottom = -100.0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = -40.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2o37i")
 
-[node name="CodeEdit" type="CodeEdit" parent="PanelContainer" unique_id=716707703]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=451372443]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_constants/separation = 25
+
+[node name="Window" type="Panel" parent="PanelContainer/VBoxContainer" unique_id=986646569]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ak75r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window" unique_id=864228829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Toolbar" type="Panel" parent="PanelContainer/VBoxContainer/Window/VBoxContainer" unique_id=837435504]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_khvpk")
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Toolbar" unique_id=488909013]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "KingCode - main.py"
+vertical_alignment = 1
+
+[node name="Editor" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer" unique_id=545061102]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SplitContainer" type="SplitContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor" unique_id=1225677827]
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(125)
+split_offset = 125
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer" unique_id=1257508974]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer/Panel" unique_id=2109297988]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer/Panel/VBoxContainer" unique_id=365510886]
+layout_mode = 2
+text = "main.py"
+alignment = 0
+
+[node name="CodeEdit" type="CodeEdit" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer" unique_id=716707703]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
 scroll_smooth = true
 caret_blink = true
 code_completion_enabled = true
+indent_automatic = true
+auto_brace_completion_enabled = true
+
+[node name="Mail" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer" unique_id=918631823]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail" unique_id=1298877255]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Email" type="Button" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail/VBoxContainer" unique_id=636333455]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_i82mo")
+text = "Email 1"
+
+[node name="Sender" type="Label" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail/VBoxContainer/Email" unique_id=630611874]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 61.0
+grow_vertical = 2
+text = "Mr. Baus"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail/VBoxContainer/Email" unique_id=644456572]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -61.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "9:00 PM"
+vertical_alignment = 1
+
+[node name="Taskbar" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=407742463]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7wkss")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Taskbar" unique_id=1584036182]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Power" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=380886637]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_wb14r")
+text = "X"
+
+[node name="Editor" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=723783639]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
+text = "King Code"
+
+[node name="Mail" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=1953223054]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
+text = "BMail"
+
+[connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Power" to="." method="_on_power_button_down"]
+[connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Editor" to="." method="_on_editor_button_down"]
+[connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Mail" to="." method="_on_mail_button_down"]

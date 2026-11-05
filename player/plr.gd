@@ -51,14 +51,9 @@ func _ready() -> void:
 	for child in model.find_children("*", "VisualInstance3D"):
 		child.set_layer_mask_value(1, false)
 		child.set_layer_mask_value(2, true) 
-	pass
+	System.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(e: InputEvent) -> void:
-	if e is InputEventMouseButton:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	elif e.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if e is InputEventMouseMotion and not interaction_controller.is_cam_locked():
 			rotate_y(-e.relative.x * look_sensitivity)

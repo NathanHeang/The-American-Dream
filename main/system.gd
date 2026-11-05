@@ -17,10 +17,16 @@ var time:int = 28800: #in seconds, starting at 8 am
 		time = new
 		time_changed.emit(old, new)
 		
+var mouse_mode:Input.MouseMode = Input.MOUSE_MODE_HIDDEN:
+	set(new):
+		mouse_mode = new
+		if !get_tree().paused:
+			Input.mouse_mode = new
+		
 @onready var event_timer: Timer = %EventTimer
 
 var started:bool = false
-	
+
 func _process(_dt: float) -> void:
 	if started:
 		time+=1

@@ -324,7 +324,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.235645, 0.69999933, 1.78263
 
 [node name="InteractionComponent" parent="NPC" unique_id=1156491162 instance=ExtResource("9_mwx7f")]
 interaction_type = 5
-dialogue_id = &"timeline"
+dialogue_id = &"first_day"
 
 [node name="Sprite3D" type="Sprite3D" parent="NPC" unique_id=151256720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
