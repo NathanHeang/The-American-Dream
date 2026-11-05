@@ -5,7 +5,7 @@ extends Control
 @onready var coin_particle: CPUParticles2D = $CoinParticle
 
 func _ready() -> void:
-	System.time_changed.connect(balance_changed)
+	System.balance_changed.connect(balance_changed)
 
 func balance_changed(old:float, new:float)->void:
 	var dollars = int(new)
@@ -15,11 +15,10 @@ func balance_changed(old:float, new:float)->void:
 	var diff = new - old
 	var diff_dollars = int(diff)
 	var diff_cents = int(diff*100) % 100
+	
 	if diff_dollars > 0:
 		cash_particle.amount = diff_dollars
 		cash_particle.emitting = true
 	if diff_cents > 0:
 		coin_particle.amount = diff_cents
 		coin_particle.emitting = true
-	if diff < 0:
-		pass

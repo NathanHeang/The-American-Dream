@@ -68,6 +68,7 @@ size = Vector2i(30, 50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=1952002842]
+unique_name_in_owner = true
 layer = 999
 
 [node name="Cursor" parent="Interface" unique_id=925991105 instance=ExtResource("6_l4f45")]

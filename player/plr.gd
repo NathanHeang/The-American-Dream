@@ -57,7 +57,7 @@ func _input(e: InputEvent) -> void:
 	if e is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif e.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if e is InputEventMouseMotion and not interaction_controller.is_cam_locked():

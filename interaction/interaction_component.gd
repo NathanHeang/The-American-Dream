@@ -6,13 +6,15 @@ enum InteractionType{
 	BUTTON,
 	DOOR,
 	LEVER,
-	WHEEL
+	WHEEL,
+	DIALOGUE
 }
 
 @export var obj_ref:Node3D
 @export var interaction_type:InteractionType = InteractionType.DEFAULT
 @export var max_rot:float=90
 @export var nodes_to_notify:Array[Node]
+@export var dialogue_id:StringName
 
 var can_interact:bool = true
 var is_front:bool = false
@@ -63,6 +65,11 @@ func interact()->void:
 			interact_default()
 		InteractionType.BUTTON:
 			notify(100)
+		InteractionType.DIALOGUE:
+			if Dialogic.current_timeline != null:
+				return
+			Dialogic.start(dialogue_id)
+			get_viewport().set_input_as_handled()
 
 func aux_interact()->void:
 	if not can_interact:

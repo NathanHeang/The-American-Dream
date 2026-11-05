@@ -3,6 +3,8 @@ extends Node
 signal balance_changed(old, new)
 signal time_changed(old, new)
 
+const RANSOM = preload("res://ransom/ransom.tscn")
+
 var money:float = 0: #in cents
 	set(new):
 		var old = money
@@ -19,10 +21,6 @@ var time:int = 28800: #in seconds, starting at 8 am
 
 var started:bool = false
 	
-func _ready() -> void:
-	add_to_group("game")
-	start_day()
-	
 func _process(_dt: float) -> void:
 	if started:
 		time+=1
@@ -30,17 +28,14 @@ func _process(_dt: float) -> void:
 func start_day()->void:
 	started = true
 	event_timer.start()
-	pass
 	
 func end_day()->void:
 	started = false
 	event_timer.stop()
-	pass
 	
 var a = false
 func _on_event() -> void:
 	event_timer.wait_time = randf_range(2.0, 3.0)
 	if a == false:
 		a = true
-		#add_child(RansomWindow.new())
-	pass
+		add_child(RANSOM.instantiate())

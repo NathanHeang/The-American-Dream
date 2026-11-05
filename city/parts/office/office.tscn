@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bqa5di1b4g4jv" path="res://objects/monitor/monitor.tscn" id="6_6f5qi"]
 [ext_resource type="PackedScene" uid="uid://che54feuchnjh" path="res://generic/models/mouse.blend" id="6_8ll6l"]
 [ext_resource type="PackedScene" uid="uid://cu4rgpuhcsrsu" path="res://objects/elevator/elevator.tscn" id="7_ep348"]
+[ext_resource type="Texture2D" uid="uid://bxvwuqm1w1mmr" path="res://npcs/textures/boss.png" id="9_adkqm"]
+[ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="9_mwx7f"]
 
-[sub_resource type="Curve3D" id="Curve3D_ep348"]
+[sub_resource type="Curve3D" id="Curve3D_mwx7f"]
 resource_local_to_scene = true
 closed = true
 _data = {
@@ -17,7 +19,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve3D" id="Curve3D_rrrpn"]
+[sub_resource type="Curve3D" id="Curve3D_6yd5t"]
 resource_local_to_scene = true
 closed = true
 _data = {
@@ -31,6 +33,10 @@ size = Vector3(58, 0.1, 24)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ep348"]
 size = Vector3(48, 0.1, 24)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ll6l"]
+radius = 1.0
+height = 2.5
 
 [node name="CityPart" type="Node3D" unique_id=187224239]
 script = ExtResource("1_53hvq")
@@ -273,40 +279,61 @@ outline_size = 16
 
 [node name="Elevator" parent="." unique_id=384074855 instance=ExtResource("7_ep348")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, -5.25)
-curve = SubResource("Curve3D_ep348")
+curve = SubResource("Curve3D_mwx7f")
 
 [node name="Elevator2" parent="." unique_id=2126298352 instance=ExtResource("7_ep348")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, 5.35)
-curve = SubResource("Curve3D_rrrpn")
+curve = SubResource("Curve3D_6yd5t")
 
-[node name="FloorCollision" type="CollisionShape3D" parent="." unique_id=353470646]
+[node name="Floors" type="StaticBody3D" parent="." unique_id=637706890]
+
+[node name="FloorCollision" type="CollisionShape3D" parent="Floors" unique_id=353470646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.65, 0)
 shape = SubResource("BoxShape3D_sbw5n")
 
-[node name="FloorCollision2" type="CollisionShape3D" parent="." unique_id=292312901]
+[node name="FloorCollision2" type="CollisionShape3D" parent="Floors" unique_id=292312901]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.55, 0)
 shape = SubResource("BoxShape3D_ep348")
 
-[node name="FloorCollision3" type="CollisionShape3D" parent="." unique_id=1953930757]
+[node name="FloorCollision3" type="CollisionShape3D" parent="Floors" unique_id=1953930757]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.885, 0)
 shape = SubResource("BoxShape3D_ep348")
 
-[node name="FloorCollision4" type="CollisionShape3D" parent="." unique_id=488471616]
+[node name="FloorCollision4" type="CollisionShape3D" parent="Floors" unique_id=488471616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.217, 0)
 shape = SubResource("BoxShape3D_ep348")
 
-[node name="FloorCollision5" type="CollisionShape3D" parent="." unique_id=957670979]
+[node name="FloorCollision5" type="CollisionShape3D" parent="Floors" unique_id=957670979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.55, 0)
 shape = SubResource("BoxShape3D_ep348")
 
-[node name="FloorCollision6" type="CollisionShape3D" parent="." unique_id=2105903698]
+[node name="FloorCollision6" type="CollisionShape3D" parent="Floors" unique_id=2105903698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.885, 0)
 shape = SubResource("BoxShape3D_ep348")
 
-[node name="FloorCollision7" type="CollisionShape3D" parent="." unique_id=1021029932]
+[node name="FloorCollision7" type="CollisionShape3D" parent="Floors" unique_id=1021029932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 37.225, 0)
 shape = SubResource("BoxShape3D_ep348")
 
-[node name="FloorCollision8" type="CollisionShape3D" parent="." unique_id=701214909]
+[node name="FloorCollision8" type="CollisionShape3D" parent="Floors" unique_id=701214909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.825, 0)
 shape = SubResource("BoxShape3D_ep348")
+
+[node name="NPC" type="StaticBody3D" parent="." unique_id=1181042947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.235645, 0.69999933, 1.7826376)
+
+[node name="InteractionComponent" parent="NPC" unique_id=1156491162 instance=ExtResource("9_mwx7f")]
+interaction_type = 5
+dialogue_id = &"timeline"
+
+[node name="Sprite3D" type="Sprite3D" parent="NPC" unique_id=151256720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
+pixel_size = 0.000325
+billboard = 2
+shaded = true
+double_sided = false
+texture = ExtResource("9_adkqm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC" unique_id=1272038689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_8ll6l")

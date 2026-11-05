@@ -7,3 +7,5 @@ script = ExtResource("1_24lf8")
 
 [node name="EventTimer" type="Timer" parent="." unique_id=648550439]
 unique_name_in_owner = true
+
+[connection signal="timeout" from="EventTimer" to="." method="_on_event"]

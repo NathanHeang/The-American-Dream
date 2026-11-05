@@ -5,10 +5,6 @@
 [ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_cdpxn"]
 [ext_resource type="Texture2D" uid="uid://cfa1hkpvf8tay" path="res://generic/textures/coin.png" id="3_v3dwd"]
 
-
-
-
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv7w"]
 content_margin_left = 10.0
 content_margin_right = 20.0
@@ -45,10 +41,9 @@ script = ExtResource("1_kesql")
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2126006378]
 material = ExtResource("2_cdpxn")
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_right = 194.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_brv7w")
 
@@ -57,13 +52,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.6241871, 1, 0.7075882, 1)
 theme_override_font_sizes/font_size = 64
 text = "$0.00"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="CashParticle" type="CPUParticles2D" parent="." unique_id=237738050]
 position = Vector2(104, 47)
 emitting = false
-amount = 16
 texture = ExtResource("2_7urik")
 one_shot = true
 emission_shape = 1
@@ -89,7 +81,6 @@ color_ramp = SubResource("Gradient_v3dwd")
 [node name="CoinParticle" type="CPUParticles2D" parent="." unique_id=499339653]
 position = Vector2(104, 47)
 emitting = false
-amount = 16
 texture = ExtResource("3_v3dwd")
 one_shot = true
 emission_shape = 1

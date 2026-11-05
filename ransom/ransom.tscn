@@ -130,6 +130,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
 
 [node name="Price" type="Button" parent="Panel/Panel2" unique_id=270488626]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -1.0
 offset_top = 1.0
@@ -154,7 +155,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
 
-[node name="Label" type="Label" parent="Panel/Panel3" unique_id=848001853]
+[node name="TimeTitle" type="Label" parent="Panel/Panel3" unique_id=848001853]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -171,6 +173,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Time" type="Label" parent="Panel/Panel3" unique_id=1188521563]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -190,6 +193,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=359943534]
+unique_name_in_owner = true
 stream = ExtResource("3_3tmcc")
 volume_db = 24.0
 autoplay = true
@@ -203,6 +207,7 @@ wait_time = 5.0
 autostart = true
 
 [connection signal="close_requested" from="." to="." method="attempt_payment"]
+[connection signal="files_dropped" from="." to="." method="_on_files_dropped"]
 [connection signal="pressed" from="Panel/Panel2/Price" to="." method="attempt_payment"]
 [connection signal="finished" from="Music" to="." method="timeout"]
 [connection signal="timeout" from="PopupTimer" to="." method="spawn_popup"]

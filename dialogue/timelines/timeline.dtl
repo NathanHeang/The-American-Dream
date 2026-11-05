@@ -1,5 +1,5 @@
-join player left
-join boss (default) right
+join player leftmost
+join boss (default) rightmost
 boss: Meet me in my office on the 5th floor.
 player (talk): Did I get a raise?
 update player (default)

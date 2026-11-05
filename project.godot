@@ -15,8 +15,8 @@ config/description="A 3D game about the daily life of a struggling office worker
 run/main_scene="uid://dbxqbnyc1t0ia"
 config/features=PackedStringArray("4.8", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="uid://g1s5xldfowln"
-config/icon="uid://135w8l4axh12"
+boot_splash/image="uid://tprdi2osdwu2"
+config/icon="uid://tprdi2osdwu2"
 
 [autoload]
 
@@ -393,17 +393,17 @@ dialogue_action={
 ), Object(InputEventKey,
 "resource_local_to_scene": false,
 "resource_name": "",
-"device": 16,
+"device": -1,
 "window_id": 0,
 "alt_pressed": false,
 "shift_pressed": false,
 "ctrl_pressed": false,
 "meta_pressed": false,
 "pressed": false,
-"keycode": 32,
+"keycode": 69,
 "physical_keycode": 0,
 "key_label": 0,
-"unicode": 0,
+"unicode": 101,
 "location": 0,
 "echo": false,
 "script": null
