@@ -7,7 +7,8 @@ enum InteractionType{
 	DOOR,
 	LEVER,
 	WHEEL,
-	DIALOGUE
+	DIALOGUE,
+	VIEWPORT
 }
 
 @export var obj_ref:Node3D
@@ -70,6 +71,10 @@ func interact()->void:
 				return
 			Dialogic.start(dialogue_id)
 			get_viewport().set_input_as_handled()
+		InteractionType.VIEWPORT:
+			obj_ref.set_select(true)
+			set_physics_process(false)
+		
 
 func aux_interact()->void:
 	if not can_interact:

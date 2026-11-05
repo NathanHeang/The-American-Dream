@@ -2,26 +2,40 @@
 
 [ext_resource type="PackedScene" uid="uid://b8cxm6c1k526g" path="res://generic/models/monitor.blend" id="1_66aw8"]
 [ext_resource type="PackedScene" uid="uid://baxy4m65bx1n1" path="res://objects/monitor/monitor_ui.tscn" id="2_dh5jh"]
+[ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="2_duowk"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_41qaf"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_duowk"]
+size = Vector3(0.5, 0.5, 0.1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rsw7j"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y1ra"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duowk"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_41qaf")
+albedo_texture = SubResource("ViewportTexture_rsw7j")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dh5jh"]
-material = SubResource("StandardMaterial3D_8y1ra")
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_duowk")
 flip_faces = true
 size = Vector2(0.4, 0.25)
 orientation = 2
 
 [node name="monitor" unique_id=818471605 instance=ExtResource("1_66aw8")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" parent_id_path=PackedInt32Array(775653984) index="0" unique_id=558894008]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40019405, -0.12137714)
-mesh = SubResource("PlaneMesh_dh5jh")
+[node name="InteractionComponent" parent="." index="0" unique_id=1156491162 node_paths=PackedStringArray("obj_ref") instance=ExtResource("2_duowk")]
+obj_ref = NodePath("../Screen")
 
-[node name="SubViewport" type="SubViewport" parent="." index="1" unique_id=2030793969]
+[node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=2030793969]
 
 [node name="Terminal" parent="SubViewport" index="0" unique_id=1562590722 instance=ExtResource("2_dh5jh")]
+
+[node name="Screen" type="StaticBody3D" parent="." index="3" unique_id=1304580887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.125)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Screen" index="0" unique_id=135950112]
+shape = SubResource("BoxShape3D_duowk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Screen" index="1" unique_id=558894008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10019404, 0.0036228597)
+mesh = SubResource("PlaneMesh_dh5jh")

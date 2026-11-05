@@ -115,13 +115,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 selected = 0
-item_count = 3
+item_count = 4
 popup/item_0/text = "1920x1080"
 popup/item_0/id = 0
 popup/item_1/text = "1600x900"
 popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
+popup/item_3/text = "800x600"
+popup/item_3/id = 3
 
 [connection signal="button_down" from="PanelContainer/HBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="PanelContainer/HBoxContainer/VBoxContainer/Return" to="." method="_on_return_button_down"]

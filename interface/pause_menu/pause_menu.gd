@@ -13,6 +13,7 @@ func _on_resume_button_down() -> void:
 	toggle()
 	
 func _on_return_button_down() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://interface/title_screen/title_screen.tscn")
 
 func _on_volume_value_changed(value: float) -> void:
@@ -23,3 +24,4 @@ func _on_resolution_selected(id: int) -> void:
 		0:DisplayServer.window_set_size(Vector2i(1920, 1080))
 		1:DisplayServer.window_set_size(Vector2i(1600, 900))
 		2:DisplayServer.window_set_size(Vector2i(1280, 720))
+		3:DisplayServer.window_set_size(Vector2i(800, 600))
