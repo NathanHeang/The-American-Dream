@@ -20,6 +20,16 @@ h1 {
     & + h2 {
         letter-spacing: 1em;
     }
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#logo{
+    background-color: rgba(191, 64, 191, 0.75);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 hr {
@@ -47,8 +57,12 @@ img{
 
 .title{
     font-size: 3em;
-    color:white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin: 50px;
 }
 
 #audience {
@@ -64,15 +78,19 @@ img{
     animation-duration: 2s;
     opacity: 0;
     animation-fill-mode: forwards;
-    margin-top: 10px;
-    display: inline-block;
     height: 50px;
-    margin-left: 415px;
+    width: 410px;
+}
+
+div.download_button{
+    display: flex;
+    justify-content: center;
 }
 
 #download_text{
     position: relative;
-    bottom: 17.5px;
+    bottom: 20px;
+    left: 0px;
 }
 
 #Kevin{
@@ -149,11 +167,6 @@ ul {
     to {
         opacity: 1;
     }
-}
-
-#downloadHeader, .title{
-    text-align: center;
-    margin: 50px;
 }
 
 #imgBtn{
