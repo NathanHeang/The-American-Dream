@@ -96,6 +96,7 @@ div.download_button{
 }
 
 #Kevin{
+    width: 285px;
     height: 285px;
 }
 
@@ -206,6 +207,10 @@ div.table_caption{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 35px;
     font-weight: lighter;
+}
+
+#Nathan{
+    height: 285px;
 }
 
 .table_caption{
