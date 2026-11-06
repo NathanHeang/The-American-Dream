@@ -26,6 +26,7 @@ var mouse_mode:Input.MouseMode = Input.MOUSE_MODE_HIDDEN:
 @onready var event_timer: Timer = %EventTimer
 
 var started:bool = false
+var required_money:float = 150
 
 func _process(_dt: float) -> void:
 	if started:

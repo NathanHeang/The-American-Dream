@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_essnr"]
 [ext_resource type="PackedScene" uid="uid://cuc8242tubh3c" path="res://dialogue/styles/layers/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="6_cjn44"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="7_45onq"]
-[ext_resource type="PackedScene" path="res://dialogue/styles/layers/CenteredChoices/custom_centered_choices.tscn" id="8_cjn44"]
+[ext_resource type="PackedScene" uid="uid://ddjja6nr363u3" path="res://dialogue/styles/layers/CenteredChoices/custom_centered_choices.tscn" id="8_cjn44"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="9_ls72m"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_mlngn"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_5y5br"]

@@ -3,7 +3,6 @@
 [ext_resource type="Material" uid="uid://b2bb2c7345pt" path="res://generic/materials/wood4.tres" id="1_jqphq"]
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="2_jqphq"]
 
-
 [sub_resource type="BoxMesh" id="BoxMesh_0dhna"]
 size = Vector3(1, 2, 0.1)
 
@@ -28,4 +27,4 @@ shape = SubResource("BoxShape3D_0pwtw")
 
 [node name="InteractionComponent" parent="Pivot/Door" unique_id=1156491162 node_paths=PackedStringArray("obj_ref") instance=ExtResource("2_jqphq")]
 obj_ref = NodePath("..")
-interaction_type = 1
+interaction_type = 2

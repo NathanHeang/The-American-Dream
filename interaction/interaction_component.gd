@@ -54,7 +54,14 @@ func pre_interact(hand:Marker3D)->void:
 		InteractionType.WHEEL:
 			lock_cam = true
 			prev_mouse_pos = get_viewport().get_mouse_position()
-			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+			System.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		InteractionType.BUTTON:
+			notify(100)
+		InteractionType.DIALOGUE:
+			if Dialogic.current_timeline != null:
+				return
+			Dialogic.start(dialogue_id)
+			get_viewport().set_input_as_handled()
 
 func interact()->void:
 	if not can_interact:
@@ -63,13 +70,6 @@ func interact()->void:
 	match interaction_type:
 		InteractionType.DEFAULT:
 			interact_default()
-		InteractionType.BUTTON:
-			notify(100)
-		InteractionType.DIALOGUE:
-			if Dialogic.current_timeline != null:
-				return
-			Dialogic.start(dialogue_id)
-			get_viewport().set_input_as_handled()
 
 func aux_interact()->void:
 	if not can_interact:
@@ -82,7 +82,9 @@ func aux_interact()->void:
 func post_interact()->void:
 	is_interacting = false
 	lock_cam = false
-	Input.mouse_mode = System.mouse_mode
+	match interaction_type:
+		InteractionType.DOOR|InteractionType.LEVER|InteractionType.WHEEL:
+			System.mouse_mode = System.mouse_mode
 
 func _input(e: InputEvent) -> void:
 	if is_interacting:

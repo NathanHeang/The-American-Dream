@@ -10,7 +10,9 @@ func _ready() -> void:
 func balance_changed(old:float, new:float)->void:
 	var dollars = int(new)
 	var cents = int(new*100) % 100
-	label.text = "$%d.%02d" % [dollars, cents]
+	var req_dollars = int(System.required_money)
+	var req_cents = int(System.required_money*100) % 100
+	label.text = "$%d.%02d/$%d.%02d" % [dollars, cents, req_dollars, req_cents]
 	
 	var diff = new - old
 	var diff_dollars = int(diff)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://baxy4m65bx1n1"]
 
-[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="1_vck7m"]
-[ext_resource type="Script" uid="uid://cprc3xks5p4da" path="res://objects/monitor/monitor_ui.gd" id="1_wb14r"]
+[ext_resource type="Script" uid="uid://cprc3xks5p4da" path="res://interface/computer/computer_ui.gd" id="1_l5ftk"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_gg7v5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o37i"]
 bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
@@ -45,18 +45,6 @@ content_margin_left = 16.0
 content_margin_right = 16.0
 bg_color = Color(0.29411766, 0.019607844, 0.05882353, 0.49019608)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb14r"]
-bg_color = Color(0.5882353, 0.19607843, 0.29411766, 0.49019608)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.30980393, 0.8, 0.5568628, 1)
-corner_radius_top_left = 64
-corner_radius_top_right = 64
-corner_radius_bottom_right = 64
-corner_radius_bottom_left = 64
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_att4d"]
 content_margin_left = 16.0
 content_margin_right = 16.0
@@ -73,17 +61,62 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="Terminal" type="Control" unique_id=1562590722]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb47q"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.2646576, 0.066255346, 0.11673819, 0.49019608)
+skew = Vector2(1, 0)
+border_width_left = 4
+border_width_top = 1
+border_width_right = 4
+border_width_bottom = 1
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4xwv"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.2627451, 0.06666667, 0.11764706, 0.8)
+skew = Vector2(1, 0)
+border_width_left = 4
+border_width_top = 1
+border_width_right = 4
+border_width_bottom = 1
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l5ftk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mseoi"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+border_blend = true
+
+[node name="Computer" type="Control" unique_id=1562590722]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 65.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wb14r")
+script = ExtResource("1_l5ftk")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1016216731]
-material = ExtResource("1_vck7m")
+material = ExtResource("2_gg7v5")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -209,22 +242,56 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7wkss")
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Power" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=380886637]
-custom_minimum_size = Vector2(25, 0)
+[node name="Power" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=396737837]
+z_index = 15
+z_as_relative = false
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_wb14r")
-text = "X"
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p4xwv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p4xwv")
+text = "OFF"
+
+[node name="Divider" type="Panel" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=1447160611]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l5ftk")
+
+[node name="Line" type="Panel" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Divider" unique_id=1196139256]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mseoi")
 
 [node name="Editor" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=723783639]
+z_index = 15
+z_as_relative = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p4xwv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p4xwv")
 text = "King Code"
 
 [node name="Mail" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=1953223054]
+z_index = 15
+z_as_relative = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p4xwv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p4xwv")
 text = "BMail"
 
-[connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Power" to="." method="_on_power_button_down"]
+[connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Power" to="." method="toggle" binds= [false]]
 [connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Editor" to="." method="_on_editor_button_down"]
 [connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Mail" to="." method="_on_mail_button_down"]

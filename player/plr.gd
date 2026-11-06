@@ -40,11 +40,15 @@ var headbob_time:float = 0.0
 
 @onready var interaction_controller: Node = %InteractionController
 
-var can_move:bool = true
 var wish_dir:Vector3 = Vector3.ZERO
 
-func get_move_speed()->float:
-	return sprint_speed if Input.is_action_pressed("sprint") else walk_speed
+var controllable:bool = true:
+	set(new):
+		wish_dir = Vector3.ZERO
+
+var speed:float:
+	get():
+		return sprint_speed if Input.is_action_pressed("sprint") else walk_speed
 
 func _ready() -> void:
 	add_to_group("plr")
@@ -54,23 +58,24 @@ func _ready() -> void:
 	System.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(e: InputEvent) -> void:
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if e is InputEventMouseMotion and not interaction_controller.is_cam_locked():
-			rotate_y(-e.relative.x * look_sensitivity)
-			head.rotate_x(-e.relative.y * look_sensitivity)
-			head.rotation.x = clamp(head.rotation.x, deg_to_rad(min_vertical_look_direction), deg_to_rad(max_vertical_look_direction))
+	if controllable:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			if e is InputEventMouseMotion and not interaction_controller.is_cam_locked():
+				rotate_y(-e.relative.x * look_sensitivity)
+				head.rotate_x(-e.relative.y * look_sensitivity)
+				head.rotation.x = clamp(head.rotation.x, deg_to_rad(min_vertical_look_direction), deg_to_rad(max_vertical_look_direction))
 
 func _handle_ground_physics(dt:float)->void:
 	if walk_sfx_timer.time_left == 0 and wish_dir.length() > 0.2:
 		walk_sfx.pitch_scale = randf_range(.8, 1.2)
 		walk_sfx.play()
-		walk_sfx_timer.wait_time = 4/get_move_speed()
+		walk_sfx_timer.wait_time = 4/speed
 		walk_sfx_timer.start()
 	
 	var base_speed = velocity.dot(wish_dir)
-	var true_speed = get_move_speed() - base_speed
+	var true_speed = speed - base_speed
 	if true_speed > 0:
-		var accel = ground_accel * dt * get_move_speed()
+		var accel = ground_accel * dt * speed
 		accel = min(accel, true_speed)
 		velocity += accel * wish_dir
 	
@@ -119,15 +124,18 @@ func is_steep(normal:Vector3)->bool:
 	return false
 
 func _physics_process(dt: float) -> void:
-	var input_dir = Input.get_vector("l", "r", "fw", "bw").normalized()
-	wish_dir = self.global_transform.basis * Vector3(input_dir.x, 0., input_dir.y)
-	
+	if controllable:
+		var input_dir = Input.get_vector("l", "r", "fw", "bw").normalized()
+		wish_dir = self.global_transform.basis * Vector3(input_dir.x, 0., input_dir.y)
+		if is_on_floor():
+			if Input.is_action_just_pressed("jump") or (auto_jump and Input.is_action_pressed("jump")):
+				velocity.y = jump_velocity
+				
 	if is_on_floor():
-		if Input.is_action_just_pressed("jump") or (auto_jump and Input.is_action_pressed("jump")):
-			velocity.y = jump_velocity
 		_handle_ground_physics(dt)
 	else:
 		_handle_air_physics(dt)
+			
 	var speed_modifier = velocity.length()/walk_speed/4
 	camera.fov = lerp(min_fov, max_fov, clamp(speed_modifier, 0, 1))
 	speed_lines.set_shader_parameter("power", lerp(0.0, 9.0, clamp(speed_modifier, 0, 1)))

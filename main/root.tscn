@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://interface/cursor/cursor.tscn" id="6_l4f45"]
 [ext_resource type="Script" uid="uid://qtulwlyrupbe" path="res://interface/interface.gd" id="6_o1hu8"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="8_s472e"]
+[ext_resource type="PackedScene" uid="uid://baxy4m65bx1n1" path="res://interface/computer/monitor_ui.tscn" id="9_4vlnp"]
 [ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="9_b0ecn"]
 [ext_resource type="PackedScene" uid="uid://ckv43aclwk4yi" path="res://interface/time_hud/time_hud.tscn" id="10_h2wah"]
 [ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://interface/balance_hud/balance_hud.tscn" id="11_nd8au"]
@@ -81,15 +82,23 @@ offset_bottom = 520.0
 visible = false
 z_index = 999
 
+[node name="Computer" parent="Interface" unique_id=1562590722 instance=ExtResource("9_4vlnp")]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+y_sort_enabled = true
+
 [node name="DialogueHandler" parent="Interface" unique_id=412039055 instance=ExtResource("9_b0ecn")]
 visible = false
 z_index = 500
 y_sort_enabled = true
 
 [node name="Time" parent="Interface" unique_id=425463166 instance=ExtResource("10_h2wah")]
+z_index = 2
 y_sort_enabled = true
 offset_left = -193.0
 offset_right = 193.0
 
 [node name="Balance" parent="Interface" unique_id=1545020258 instance=ExtResource("11_nd8au")]
+unique_name_in_owner = true
 y_sort_enabled = true
