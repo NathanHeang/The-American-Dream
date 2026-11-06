@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bxvwuqm1w1mmr" path="res://npcs/textures/boss.png" id="9_adkqm"]
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="9_mwx7f"]
 
-[sub_resource type="Curve3D" id="Curve3D_mwx7f"]
+[sub_resource type="Curve3D" id="Curve3D_8ll6l"]
 resource_local_to_scene = true
 closed = true
 _data = {
@@ -19,7 +19,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve3D" id="Curve3D_6yd5t"]
+[sub_resource type="Curve3D" id="Curve3D_adkqm"]
 resource_local_to_scene = true
 closed = true
 _data = {
@@ -279,16 +279,16 @@ outline_size = 16
 
 [node name="Elevator" parent="." unique_id=384074855 instance=ExtResource("7_ep348")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, -5.25)
-curve = SubResource("Curve3D_mwx7f")
+curve = SubResource("Curve3D_8ll6l")
 
 [node name="Elevator2" parent="." unique_id=2126298352 instance=ExtResource("7_ep348")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, 5.35)
-curve = SubResource("Curve3D_6yd5t")
+curve = SubResource("Curve3D_adkqm")
 
 [node name="Floors" type="StaticBody3D" parent="." unique_id=637706890]
 
 [node name="FloorCollision" type="CollisionShape3D" parent="Floors" unique_id=353470646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.65, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.4, 0)
 shape = SubResource("BoxShape3D_sbw5n")
 
 [node name="FloorCollision2" type="CollisionShape3D" parent="Floors" unique_id=292312901]
@@ -319,14 +319,14 @@ shape = SubResource("BoxShape3D_ep348")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.825, 0)
 shape = SubResource("BoxShape3D_ep348")
 
-[node name="NPC" type="StaticBody3D" parent="." unique_id=1181042947]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.235645, 0.69999933, 1.7826376)
+[node name="Boss" type="StaticBody3D" parent="." unique_id=1181042947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.04572, 0.69999933, 0.045446396)
 
-[node name="InteractionComponent" parent="NPC" unique_id=1156491162 instance=ExtResource("9_mwx7f")]
+[node name="InteractionComponent" parent="Boss" unique_id=1156491162 instance=ExtResource("9_mwx7f")]
 interaction_type = 5
 dialogue_id = &"first_day"
 
-[node name="Sprite3D" type="Sprite3D" parent="NPC" unique_id=151256720]
+[node name="Sprite3D" type="Sprite3D" parent="Boss" unique_id=151256720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
 pixel_size = 0.000325
 billboard = 2
@@ -334,6 +334,6 @@ shaded = true
 double_sided = false
 texture = ExtResource("9_adkqm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC" unique_id=1272038689]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boss" unique_id=1272038689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("CapsuleShape3D_8ll6l")
