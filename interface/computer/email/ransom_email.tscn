@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b7sevpmo8eytc"]
+
+[ext_resource type="Script" uid="uid://db7fge24jb164" path="res://interface/computer/email/ransom_email.gd" id="1_67clx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i82mo"]
+content_margin_left = 25.0
+content_margin_right = 25.0
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0.62352943)
+
+[node name="Email4" type="Button" unique_id=453941762]
+offset_right = 188.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_i82mo")
+text = "WANT FREE MONEY?"
+script = ExtResource("1_67clx")
+metadata/_custom_type_script = "uid://db7fge24jb164"
+
+[node name="Sender" type="Label" parent="." unique_id=686250489]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 61.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "zcxb@gmail.com"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="." unique_id=931948516]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -61.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "9:00 PM"
+vertical_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

@@ -51,6 +51,9 @@ var speed:float:
 		return sprint_speed if Input.is_action_pressed("sprint") else walk_speed
 
 func _ready() -> void:
+	var city:City = get_tree().get_first_node_in_group("City")
+	if city:
+		global_position = Vector3i(city.home_pos.x*city.part_size, 4, city.home_pos.y*city.part_size)
 	add_to_group("plr")
 	for child in model.find_children("*", "VisualInstance3D"):
 		child.set_layer_mask_value(1, false)

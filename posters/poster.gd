@@ -12,6 +12,5 @@ func choose_random()->void:
 		texture_albedo = load("%s/%s" % [path, texture_name])
 
 func _ready() -> void:
-	size = Vector3(randf_range(.5, 2), randf_range(.5, 2), randf_range(.5, 2))
-	rotation_degrees = Vector3(randi_range(0, 3)*90, randi_range(0, 3)*90, randi_range(0, 3)*90)
+	rotation_degrees = Vector3(0, randi_range(0, 360), 0)
 	choose_random()

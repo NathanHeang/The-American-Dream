@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnxy35ldd4rvr"]
 
 [ext_resource type="Shader" uid="uid://c46cwwdlumhvx" path="res://generic/shaders/transition_2.gdshader" id="1_op231"]
+[ext_resource type="Script" uid="uid://dj34k722s86aw" path="res://transitions/transition.gd" id="2_ncr60"]
 [ext_resource type="Shader" uid="uid://kglc3tqj2bn6" path="res://generic/shaders/transition.gdshader" id="2_ny6m8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sbay5"]
@@ -70,9 +71,8 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_a4gt1"]
-resource_name = "transition"
-length = 3.0000000000000004
+[sub_resource type="Animation" id="Animation_ny6m8"]
+resource_name = "end"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,10 +80,61 @@ tracks/0/path = NodePath("TransitionEnd:material:shader_parameter/_Progress")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.999999977648]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TransitionEnd:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/t")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.999999977648]
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TransitionEnd:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a4gt1"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionEnd:material:shader_parameter/_Progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -104,10 +155,10 @@ tracks/2/path = NodePath(".:material:shader_parameter/t")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.0, 0.0]
+"values": [0.0, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -116,25 +167,29 @@ tracks/3/path = NodePath("TransitionEnd:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_74xh0"]
 _data = {
 &"RESET": SubResource("Animation_ncr60"),
-&"transition": SubResource("Animation_a4gt1")
+&"end": SubResource("Animation_ny6m8"),
+&"start": SubResource("Animation_a4gt1")
 }
 
 [node name="Transition" type="ColorRect" unique_id=821621310]
+z_index = 4096
+z_as_relative = false
 material = SubResource("ShaderMaterial_sbay5")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_ncr60")
 
 [node name="TransitionEnd" type="ColorRect" parent="." unique_id=47907885]
 visible = false
@@ -148,3 +203,5 @@ grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=475904976]
 libraries/ = SubResource("AnimationLibrary_74xh0")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

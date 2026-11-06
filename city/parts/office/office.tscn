@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5xkge13k46kn" path="res://generic/models/keyboard.blend" id="5_rrrpn"]
 [ext_resource type="PackedScene" uid="uid://bqa5di1b4g4jv" path="res://objects/monitor/monitor.tscn" id="6_6f5qi"]
 [ext_resource type="PackedScene" uid="uid://che54feuchnjh" path="res://generic/models/mouse.blend" id="6_8ll6l"]
+[ext_resource type="PackedScene" uid="uid://de230rwjd5wwk" path="res://objects/monitor/video_monitor.tscn" id="7_adkqm"]
 [ext_resource type="PackedScene" uid="uid://cu4rgpuhcsrsu" path="res://objects/elevator/elevator.tscn" id="7_ep348"]
 [ext_resource type="Texture2D" uid="uid://bxvwuqm1w1mmr" path="res://npcs/textures/boss.png" id="9_adkqm"]
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="9_mwx7f"]
@@ -23,7 +24,7 @@ point_count = 2
 resource_local_to_scene = true
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -76,14 +77,14 @@ transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.00709817
 [node name="cubicle3" parent="row" unique_id=1300063107 instance=ExtResource("3_6f5qi")]
 transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 8.374807, 12.622134, -11.24073)
 
-[node name="monitor" parent="row/cubicle3" unique_id=1752921312 instance=ExtResource("6_6f5qi")]
-transform = Transform3D(-0.4712316, 0, 3.0775692, 0, 2.510529, 0, -2.6783037, 0, -0.23153189, 4.004875, -1.00875, 2.7464294)
-
 [node name="keyboard" parent="row/cubicle3" unique_id=114609509 instance=ExtResource("5_rrrpn")]
 transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975791, 0, -0.29620117, 2.8043747, -0.61757755, 2.5847282)
 
 [node name="mouse" parent="row/cubicle3" unique_id=1260778141 instance=ExtResource("6_8ll6l")]
 transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="kingmonitor" parent="row/cubicle3" unique_id=1239325572 instance=ExtResource("7_adkqm")]
+transform = Transform3D(-0.47214946, 0, 3.0332077, 0, 2.51, 0, -2.6776924, 0, -0.5348364, 4.001, -1.009, 2.746)
 
 [node name="cubicle4" parent="row" unique_id=1736756886 instance=ExtResource("3_6f5qi")]
 transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, 3.5576591, 12.622134, -11.24073)
@@ -132,6 +133,13 @@ transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975
 
 [node name="mouse" parent="row/cubicle7" unique_id=1347414082 instance=ExtResource("6_8ll6l")]
 transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
+
+[node name="Label3D" type="Label3D" parent="row/cubicle7" unique_id=534674178]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, -0.48809433, 1.1889315, 2.9291182)
+billboard = 2
+double_sided = false
+text = "Your Desk!"
+font_size = 128
 
 [node name="cubicle8" parent="row" unique_id=1890366488 instance=ExtResource("3_6f5qi")]
 transform = Transform3D(0.58507115, 0, 0, 0, 1, 0, 0, 0, 0.89473504, -15.597139, 12.622134, -11.24073)
@@ -278,11 +286,11 @@ font_size = 128
 outline_size = 16
 
 [node name="Elevator" parent="." unique_id=384074855 instance=ExtResource("7_ep348")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, -5.25)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.75, 0.575, -5.25)
 curve = SubResource("Curve3D_8ll6l")
 
 [node name="Elevator2" parent="." unique_id=2126298352 instance=ExtResource("7_ep348")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.5, 0, 5.35)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.75, 0.575, 5.35)
 curve = SubResource("Curve3D_adkqm")
 
 [node name="Floors" type="StaticBody3D" parent="." unique_id=637706890]

@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cprc3xks5p4da" path="res://interface/computer/computer_ui.gd" id="1_l5ftk"]
 [ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_gg7v5"]
+[ext_resource type="Script" uid="uid://bx1uhltmyx3kd" path="res://interface/computer/window.gd" id="3_gg7v5"]
+[ext_resource type="PackedScene" uid="uid://sfbb53s03k5x" path="res://interface/computer/email/email.tscn" id="4_hb47q"]
+[ext_resource type="Script" uid="uid://cpyhaufoilf6r" path="res://interface/computer/window_button.gd" id="4_hxr2t"]
+[ext_resource type="PackedScene" uid="uid://b7sevpmo8eytc" path="res://interface/computer/email/ransom_email.tscn" id="5_p4xwv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o37i"]
 bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
@@ -19,6 +23,9 @@ expand_margin_top = 15.0
 expand_margin_right = 25.0
 expand_margin_bottom = 15.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khvpk"]
+bg_color = Color(0.12941177, 0, 0.031235158, 0.57254905)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak75r"]
 bg_color = Color(0.6, 0.29803923, 0.3137255, 0.1764706)
 border_width_left = 5
@@ -31,14 +38,6 @@ expand_margin_left = 4.0
 expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khvpk"]
-bg_color = Color(0.12941177, 0, 0.031235158, 0.57254905)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i82mo"]
-content_margin_left = 25.0
-content_margin_right = 25.0
-bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0.62352943)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wkss"]
 content_margin_left = 16.0
@@ -133,25 +132,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2o37i")
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Window" type="Panel" parent="PanelContainer/VBoxContainer" unique_id=986646569]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ak75r")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window" unique_id=864228829]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Toolbar" type="Panel" parent="PanelContainer/VBoxContainer/Window/VBoxContainer" unique_id=837435504]
+[node name="Toolbar" type="Panel" parent="PanelContainer/VBoxContainer" unique_id=837435504]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_khvpk")
 
-[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Toolbar" unique_id=488909013]
+[node name="WindowTitle" type="Label" parent="PanelContainer/VBoxContainer/Toolbar" unique_id=488909013]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -161,22 +148,78 @@ theme_override_font_sizes/font_size = 24
 text = "KingCode - main.py"
 vertical_alignment = 1
 
-[node name="Editor" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer" unique_id=545061102]
+[node name="WindowContainer" type="Panel" parent="PanelContainer/VBoxContainer" unique_id=986646569]
 unique_name_in_owner = true
-visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ak75r")
+
+[node name="Mail" type="VBoxContainer" parent="PanelContainer/VBoxContainer/WindowContainer" unique_id=784514722]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1192.0
+offset_bottom = 425.0
+size_flags_vertical = 3
+script = ExtResource("3_gg7v5")
+title = &"Mail"
+metadata/_custom_type_script = "uid://bx1uhltmyx3kd"
+
+[node name="SplitContainer" type="SplitContainer" parent="PanelContainer/VBoxContainer/WindowContainer/Mail" unique_id=2058957426]
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(500)
+split_offset = 500
+
+[node name="Emails" type="VBoxContainer" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer" unique_id=1298877255]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SplitContainer" type="SplitContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor" unique_id=1225677827]
+[node name="Email" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer/Emails" unique_id=2007529267 instance=ExtResource("4_hb47q")]
+layout_mode = 2
+text = "YOU'RE LATE!"
+
+[node name="Email2" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer/Emails" unique_id=1575316853 instance=ExtResource("4_hb47q")]
+layout_mode = 2
+
+[node name="Email3" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer/Emails" unique_id=659362062 instance=ExtResource("4_hb47q")]
+layout_mode = 2
+text = "yoo"
+
+[node name="Sender" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer/Emails/Email3" index="0" unique_id=579698718]
+text = "John Job"
+
+[node name="Email4" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer/Emails" unique_id=291661277 instance=ExtResource("5_p4xwv")]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer" unique_id=1112030619]
+layout_mode = 2
+
+[node name="MailTitle" type="Label" parent="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer/Panel" unique_id=1641242604]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Editor" type="VBoxContainer" parent="PanelContainer/VBoxContainer/WindowContainer" unique_id=1354914843]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 1192.0
+offset_bottom = 210.0
+size_flags_vertical = 3
+script = ExtResource("3_gg7v5")
+title = &"Editor"
+metadata/_custom_type_script = "uid://bx1uhltmyx3kd"
+
+[node name="SplitContainer" type="SplitContainer" parent="PanelContainer/VBoxContainer/WindowContainer/Editor" unique_id=1225677827]
 layout_mode = 2
 size_flags_vertical = 3
 split_offsets = PackedInt32Array(125)
 split_offset = 125
 
-[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer" unique_id=1257508974]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer" unique_id=1257508974]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer/Panel" unique_id=2109297988]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer/Panel" unique_id=2109297988]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -184,13 +227,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer/Panel/VBoxContainer" unique_id=365510886]
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer/Panel/VBoxContainer" unique_id=365510886]
 layout_mode = 2
 text = "main.py"
 alignment = 0
 
-[node name="CodeEdit" type="CodeEdit" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Editor/SplitContainer" unique_id=716707703]
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer" unique_id=1579146112]
 layout_mode = 2
+
+[node name="TextInput" type="CodeEdit" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer/Control" unique_id=716707703]
+unique_name_in_owner = true
+z_index = 500
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 24
 scroll_smooth = true
@@ -199,40 +253,25 @@ code_completion_enabled = true
 indent_automatic = true
 auto_brace_completion_enabled = true
 
-[node name="Mail" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer" unique_id=918631823]
+[node name="TextGoal" type="CodeEdit" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer/Control" unique_id=2050397735]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail" unique_id=1298877255]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Email" type="Button" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail/VBoxContainer" unique_id=636333455]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_i82mo")
-text = "Email 1"
-
-[node name="Sender" type="Label" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail/VBoxContainer/Email" unique_id=630611874]
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 61.0
-grow_vertical = 2
-text = "Mr. Baus"
-vertical_alignment = 1
-
-[node name="Time" type="Label" parent="PanelContainer/VBoxContainer/Window/VBoxContainer/Mail/VBoxContainer/Email" unique_id=644456572]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -61.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
-text = "9:00 PM"
-vertical_alignment = 1
+mouse_filter = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "Copy Me!"
+editable = false
+wrap_mode = 1
+scroll_smooth = true
+caret_blink = true
+code_completion_enabled = true
+indent_automatic = true
+auto_brace_completion_enabled = true
 
 [node name="Taskbar" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=407742463]
 layout_mode = 2
@@ -266,11 +305,17 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -10.0
+offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mseoi")
 
-[node name="Editor" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=723783639]
+[node name="WindowButtons" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=874769470]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Mail" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/WindowButtons" unique_id=488951479 node_paths=PackedStringArray("window")]
 z_index = 15
 z_as_relative = false
 layout_mode = 2
@@ -279,9 +324,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p4xwv")
 theme_override_styles/focus = SubResource("StyleBoxFlat_p4xwv")
-text = "King Code"
+text = "Mail"
+script = ExtResource("4_hxr2t")
+window = NodePath("../../../../WindowContainer/Mail")
+metadata/_custom_type_script = "uid://cpyhaufoilf6r"
 
-[node name="Mail" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=1953223054]
+[node name="Editor" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/WindowButtons" unique_id=1034160315 node_paths=PackedStringArray("window")]
 z_index = 15
 z_as_relative = false
 layout_mode = 2
@@ -290,8 +338,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p4xwv")
 theme_override_styles/focus = SubResource("StyleBoxFlat_p4xwv")
-text = "BMail"
+text = "Editor"
+script = ExtResource("4_hxr2t")
+window = NodePath("../../../../WindowContainer/Editor")
+metadata/_custom_type_script = "uid://cpyhaufoilf6r"
 
+[connection signal="text_changed" from="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer/Control/TextInput" to="." method="_on_input_text_changed"]
 [connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Power" to="." method="toggle" binds= [false]]
-[connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Editor" to="." method="_on_editor_button_down"]
-[connection signal="button_down" from="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/Mail" to="." method="_on_mail_button_down"]
+
+[editable path="PanelContainer/VBoxContainer/WindowContainer/Mail/SplitContainer/Emails/Email3"]

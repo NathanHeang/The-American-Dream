@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://7if2qn711pxj" path="res://main/environment.gd" id="4_4vlnp"]
 [ext_resource type="Script" uid="uid://dokahwepkongs" path="res://city/city.gd" id="4_f5dlx"]
 [ext_resource type="PackedScene" uid="uid://c2h82806ok7wp" path="res://player/plr.tscn" id="5_0n2ln"]
-[ext_resource type="PackedScene" uid="uid://bsfuhtbblny04" path="res://interface/cursor/cursor.tscn" id="6_l4f45"]
 [ext_resource type="Script" uid="uid://qtulwlyrupbe" path="res://interface/interface.gd" id="6_o1hu8"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="8_s472e"]
 [ext_resource type="PackedScene" uid="uid://baxy4m65bx1n1" path="res://interface/computer/monitor_ui.tscn" id="9_4vlnp"]
@@ -42,9 +41,10 @@ fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
 
 [node name="Root" type="Node" unique_id=256912048]
 
-[node name="Audio" type="Node" parent="." unique_id=1457674082]
+[node name="Audio" type="Node" parent="." unique_id=1946168339]
 
-[node name="Soundtrack" type="AudioStreamPlayer" parent="Audio" unique_id=97903917]
+[node name="Soundtrack" type="AudioStreamPlayer" parent="Audio" unique_id=777516093]
+unique_name_in_owner = true
 stream = ExtResource("2_4vlnp")
 autoplay = true
 parameters/looping = true
@@ -63,7 +63,7 @@ night_sky_color_2 = Color(0.18566525, 0.20150667, 0.32072333, 1)
 
 [node name="City" type="Node3D" parent="World/Map" unique_id=1594716732]
 script = ExtResource("4_f5dlx")
-size = Vector2i(30, 50)
+size = Vector2i(20, 20)
 
 [node name="Player" parent="World" unique_id=1039902304 instance=ExtResource("5_0n2ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
@@ -72,33 +72,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
 layer = 999
 script = ExtResource("6_o1hu8")
 
-[node name="Cursor" parent="Interface" unique_id=925991105 instance=ExtResource("6_l4f45")]
-offset_left = 940.0
-offset_top = 520.0
-offset_right = 940.0
-offset_bottom = 520.0
-
 [node name="PauseMenu" parent="Interface" unique_id=1499448151 instance=ExtResource("8_s472e")]
 visible = false
 z_index = 999
 
-[node name="Computer" parent="Interface" unique_id=1562590722 instance=ExtResource("9_4vlnp")]
+[node name="Menus" type="Control" parent="Interface" unique_id=366460559]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Computer" parent="Interface/Menus" unique_id=1562590722 instance=ExtResource("9_4vlnp")]
 unique_name_in_owner = true
 visible = false
 z_index = 1
 y_sort_enabled = true
+layout_mode = 1
+offset_bottom = 25.0
 
 [node name="DialogueHandler" parent="Interface" unique_id=412039055 instance=ExtResource("9_b0ecn")]
 visible = false
 z_index = 500
 y_sort_enabled = true
 
-[node name="Time" parent="Interface" unique_id=425463166 instance=ExtResource("10_h2wah")]
+[node name="Hud" type="Control" parent="Interface" unique_id=95498926]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Time" parent="Interface/Hud" unique_id=425463166 instance=ExtResource("10_h2wah")]
 z_index = 2
 y_sort_enabled = true
-offset_left = -193.0
-offset_right = 193.0
+layout_mode = 1
+offset_left = 427.0
+offset_right = 813.0
 
-[node name="Balance" parent="Interface" unique_id=1545020258 instance=ExtResource("11_nd8au")]
+[node name="Balance" parent="Interface/Hud" unique_id=1545020258 instance=ExtResource("11_nd8au")]
 unique_name_in_owner = true
 y_sort_enabled = true
+layout_mode = 1
+offset_top = 586.0
+offset_bottom = 680.0

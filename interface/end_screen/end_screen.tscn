@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://cmviiit7472rc"]
+
+[ext_resource type="Script" uid="uid://wxg37wukesei" path="res://interface/end_screen/end_screen.gd" id="1_dbrmp"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="2_gcnoh"]
+[ext_resource type="StyleBox" uid="uid://bv4xsxd5dewf3" path="res://generic/styles/button.tres" id="5_jfj31"]
+[ext_resource type="StyleBox" uid="uid://hgdic4qp2klm" path="res://generic/styles/button_pressed.tres" id="6_6h64u"]
+[ext_resource type="AudioStream" uid="uid://cjg486wviw8hs" path="res://generic/audio/soundtracks/intermission.ogg" id="8_fin84"]
+[ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://generic/shaders/pattern_bg.gdshader" id="9_jleqc"]
+[ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://generic/textures/dollar.png" id="10_qgrwb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
+bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 50.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhiq2"]
+shader = ExtResource("9_jleqc")
+shader_parameter/pattern = ExtResource("10_qgrwb")
+shader_parameter/pattern_color = Color(0.27322236, 0.43988907, 0.1342079, 1)
+shader_parameter/tiling = 200.0
+shader_parameter/speed = Vector2(0.2, 1)
+shader_parameter/rotation = 0.06481481950484991
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gj216"]
+shader = ExtResource("9_jleqc")
+shader_parameter/pattern = ExtResource("10_qgrwb")
+shader_parameter/pattern_color = Color(0.27322236, 0.43988907, 0.1342079, 1)
+shader_parameter/tiling = 50.0
+shader_parameter/speed = Vector2(-2, -0.5)
+shader_parameter/rotation = 0.7148148503798497
+
+[node name="EndScreen" type="Control" unique_id=1558530067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dbrmp")
+
+[node name="InnerBackground" type="Panel" parent="." unique_id=423548258]
+material = ExtResource("2_gcnoh")
+custom_maximum_size = Vector2(-1, 550)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 85.0
+offset_right = -100.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
+
+[node name="EndScreen" type="Control" parent="InnerBackground" unique_id=1397074319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="InnerBackground/EndScreen" unique_id=2092457200]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "END OF DAY 1"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="InnerBackground/EndScreen" unique_id=769278880]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -44.0
+offset_right = 106.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "AAAAA"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="InnerBackground/EndScreen" unique_id=136825928]
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 0
+offset_left = 390.0
+offset_top = 475.0
+offset_right = 690.0
+offset_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("5_jfj31")
+theme_override_styles/pressed = ExtResource("6_6h64u")
+theme_override_styles/hover = ExtResource("6_6h64u")
+text = "Return to Title"
+
+[node name="Music" type="AudioStreamPlayer" parent="InnerBackground/EndScreen" unique_id=82386520]
+unique_name_in_owner = true
+stream = ExtResource("8_fin84")
+autoplay = true
+parameters/looping = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=2079974494]
+z_index = -100
+z_as_relative = false
+material = SubResource("ShaderMaterial_rhiq2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background2" type="ColorRect" parent="." unique_id=148863896]
+z_index = -100
+z_as_relative = false
+material = SubResource("ShaderMaterial_gj216")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="button_down" from="InnerBackground/EndScreen/Return" to="." method="_on_return_button_down"]

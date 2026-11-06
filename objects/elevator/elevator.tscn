@@ -2,27 +2,48 @@
 
 [ext_resource type="Script" uid="uid://djtfy558q4rq5" path="res://objects/elevator/elevator.gd" id="1_cx38q"]
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="2_cx38q"]
+[ext_resource type="Material" uid="uid://cd4ceqy2ajm4p" path="res://generic/materials/metal.tres" id="2_xeh55"]
+[ext_resource type="Material" uid="uid://j7r5uw3qsh2p" path="res://generic/materials/clear_glass.tres" id="3_icm76"]
 
 [sub_resource type="Curve3D" id="Curve3D_yhp3w"]
 resource_local_to_scene = true
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36.5, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_qfrg1"]
+material = ExtResource("2_xeh55")
 size = Vector3(5, 5, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hbdww"]
+material = ExtResource("3_icm76")
 size = Vector3(5, 0.1, 5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cx38q"]
+material = ExtResource("3_icm76")
 size = Vector3(2, 0.1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_icm76"]
+material = ExtResource("3_icm76")
+size = Vector3(1, 0.1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbdww"]
 size = Vector3(5, 5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7v7py"]
+size = Vector3(0.5, 5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xeh55"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_icm76"]
+size = Vector3(2, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hjt4"]
+size = Vector3(1, 0.1, 2)
 
 [sub_resource type="Animation" id="Animation_cx38q"]
 length = 0.001
@@ -38,11 +59,40 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PathFollow3D:progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xeh55"]
+resource_name = "floor_0"
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_ends6"]
 resource_name = "move"
 length = 4.0
 loop_mode = 1
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,15 +100,16 @@ tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xeh55"]
 _data = {
 &"RESET": SubResource("Animation_cx38q"),
+&"floor_0": SubResource("Animation_xeh55"),
 &"move": SubResource("Animation_ends6")
 }
 
@@ -79,13 +130,14 @@ script = ExtResource("1_cx38q")
 transform = Transform3D(0.99993235, 0, 0, 0, 0.9999354, 0, 0, 0, 0.99997544, 0, 0, 0)
 rotation_mode = 0
 use_model_front = true
+loop = false
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D" unique_id=1260386398]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
 remote_path = NodePath("../../AnimatableBody3D")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1080791252]
-transform = Transform3D(-4.3708432e-08, 0.99993235, -4.3708432e-08, 0, -4.3708564e-08, -0.9999354, -0.99997544, -4.3710315e-08, 1.9106385e-15, 0, 0, 0)
+transform = Transform3D(-4.3708432e-08, 0.99993235, -4.3708432e-08, 0, -4.3708564e-08, -0.9999354, -0.99997544, -4.3710315e-08, 1.9106385e-15, 0, 36.499996, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=702225812]
 mesh = SubResource("BoxMesh_qfrg1")
@@ -106,6 +158,10 @@ mesh = SubResource("BoxMesh_hbdww")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.5, -1.5, -2.5)
 mesh = SubResource("BoxMesh_cx38q")
 
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1579855877]
+transform = Transform3D(-4.3711392e-08, -1, 2.1175824e-22, 1, -4.3711392e-08, -8.351872e-23, -3.5527137e-15, 0, 1, -2.5, 0, -4)
+mesh = SubResource("BoxMesh_icm76")
+
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1285995915]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.5, 1.5, -2.5)
 mesh = SubResource("BoxMesh_cx38q")
@@ -115,20 +171,53 @@ transform = Transform3D(1, 0, 0, 0, 1, -8.352216e-23, 0, -8.351527e-23, 1, 0, 0,
 mesh = SubResource("BoxMesh_qfrg1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1871832887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
 shape = SubResource("BoxShape3D_hbdww")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=791197804]
+transform = Transform3D(0.9238795, -1.0658141e-14, 0.38268346, 0, 1, 8.881784e-15, -0.38268346, -1.0658141e-14, 0.9238795, -2.8140967, -2.538627e-10, 0.09428406)
+shape = SubResource("BoxShape3D_7v7py")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=488522045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, -5)
+shape = SubResource("BoxShape3D_hbdww")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1687907007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -2.5)
+shape = SubResource("BoxShape3D_xeh55")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1850089277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2.5)
+shape = SubResource("BoxShape3D_xeh55")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1814206675]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.5, 0, -2.5)
+shape = SubResource("BoxShape3D_xeh55")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=162481865]
+transform = Transform3D(-4.3711392e-08, -1, 2.1175824e-22, 1, -4.3711392e-08, -8.351872e-23, -3.5527137e-15, 0, 1, -2.4999998, -1.5000001, -2.5000038)
+shape = SubResource("BoxShape3D_icm76")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=521431743]
+transform = Transform3D(-4.3711395e-08, -1, 4.2351647e-22, 1, -4.3711395e-08, -8.3518705e-23, -7.1054274e-15, 0, 1, -2.4999998, 1.1368684e-13, -4)
+shape = SubResource("BoxShape3D_0hjt4")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=2137226537]
+transform = Transform3D(-4.3711395e-08, -1, 4.2351647e-22, 1, -4.3711395e-08, -8.3518705e-23, -7.1054274e-15, 0, 1, -2.5, 1.5, -2.5)
+shape = SubResource("BoxShape3D_icm76")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody3D" unique_id=2123295500]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_xeh55")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1144454958]
-transform = Transform3D(2.1316282e-14, 0.99999994, 1.4823077e-21, -1, 0, -8.351866e-23, 2.1316282e-14, -3.552714e-15, 1, -2.44, -1.5000001, -1.9999999)
-mesh = SubResource("PlaneMesh_hbdww")
-surface_material_override/0 = SubResource("StandardMaterial3D_cx38q")
-
 [node name="InteractionComponent" parent="AnimatableBody3D" unique_id=1156491162 node_paths=PackedStringArray("nodes_to_notify") instance=ExtResource("2_cx38q")]
 interaction_type = 1
 nodes_to_notify = [NodePath("../..")]
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1144454958]
+transform = Transform3D(2.4868996e-14, 0.99999994, 1.6940659e-21, -1, 0, -8.3518654e-23, 2.4868996e-14, -3.552714e-15, 1, -2.44, -1.5000002, -2)
+mesh = SubResource("PlaneMesh_hbdww")
+surface_material_override/0 = SubResource("StandardMaterial3D_cx38q")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=304627126]
 transform = Transform3D(1, -1.0658141e-14, 6.352747e-22, 0, 1, -8.35187e-23, 6.352747e-22, -1.0658141e-14, 1, -2.44, -1.5000001, -1.9999999)

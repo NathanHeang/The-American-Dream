@@ -4,11 +4,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4apfu"]
 
-[node name="NPC" type="StaticBody3D" unique_id=1181042947]
+[node name="NPC" type="RigidBody3D" unique_id=1446500269]
+axis_lock_angular_y = true
 script = ExtResource("1_2xp5l")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=151256720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+centered = false
+offset = Vector2(0, -0.5)
 pixel_size = 0.0075
 billboard = 2
 shaded = true
@@ -17,3 +20,8 @@ double_sided = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1272038689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_4apfu")
+
+[node name="ChangeDirection" type="Timer" parent="." unique_id=384813663]
+autostart = true
+
+[connection signal="timeout" from="ChangeDirection" to="." method="_on_change_direction_timeout"]

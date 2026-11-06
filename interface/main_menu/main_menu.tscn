@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://hgdic4qp2klm" path="res://generic/styles/button_pressed.tres" id="6_qt2eg"]
 [ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://generic/shaders/pattern_bg.gdshader" id="7_db0k2"]
 [ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://generic/textures/dollar.png" id="8_cr5ul"]
+[ext_resource type="AudioStream" uid="uid://cjg486wviw8hs" path="res://generic/audio/soundtracks/intermission.ogg" id="8_fx8gq"]
 [ext_resource type="AudioStream" uid="uid://gb6rlqb6qxc5" path="res://generic/audio/soundtracks/title.ogg" id="9_38238"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
@@ -51,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dff57")
 
-[node name="PanelContainer" type="Panel" parent="." unique_id=423548258]
+[node name="InnerBackground" type="Panel" parent="." unique_id=423548258]
 material = ExtResource("2_fx8gq")
 custom_maximum_size = Vector2(-1, 550)
 layout_mode = 1
@@ -66,12 +67,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
 
-[node name="TitleScreen" type="Control" parent="PanelContainer" unique_id=1397074319]
+[node name="TitleScreen" type="Control" parent="InnerBackground" unique_id=1397074319]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Icon" type="TextureRect" parent="PanelContainer/TitleScreen" unique_id=1566484819]
+[node name="Icon" type="TextureRect" parent="InnerBackground/TitleScreen" unique_id=1566484819]
 unique_name_in_owner = true
 material = ExtResource("3_hm0ms")
 layout_mode = 1
@@ -89,7 +90,7 @@ grow_vertical = 0
 texture = ExtResource("4_7piqx")
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/TitleScreen" unique_id=2104580251]
+[node name="HBoxContainer" type="HBoxContainer" parent="InnerBackground/TitleScreen" unique_id=2104580251]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -105,7 +106,7 @@ grow_vertical = 0
 theme_override_constants/separation = 256
 alignment = 1
 
-[node name="Play" type="Button" parent="PanelContainer/TitleScreen/HBoxContainer" unique_id=136825928]
+[node name="Play" type="Button" parent="InnerBackground/TitleScreen/HBoxContainer" unique_id=136825928]
 custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -117,7 +118,7 @@ theme_override_styles/pressed = ExtResource("6_qt2eg")
 theme_override_styles/hover = ExtResource("6_qt2eg")
 text = "Wake Up"
 
-[node name="Quit" type="Button" parent="PanelContainer/TitleScreen/HBoxContainer" unique_id=2015566803]
+[node name="Quit" type="Button" parent="InnerBackground/TitleScreen/HBoxContainer" unique_id=2015566803]
 custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -128,6 +129,77 @@ theme_override_styles/normal = ExtResource("5_rkwbc")
 theme_override_styles/pressed = ExtResource("6_qt2eg")
 theme_override_styles/hover = ExtResource("6_qt2eg")
 text = "Give Up"
+
+[node name="TitleScreenMusic" type="AudioStreamPlayer" parent="InnerBackground/TitleScreen" unique_id=82386520]
+unique_name_in_owner = true
+stream = ExtResource("9_38238")
+parameters/looping = true
+
+[node name="Guide" type="Control" parent="InnerBackground" unique_id=288461578]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="InnerBackground/Guide" unique_id=1464400977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Make it to work before 9:00 AM
+Do what your boss says to earn money.
+He'll email you, your computer is on the second floor.
+Make enough money to survive."
+
+[node name="GuideMusic" type="AudioStreamPlayer" parent="InnerBackground/Guide" unique_id=1404583744]
+unique_name_in_owner = true
+stream = ExtResource("8_fx8gq")
+parameters/looping = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InnerBackground/Guide" unique_id=163281675]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -536.0
+offset_top = -542.0
+offset_right = 536.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 256
+alignment = 1
+
+[node name="Continue" type="Button" parent="InnerBackground/Guide/HBoxContainer2" unique_id=144641588]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("5_rkwbc")
+theme_override_styles/pressed = ExtResource("6_qt2eg")
+theme_override_styles/hover = ExtResource("6_qt2eg")
+text = "Continue"
+
+[node name="Back" type="Button" parent="InnerBackground/Guide/HBoxContainer2" unique_id=2068430609]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("5_rkwbc")
+theme_override_styles/pressed = ExtResource("6_qt2eg")
+theme_override_styles/hover = ExtResource("6_qt2eg")
+text = "Return"
 
 [node name="Background" type="ColorRect" parent="." unique_id=2079974494]
 z_index = -100
@@ -155,10 +227,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=82386520]
-unique_name_in_owner = true
-stream = ExtResource("9_38238")
-parameters/looping = true
-
-[connection signal="button_down" from="PanelContainer/TitleScreen/HBoxContainer/Play" to="." method="_on_play_button_down"]
-[connection signal="button_down" from="PanelContainer/TitleScreen/HBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="InnerBackground/TitleScreen/HBoxContainer/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="InnerBackground/TitleScreen/HBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="InnerBackground/Guide/HBoxContainer2/Continue" to="." method="_on_continue_button_down"]
+[connection signal="button_down" from="InnerBackground/Guide/HBoxContainer2/Back" to="." method="_on_back_button_down"]

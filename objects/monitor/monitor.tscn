@@ -16,7 +16,7 @@ size = Vector3(0.5, 0.25, 0.125)
 [node name="monitor" unique_id=818471605 instance=ExtResource("1_66aw8")]
 script = ExtResource("2_rsw7j")
 
-[node name="Cube" parent="." index="0" unique_id=886975617]
+[node name="Cube" parent="." index="0" unique_id=1840446098]
 surface_material_override/1 = SubResource("StandardMaterial3D_ae51a")
 
 [node name="Screen" type="StaticBody3D" parent="." index="1" unique_id=940183229]
