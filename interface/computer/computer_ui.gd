@@ -54,7 +54,8 @@ var dictionary = [
 func randomize_goal()->void:
 	var goal = ""
 	for i in range(randi_range(10, 50)):
-		goal += dictionary[randi_range(0, dictionary.length())] + " "
+		goal += dictionary[randi_range(0, dictionary.size()-1)] + " "
+	text_input.text = ""
 	text_goal.text = goal
 	last_match = -1
 

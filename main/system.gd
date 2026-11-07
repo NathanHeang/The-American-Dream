@@ -19,6 +19,14 @@ var time:int = 28800: #in seconds, starting at 8 am
 		time = new
 		time_changed.emit(old, new)
 		
+var day:int = 16
+
+var time_string:String:
+	get():
+		var mins = int(time / 60) % 60
+		var hr = int(time / 3600) % 24
+		return "November %2d - %02d:%02d" % [day, hr, mins]
+		
 var mouse_mode:Input.MouseMode = Input.MOUSE_MODE_HIDDEN:
 	set(new):
 		mouse_mode = new
@@ -34,13 +42,6 @@ var is_in_menu:bool:
 					return true
 		return false
 		
-var time_string:String:
-	get():
-		var mins = int(time / 60) % 60
-		var hr = int(time / 3600) % 24
-		var dy = time / 86400 + 1
-		return "November %2d - %02d:%02d" % [dy, hr, mins]
-		
 @onready var event_timer: Timer = %EventTimer
 
 var started:bool = false
@@ -48,11 +49,13 @@ var required_money:float = 2000
 
 func _process(_dt: float) -> void:
 	if started:
-		time+=10
+		time+=1
 		if time >= 61200:
 			end_day()
 
 func start_day()->void:
+	day+=1
+	time = 0
 	started = true
 	event_timer.start()
 	
