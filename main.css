@@ -110,6 +110,9 @@ img.portrait{
     animation-fill-mode: forwards;
     height: 55px;
     width: 410px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 div.download_button{
@@ -138,6 +141,7 @@ nav{
     margin-top: -20px;
     margin-left: -20px;
     margin-right: -16px;
+    overflow: auto;
 }
 
 ul {
@@ -147,6 +151,7 @@ ul {
     overflow: hidden;
     list-style-type: none;
     display: flex;
+    overflow: auto;
     li {
         a {
             display: block;
