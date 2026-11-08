@@ -9,7 +9,9 @@
 [ext_resource type="Shader" uid="uid://vxwl3f0luu2u" path="res://generic/shaders/pattern_bg.gdshader" id="7_db0k2"]
 [ext_resource type="Texture2D" uid="uid://cajsx5npdcm3t" path="res://generic/textures/dollar.png" id="8_cr5ul"]
 [ext_resource type="AudioStream" uid="uid://cjg486wviw8hs" path="res://generic/audio/soundtracks/intermission.ogg" id="8_fx8gq"]
+[ext_resource type="Texture2D" uid="uid://d05s1uo75vt6x" path="res://generic/textures/mouse_left.png" id="9_7piqx"]
 [ext_resource type="AudioStream" uid="uid://gb6rlqb6qxc5" path="res://generic/audio/soundtracks/title.ogg" id="9_38238"]
+[ext_resource type="Texture2D" uid="uid://b1h61f3mx5u5m" path="res://generic/textures/blank_keyboard_key_icon.png" id="10_rkwbc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t54v"]
 bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
@@ -68,6 +70,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
 
 [node name="TitleScreen" type="Control" parent="InnerBackground" unique_id=1397074319]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -136,26 +139,12 @@ stream = ExtResource("9_38238")
 parameters/looping = true
 
 [node name="Guide" type="Control" parent="InnerBackground" unique_id=288461578]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="InnerBackground/Guide" unique_id=1464400977]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "Make it to work before 9:00 AM
-Do what your boss says to earn money.
-He'll email you, your computer is on the second floor.
-Make enough money to survive."
 
 [node name="GuideMusic" type="AudioStreamPlayer" parent="InnerBackground/Guide" unique_id=1404583744]
 unique_name_in_owner = true
@@ -200,6 +189,138 @@ theme_override_styles/normal = ExtResource("5_rkwbc")
 theme_override_styles/pressed = ExtResource("6_qt2eg")
 theme_override_styles/hover = ExtResource("6_qt2eg")
 text = "Return"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InnerBackground/Guide" unique_id=1947432532]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer" unique_id=1464400977]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Find your office in the center of the city.
+Your boss will email you.
+Do well to make enough money to survive."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InnerBackground/Guide/VBoxContainer" unique_id=1139352168]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer" unique_id=456292167]
+layout_mode = 2
+texture = ExtResource("9_7piqx")
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer" unique_id=29298641]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Primary Interaction
+Holding down and dragging opens doors."
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InnerBackground/Guide/VBoxContainer" unique_id=954972661]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2" unique_id=123867696]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+texture = ExtResource("10_rkwbc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2/TextureRect" unique_id=2115879742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2" unique_id=354992768]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+texture = ExtResource("10_rkwbc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2/TextureRect2" unique_id=580522033]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2" unique_id=1700017804]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+texture = ExtResource("10_rkwbc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2/TextureRect3" unique_id=626478510]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2" unique_id=753832396]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+texture = ExtResource("10_rkwbc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2/TextureRect4" unique_id=814382161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer2" unique_id=1062130231]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Move"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="InnerBackground/Guide/VBoxContainer" unique_id=876055132]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer3" unique_id=681825444]
+custom_minimum_size = Vector2(215, 25)
+layout_mode = 2
+texture = ExtResource("10_rkwbc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer3/TextureRect" unique_id=1998944207]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="InnerBackground/Guide/VBoxContainer/HBoxContainer3" unique_id=1428504009]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jump"
 
 [node name="Background" type="ColorRect" parent="." unique_id=2079974494]
 z_index = -100
