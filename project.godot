@@ -406,4 +406,3 @@ joypads/ignore_joypad_on_unfocused_application=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="8_s472e"]
 [ext_resource type="PackedScene" uid="uid://baxy4m65bx1n1" path="res://interface/computer/monitor_ui.tscn" id="9_4vlnp"]
 [ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="9_b0ecn"]
+[ext_resource type="PackedScene" uid="uid://cckbqyvt4f2d8" path="res://objects/elevator/elevator_ui.tscn" id="9_y1rx7"]
 [ext_resource type="PackedScene" uid="uid://ckv43aclwk4yi" path="res://interface/time_hud/time_hud.tscn" id="10_h2wah"]
 [ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://interface/balance_hud/balance_hud.tscn" id="11_nd8au"]
 
@@ -69,7 +70,7 @@ size = Vector2i(20, 20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=1952002842]
-layer = 999
+layer = 5
 script = ExtResource("6_o1hu8")
 
 [node name="PauseMenu" parent="Interface" unique_id=1499448151 instance=ExtResource("8_s472e")]
@@ -92,6 +93,11 @@ z_index = 1
 y_sort_enabled = true
 layout_mode = 1
 offset_bottom = 25.0
+
+[node name="Elevator" parent="Interface/Menus" unique_id=1495858402 instance=ExtResource("9_y1rx7")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [node name="DialogueHandler" parent="Interface" unique_id=412039055 instance=ExtResource("9_b0ecn")]
 visible = false

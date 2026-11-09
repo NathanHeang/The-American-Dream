@@ -1,70 +1,141 @@
 [gd_scene format=3 uid="uid://cckbqyvt4f2d8"]
 
-[node name="ElevatorUI" type="Control" unique_id=1495858402]
+[ext_resource type="Script" uid="uid://dq3s01n40pue6" path="res://objects/elevator/elevator_ui.gd" id="1_jccnq"]
+[ext_resource type="Material" uid="uid://dlurdwsdvwjan" path="res://generic/materials/blur.tres" id="1_xmx0c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jccnq"]
+content_margin_left = 100.0
+content_margin_right = 100.0
+bg_color = Color(0.21176471, 0.023529412, 0.105882354, 0.49019608)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30980393, 0.8, 0.5568628, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 25.0
+expand_margin_top = 15.0
+expand_margin_right = 25.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmx0c"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.17578125, 0.008792229, 0.04181265, 0.6)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_livlf"]
+bg_color = Color(0.050980393, 0.050980393, 0.14509805, 0.654902)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Elevator" type="Control" unique_id=1495858402]
+z_index = 50
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 65.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jccnq")
 
-[node name="Floors" type="GridContainer" parent="." unique_id=1337614527]
-unique_name_in_owner = true
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=257473808]
+material = ExtResource("1_xmx0c")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = -40.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jccnq")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=685852330]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xmx0c")
+
+[node name="Floors" type="GridContainer" parent="PanelContainer/PanelContainer" unique_id=1337614527]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 columns = 3
 
-[node name="0" type="Button" parent="Floors" unique_id=356146991]
+[node name="0" type="Button" parent="PanelContainer/PanelContainer/Floors" unique_id=356146991]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_livlf")
 text = "0
 "
 
-[node name="1" type="Button" parent="Floors" unique_id=1161857695]
+[node name="1" type="Button" parent="PanelContainer/PanelContainer/Floors" unique_id=1161857695]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_livlf")
 text = "1"
 
-[node name="2" type="Button" parent="Floors" unique_id=2114890638]
+[node name="2" type="Button" parent="PanelContainer/PanelContainer/Floors" unique_id=2114890638]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_livlf")
 text = "2
 "
 
-[node name="3" type="Button" parent="Floors" unique_id=1326457412]
+[node name="3" type="Button" parent="PanelContainer/PanelContainer/Floors" unique_id=1326457412]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_livlf")
 text = "3"
 
-[node name="4" type="Button" parent="Floors" unique_id=1793725130]
+[node name="4" type="Button" parent="PanelContainer/PanelContainer/Floors" unique_id=1793725130]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_livlf")
 text = "4"
 
-[node name="5" type="Button" parent="Floors" unique_id=71671948]
+[node name="5" type="Button" parent="PanelContainer/PanelContainer/Floors" unique_id=71671948]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_livlf")
 text = "5"
 
-[node name="6" type="Button" parent="Floors" unique_id=47554613]
+[node name="6" type="Button" parent="PanelContainer/PanelContainer/Floors" unique_id=47554613]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_livlf")
 text = "6"

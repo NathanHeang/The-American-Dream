@@ -1,8 +1,6 @@
 extends Control
 class_name ComputerUI
 
-@onready var monitor: Node3D
-
 @onready var window_buttons: HBoxContainer = %WindowButtons
 @onready var window_container: Panel = %WindowContainer
 @onready var window_title: Label = %WindowTitle

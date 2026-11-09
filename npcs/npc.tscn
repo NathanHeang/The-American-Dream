@@ -11,7 +11,7 @@ script = ExtResource("1_2xp5l")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=151256720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 centered = false
-offset = Vector2(0, -0.5)
+offset = Vector2(0, -0.75)
 pixel_size = 0.0075
 billboard = 2
 shaded = true

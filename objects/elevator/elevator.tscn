@@ -137,7 +137,7 @@ transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -
 remote_path = NodePath("../../AnimatableBody3D")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1080791252]
-transform = Transform3D(-4.3708432e-08, 0.99993235, -4.3708432e-08, 0, -4.3708564e-08, -0.9999354, -0.99997544, -4.3710315e-08, 1.9106385e-15, 0, 36.499996, 0)
+transform = Transform3D(-4.3708432e-08, 0.99993235, -4.3708432e-08, 0, -4.3708564e-08, -0.9999354, -0.99997544, -4.3710315e-08, 1.9106385e-15, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=702225812]
 mesh = SubResource("BoxMesh_qfrg1")

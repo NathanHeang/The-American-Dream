@@ -6,9 +6,9 @@
 [node name="System" type="Node" unique_id=55206194]
 script = ExtResource("1_24lf8")
 
+[node name="Cursor" parent="." unique_id=925991105 instance=ExtResource("2_2oc78")]
+
 [node name="EventTimer" type="Timer" parent="." unique_id=648550439]
 unique_name_in_owner = true
-
-[node name="Cursor" parent="." unique_id=925991105 instance=ExtResource("2_2oc78")]
 
 [connection signal="timeout" from="EventTimer" to="." method="_on_event"]
