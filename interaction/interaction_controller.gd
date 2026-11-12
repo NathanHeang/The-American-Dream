@@ -7,9 +7,9 @@ var current_obj:Object
 var last_potential_obj:Object
 var interaction_component:InteractionComponent
 
-signal focused(obj_name:String)
+signal focused(description:String)
 signal unfocused()
-signal interacted(obj_name:String)
+signal interacted()
 signal stopped_interacting()
 
 func _process(_dt:float)->void:
@@ -36,7 +36,7 @@ func _process(_dt:float)->void:
 			if interaction_component:
 				if interaction_component.can_interact == false:
 					return
-				focused.emit(potential_obj.name)
+				focused.emit(interaction_component.description if interaction_component.description else "")
 				last_potential_obj = potential_obj
 				if Input.is_action_pressed("primary"):
 					current_obj = potential_obj

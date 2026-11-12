@@ -28,3 +28,4 @@ shape = SubResource("BoxShape3D_0pwtw")
 [node name="InteractionComponent" parent="Pivot/Door" unique_id=1156491162 node_paths=PackedStringArray("obj_ref") instance=ExtResource("2_jqphq")]
 obj_ref = NodePath("..")
 interaction_type = 2
+description = "Open or close door | Drag mouse up or down"

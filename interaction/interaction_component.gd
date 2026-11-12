@@ -15,6 +15,7 @@ enum InteractionType{
 @export var max_rot:float=90
 @export var nodes_to_notify:Array[Node]
 @export var dialogue_id:StringName
+@export var description:String
 
 var can_interact:bool = true
 var is_front:bool = false

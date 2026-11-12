@@ -84,10 +84,10 @@ func _handle_ground_physics(dt:float)->void:
 	
 	var control = max(velocity.length(), ground_deccel)
 	var drop = control * ground_friction * dt
-	var speed = max(velocity.length() - drop, 0.0)
+	var final_speed = max(velocity.length() - drop, 0.0)
 	if velocity.length() > 0:
-		speed /= velocity.length()
-	velocity *= speed
+		final_speed /= velocity.length()
+	velocity *= final_speed
 	
 	headbob(dt)
 

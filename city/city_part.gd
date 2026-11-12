@@ -15,4 +15,4 @@ func _ready() -> void:
 		if randi_range(0, 5) == 0:
 			var poster = Poster.new()
 			poster.position = Vector3(randf_range(-4, 4), randf_range(0, 4), randf_range(-4, 4))
-			add_child(poster)
+			#add_child(poster)

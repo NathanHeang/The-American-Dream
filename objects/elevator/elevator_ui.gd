@@ -1,17 +1,19 @@
 extends Control
 class_name ElevatorUI
 
-@onready var elevator:Path3D
+@onready var elevator:Elevator
 @onready var floors:GridContainer = %Floors
 
 func _ready() -> void:
 	for button:Button in floors.get_children():
 		button.button_down.connect(func ():
-			elevator.call("change_floor", int(button.name))
 			toggle(false)
+			elevator.call("change_floor", int(button.name))
 			)
 
 func toggle(state = null)->void:
+	if state == true and elevator.moving:
+		return
 	visible = state if state else not visible
 	System.mouse_mode = Input.MOUSE_MODE_HIDDEN if visible else Input.MOUSE_MODE_CAPTURED
 	var plr:Player = get_tree().get_first_node_in_group("plr")

@@ -16,7 +16,7 @@ size = Vector3(0.5, 0.25, 0.125)
 [node name="monitor" unique_id=818471605 instance=ExtResource("1_66aw8")]
 script = ExtResource("2_rsw7j")
 
-[node name="Cube" parent="." index="0" unique_id=1840446098]
+[node name="Cube" parent="." index="0" unique_id=52664818]
 surface_material_override/1 = SubResource("StandardMaterial3D_ae51a")
 
 [node name="Screen" type="StaticBody3D" parent="." index="1" unique_id=940183229]
@@ -25,6 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.12538922)
 [node name="InteractionComponent" parent="Screen" index="0" unique_id=1156491162 node_paths=PackedStringArray("nodes_to_notify") instance=ExtResource("2_duowk")]
 interaction_type = 1
 nodes_to_notify = [NodePath("../..")]
+description = "Turn on the computer"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Screen" index="1" unique_id=305554543]
 shape = SubResource("BoxShape3D_ae51a")

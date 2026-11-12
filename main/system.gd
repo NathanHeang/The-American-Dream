@@ -49,13 +49,13 @@ var required_money:float = 2000
 
 func _process(_dt: float) -> void:
 	if started:
-		time+=1
+		time+=2
 		if time >= 61200:
 			end_day()
 
 func start_day()->void:
 	day+=1
-	time = 0
+	time = 28800
 	started = true
 	event_timer.start()
 	

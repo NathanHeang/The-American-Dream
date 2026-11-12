@@ -64,7 +64,7 @@ night_sky_color_2 = Color(0.18566525, 0.20150667, 0.32072333, 1)
 
 [node name="City" type="Node3D" parent="World/Map" unique_id=1594716732]
 script = ExtResource("4_f5dlx")
-size = Vector2i(20, 20)
+size = Vector2i(48, 48)
 
 [node name="Player" parent="World" unique_id=1039902304 instance=ExtResource("5_0n2ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
@@ -75,7 +75,6 @@ script = ExtResource("6_o1hu8")
 
 [node name="PauseMenu" parent="Interface" unique_id=1499448151 instance=ExtResource("8_s472e")]
 visible = false
-z_index = 999
 
 [node name="Menus" type="Control" parent="Interface" unique_id=366460559]
 unique_name_in_owner = true

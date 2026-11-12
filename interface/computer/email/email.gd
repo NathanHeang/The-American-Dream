@@ -11,7 +11,7 @@ class_name Email
 func _ready() -> void:
 	time_label.text = System.time_string
 
-func _process(delta: float) -> void:
+func _process(_dt: float) -> void:
 	pass
 
 func _on_button_down() -> void:

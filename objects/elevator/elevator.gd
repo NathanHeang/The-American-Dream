@@ -1,10 +1,12 @@
 extends Path3D
-
+class_name Elevator
 @onready var anim_plr: AnimationPlayer = %AnimationPlayer
+var moving = false
 
 func change_floor(pos:int) -> void:
 	curve.set_point_position(1, Vector3(0, pos*15, 0))
 	anim_plr.play("move")
+	moving = true
 
 func interact_notification(_percentage:float)->void:
 	var interface = get_tree().get_first_node_in_group("interface")
@@ -13,3 +15,6 @@ func interact_notification(_percentage:float)->void:
 		if ui and not System.is_in_menu:
 			ui.elevator = self
 			ui.toggle(true)
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	moving = false

@@ -122,9 +122,10 @@ albedo_color = Color(0.13671875, 0.13671875, 0.13671875, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cx38q"]
 size = Vector3(0.025, 1, 1)
 
-[node name="Elevator" type="Path3D" unique_id=384074855]
+[node name="Elevator" type="Path3D" unique_id=787724129]
 curve = SubResource("Curve3D_yhp3w")
 script = ExtResource("1_cx38q")
+metadata/_custom_type_script = "uid://djtfy558q4rq5"
 
 [node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=1968157416]
 transform = Transform3D(0.99993235, 0, 0, 0, 0.9999354, 0, 0, 0, 0.99997544, 0, 0, 0)
@@ -134,91 +135,95 @@ loop = false
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D" unique_id=1260386398]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
-remote_path = NodePath("../../AnimatableBody3D")
+remote_path = NodePath("../../Elevator")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1080791252]
+[node name="Elevator" type="AnimatableBody3D" parent="." unique_id=1080791252]
 transform = Transform3D(-4.3708432e-08, 0.99993235, -4.3708432e-08, 0, -4.3708564e-08, -0.9999354, -0.99997544, -4.3710315e-08, 1.9106385e-15, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=702225812]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Elevator" unique_id=702225812]
 mesh = SubResource("BoxMesh_qfrg1")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=2121724842]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Elevator" unique_id=2121724842]
 transform = Transform3D(1, 0, 0, 0, 1, -8.352216e-23, 0, -8.351527e-23, 1, 0, -2.5, -2.5)
 mesh = SubResource("BoxMesh_hbdww")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=105176211]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Elevator" unique_id=105176211]
 transform = Transform3D(1, 0, 0, 0, 1, -8.352216e-23, 0, -8.351527e-23, 1, 0, 2.5, -2.5)
 mesh = SubResource("BoxMesh_hbdww")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=669466382]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Elevator" unique_id=669466382]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.5, 0, -2.5)
 mesh = SubResource("BoxMesh_hbdww")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=192590829]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Elevator" unique_id=192590829]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.5, -1.5, -2.5)
 mesh = SubResource("BoxMesh_cx38q")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1579855877]
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Elevator" unique_id=1579855877]
 transform = Transform3D(-4.3711392e-08, -1, 2.1175824e-22, 1, -4.3711392e-08, -8.351872e-23, -3.5527137e-15, 0, 1, -2.5, 0, -4)
 mesh = SubResource("BoxMesh_icm76")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1285995915]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Elevator" unique_id=1285995915]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.5, 1.5, -2.5)
 mesh = SubResource("BoxMesh_cx38q")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=370697863]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Elevator" unique_id=370697863]
 transform = Transform3D(1, 0, 0, 0, 1, -8.352216e-23, 0, -8.351527e-23, 1, 0, 0, -5)
 mesh = SubResource("BoxMesh_qfrg1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1871832887]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Elevator" unique_id=1871832887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
 shape = SubResource("BoxShape3D_hbdww")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=791197804]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Elevator" unique_id=791197804]
 transform = Transform3D(0.9238795, -1.0658141e-14, 0.38268346, 0, 1, 8.881784e-15, -0.38268346, -1.0658141e-14, 0.9238795, -2.8140967, -2.538627e-10, 0.09428406)
 shape = SubResource("BoxShape3D_7v7py")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=488522045]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Elevator" unique_id=488522045]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, -5)
 shape = SubResource("BoxShape3D_hbdww")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1687907007]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Elevator" unique_id=1687907007]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -2.5)
 shape = SubResource("BoxShape3D_xeh55")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1850089277]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Elevator" unique_id=1850089277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2.5)
 shape = SubResource("BoxShape3D_xeh55")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1814206675]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Elevator" unique_id=1814206675]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.5, 0, -2.5)
 shape = SubResource("BoxShape3D_xeh55")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=162481865]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Elevator" unique_id=162481865]
 transform = Transform3D(-4.3711392e-08, -1, 2.1175824e-22, 1, -4.3711392e-08, -8.351872e-23, -3.5527137e-15, 0, 1, -2.4999998, -1.5000001, -2.5000038)
 shape = SubResource("BoxShape3D_icm76")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=521431743]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Elevator" unique_id=521431743]
 transform = Transform3D(-4.3711395e-08, -1, 4.2351647e-22, 1, -4.3711395e-08, -8.3518705e-23, -7.1054274e-15, 0, 1, -2.4999998, 1.1368684e-13, -4)
 shape = SubResource("BoxShape3D_0hjt4")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=2137226537]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Elevator" unique_id=2137226537]
 transform = Transform3D(-4.3711395e-08, -1, 4.2351647e-22, 1, -4.3711395e-08, -8.3518705e-23, -7.1054274e-15, 0, 1, -2.5, 1.5, -2.5)
 shape = SubResource("BoxShape3D_icm76")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody3D" unique_id=2123295500]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Elevator" unique_id=2123295500]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_xeh55")
 
-[node name="InteractionComponent" parent="AnimatableBody3D" unique_id=1156491162 node_paths=PackedStringArray("nodes_to_notify") instance=ExtResource("2_cx38q")]
+[node name="InteractionComponent" parent="Elevator" unique_id=1156491162 node_paths=PackedStringArray("obj_ref", "nodes_to_notify") instance=ExtResource("2_cx38q")]
+obj_ref = NodePath("../..")
 interaction_type = 1
 nodes_to_notify = [NodePath("../..")]
+description = "View elevator keypad"
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1144454958]
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Elevator" unique_id=1144454958]
 transform = Transform3D(2.4868996e-14, 0.99999994, 1.6940659e-21, -1, 0, -8.3518654e-23, 2.4868996e-14, -3.552714e-15, 1, -2.44, -1.5000002, -2)
 mesh = SubResource("PlaneMesh_hbdww")
 surface_material_override/0 = SubResource("StandardMaterial3D_cx38q")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=304627126]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Elevator" unique_id=304627126]
 transform = Transform3D(1, -1.0658141e-14, 6.352747e-22, 0, 1, -8.35187e-23, 6.352747e-22, -1.0658141e-14, 1, -2.44, -1.5000001, -1.9999999)
 shape = SubResource("BoxShape3D_cx38q")
+
+[connection signal="animation_finished" from="Elevator/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

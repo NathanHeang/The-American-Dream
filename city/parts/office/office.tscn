@@ -62,7 +62,7 @@ size = Vector3(8.4, 43, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kvkw2"]
 size = Vector3(5.5, 43, 0.1)
 
-[node name="CityPart" type="Node3D" unique_id=187224239]
+[node name="Office" type="Node3D" unique_id=187224239]
 script = ExtResource("1_53hvq")
 enabled = false
 weight = 0.0
@@ -292,7 +292,7 @@ transform = Transform3D(-0.45297325, 0, -0.036665592, 0, 0.38376245, 0, 0.023975
 [node name="mouse" parent="row2/cubicle9" unique_id=1893161724 instance=ExtResource("6_8ll6l")]
 transform = Transform3D(-0.9484372, 0, 0.011086528, 0, 0.7251405, 0, -0.007098178, 0, -0.6334111, 2.900303, -0.74633217, 3.7596445)
 
-[node name="Label3D" type="Label3D" parent="." unique_id=894061659]
+[node name="Sign" type="Label3D" parent="." unique_id=894061659]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12, 40, -12)
 pixel_size = 0.03
 modulate = Color(0.6015625, 0.2250486, 0.21607193, 1)
@@ -403,3 +403,9 @@ shape = SubResource("BoxShape3D_kvkw2")
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="Walls" unique_id=891519765]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24, 22, 9.12)
 shape = SubResource("BoxShape3D_kvkw2")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1773405968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+pixel_size = 0.5
+billboard = 1
+text = "The Office"
