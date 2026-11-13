@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cc8skgyaerf7k"]
+
+[ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="1_glnw8"]
+[ext_resource type="Texture2D" uid="uid://ccqvdtidekj5q" path="res://npcs/textures/wife.png" id="2_glnw8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ll6l"]
+radius = 1.0
+height = 2.5
+
+[node name="Wife" type="RigidBody3D" unique_id=1610599898]
+axis_lock_angular_y = true
+
+[node name="InteractionComponent" parent="." unique_id=1156491162 instance=ExtResource("1_glnw8")]
+interaction_type = 5
+dialogue_id = &"wife"
+description = "Talk to your wife"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=257338701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
+pixel_size = 0.0075
+billboard = 2
+shaded = true
+double_sided = false
+texture = ExtResource("2_glnw8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=919778943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_8ll6l")

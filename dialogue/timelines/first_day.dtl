@@ -1,9 +1,4 @@
 join boss rightmost
 join player leftmost
-boss: You're late.
-- Ask for help
-	player: What do I do?
-	boss: Take the elevator to the second floor and find your desk.
-	boss: I emailed you the details.
-- Apologize
-	player: Sorry, won't happen again...
+boss (default): Don't keep me waiting.
+boss: Write those papers on Floor 1 and hand them to me.

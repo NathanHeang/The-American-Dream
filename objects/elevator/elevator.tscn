@@ -7,7 +7,6 @@
 
 [sub_resource type="Curve3D" id="Curve3D_yhp3w"]
 resource_local_to_scene = true
-closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36.5, 0),
 "tilts": PackedFloat32Array(0, 0)
@@ -59,39 +58,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../PathFollow3D:progress")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_xeh55"]
 resource_name = "floor_0"
-capture_included = true
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../PathFollow3D:progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 2,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ends6"]
-resource_name = "move"
-length = 4.0
-loop_mode = 1
+length = 2.0
 capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -100,7 +70,109 @@ tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(4),
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_icm76"]
+resource_name = "floor_1"
+length = 2.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.275]
+}
+
+[sub_resource type="Animation" id="Animation_0hjt4"]
+resource_name = "floor_2"
+length = 2.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.42]
+}
+
+[sub_resource type="Animation" id="Animation_7v7py"]
+resource_name = "floor_3"
+length = 2.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.58]
+}
+
+[sub_resource type="Animation" id="Animation_1itq1"]
+resource_name = "floor_4"
+length = 2.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.71]
+}
+
+[sub_resource type="Animation" id="Animation_wd1t7"]
+resource_name = "floor_5"
+length = 2.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.86]
+}
+
+[sub_resource type="Animation" id="Animation_ends6"]
+resource_name = "floor_6"
+length = 2.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
 "transitions": PackedFloat32Array(1),
 "update": 2,
 "values": [1.0]
@@ -110,7 +182,12 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_cx38q"),
 &"floor_0": SubResource("Animation_xeh55"),
-&"move": SubResource("Animation_ends6")
+&"floor_1": SubResource("Animation_icm76"),
+&"floor_2": SubResource("Animation_0hjt4"),
+&"floor_3": SubResource("Animation_7v7py"),
+&"floor_4": SubResource("Animation_1itq1"),
+&"floor_5": SubResource("Animation_wd1t7"),
+&"floor_6": SubResource("Animation_ends6")
 }
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hbdww"]
@@ -134,11 +211,11 @@ use_model_front = true
 loop = false
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D" unique_id=1260386398]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0, 0)
 remote_path = NodePath("../../Elevator")
 
 [node name="Elevator" type="AnimatableBody3D" parent="." unique_id=1080791252]
-transform = Transform3D(-4.3708432e-08, 0.99993235, -4.3708432e-08, 0, -4.3708564e-08, -0.9999354, -0.99997544, -4.3710315e-08, 1.9106385e-15, 0, 0, 0)
+transform = Transform3D(-0.99993235, -8.7416865e-08, 3.8211126e-15, 0, -4.3708564e-08, -0.9999354, 8.742063e-08, -0.99997544, 4.3710315e-08, 0, 31.390156, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Elevator" unique_id=702225812]
 mesh = SubResource("BoxMesh_qfrg1")

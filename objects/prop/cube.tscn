@@ -3,17 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="1_72haa"]
 [ext_resource type="Texture2D" uid="uid://8k56uye2jrga" path="res://posters/king.png" id="1_uduwk"]
 
-
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3lq0"]
 albedo_texture = ExtResource("1_uduwk")
 uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cge51"]
-size = Vector3(5, 5, 5)
+size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_72haa"]
-size = Vector3(5, 5, 5)
+size = Vector3(2, 2, 2)
 
 [node name="Cube" type="RigidBody3D" unique_id=329692021]
 mass = 0.75

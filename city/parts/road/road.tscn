@@ -22,6 +22,8 @@ size = Vector3(10, 0.9, 10)
 
 [node name="CityPart" type="Node3D" unique_id=1936590408]
 script = ExtResource("1_itij1")
+min_posters = 1
+max_posters = 5
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=509225680]
 

@@ -9,7 +9,7 @@ const FACE_2 = preload("res://ransom/face2.png")
 @onready var price_label: Button = %Price
 @onready var face: TextureRect = %Face
 
-var price: float = randf_range(50, 500)
+var price: float = randf_range(25, 100)
 
 func _ready() -> void:
 	randomize_position()

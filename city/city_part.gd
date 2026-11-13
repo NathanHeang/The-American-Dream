@@ -14,5 +14,5 @@ func _ready() -> void:
 	for i in range(min_posters, max_posters):
 		if randi_range(0, 5) == 0:
 			var poster = Poster.new()
-			poster.position = Vector3(randf_range(-4, 4), randf_range(0, 4), randf_range(-4, 4))
-			#add_child(poster)
+			poster.position = Vector3(randf_range(-8, 8), randf_range(-4, 4), randf_range(-8, 8))
+			add_child(poster)

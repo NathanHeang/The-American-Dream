@@ -1,0 +1,5 @@
+join player leftmost
+[wait time="1.0"]
+player (talk): Hello?
+join bot rightmost
+bot: Sorry, I could not fulfill this request.

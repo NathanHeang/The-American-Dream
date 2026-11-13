@@ -1,6 +1,8 @@
 extends Control
 class_name ComputerUI
 
+const PAPERS = preload("res://objects/prop/papers.tscn")
+
 @onready var window_buttons: HBoxContainer = %WindowButtons
 @onready var window_container: Panel = %WindowContainer
 @onready var window_title: Label = %WindowTitle
@@ -47,11 +49,84 @@ var dictionary = [
 	"for",
 	"var",
 	"=",
-	"."
+	"int",
+	"float",
+	"double",
+	"string",
+	"work",
+	"money",
+	"computer",
+	"mind",
+	"system",
+	"network",
+	"coffee",
+	"glass",
+	"steel",
+	"chair",
+	"office",
+	"pen",
+	"keyboard",
+	"mouse",
+	"hunger",
+	"poor",
+	"life",
+	"business",
+	"cycle",
+	"night",
+	"day",
+	"break",
+	"information",
+	"technology",
+	"elevator",
+	"null",
+	"dictionary",
+	"array",
+	"set",
+	"lambda",
+	"async",
+	"annoying dog",
+	"america",
+	"dream",
+	"nightmare",
+	"broken",
+	"fall",
+	"interface",
+	"laptop",
+	"monitor",
+	"intelligence",
+	"hierarchy",
+	"class",
+	"supercalifragilisticexpialidocious",
+	"fun",
+	"boredom",
+	"dread",
+	"safety",
+	"stability",
+	"economy",
+	"income",
+	"cash",
+	"coins",
+	"dollars",
+	"bank",
+	"authority",
+	"sudo",
+	"cd",
+	"mkdir",
+	"rm",
+	"0",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9"
 ]
 func randomize_goal()->void:
 	var goal = ""
-	for i in range(randi_range(10, 50)):
+	for i in range(randi_range(3, 20)):
 		goal += dictionary[randi_range(0, dictionary.size()-1)] + " "
 	text_input.text = ""
 	text_goal.text = goal
@@ -68,7 +143,11 @@ func _on_input_text_changed() -> void:
 		else:
 			break
 	if new_last_match > last_match:
-		System.money += (new_last_match - last_match)
+		var plr:Player = get_tree().get_first_node_in_group("plr")
+		var papers:Papers = PAPERS.instantiate()
+		papers.value = 5*(new_last_match - last_match)
+		papers.global_position = plr.global_position + Vector3(-2, 1, 2)
+		get_tree().current_scene.add_child(papers)
 		last_match = new_last_match
 	if a == b:
 		randomize_goal()

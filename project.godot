@@ -28,11 +28,19 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "boss": "res://dialogue/characters/boss.dch",
-"player": "res://dialogue/characters/player.dch"
+"bot": "res://dialogue/characters/bot.dch",
+"guest": "res://dialogue/characters/guest.dch",
+"noob": "res://dialogue/characters/noob.dch",
+"player": "res://dialogue/characters/player.dch",
+"wife": "res://dialogue/characters/wife.dch"
 }
 directories/dtl_directory={
+"bot": "res://dialogue/timelines/bot.dtl",
 "fired": "res://dialogue/timelines/fired.dtl",
-"first_day": "res://dialogue/timelines/first_day.dtl"
+"first_day": "res://dialogue/timelines/first_day.dtl",
+"guest": "res://dialogue/timelines/guest.dtl",
+"noob": "res://dialogue/timelines/noob.dtl",
+"wife": "res://dialogue/timelines/wife.dtl"
 }
 layout/style_directory={
 "": "res://dialogue/styles/default.tres",

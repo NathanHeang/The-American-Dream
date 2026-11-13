@@ -4,8 +4,7 @@ class_name Elevator
 var moving = false
 
 func change_floor(pos:int) -> void:
-	curve.set_point_position(1, Vector3(0, pos*15, 0))
-	anim_plr.play("move")
+	anim_plr.play("floor_"+str(pos))
 	moving = true
 
 func interact_notification(_percentage:float)->void:

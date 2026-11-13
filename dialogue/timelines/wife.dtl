@@ -1,0 +1,8 @@
+join player leftmost
+join wife rightmost
+player (talk): I'm off to work. See you.
+wife (talk): Right...
+player: ...
+wife: We can't keep living like this.
+player (default): I just have to work harder, it'll be fine.
+wife (default): Alright. I'll see you later.

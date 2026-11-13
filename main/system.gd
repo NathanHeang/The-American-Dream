@@ -45,7 +45,7 @@ var is_in_menu:bool:
 @onready var event_timer: Timer = %EventTimer
 
 var started:bool = false
-var required_money:float = 2000
+var required_money:float = randi_range(150, 300)
 
 func _process(_dt: float) -> void:
 	if started:

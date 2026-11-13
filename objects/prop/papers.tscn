@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://3s2kpkuictpl"]
+
+[ext_resource type="Script" uid="uid://iwuurfit7130" path="res://objects/prop/papers.gd" id="1_uf3du"]
+[ext_resource type="PackedScene" uid="uid://dn4manfv3qrx7" path="res://generic/models/papers.blend" id="2_06soq"]
+[ext_resource type="PackedScene" uid="uid://cruxgqn2lpvt8" path="res://interaction/interaction_component.tscn" id="2_uf3du"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72haa"]
+size = Vector3(0.65, 0.1, 0.5)
+
+[node name="Papers" type="RigidBody3D" unique_id=985561853]
+mass = 0.75
+script = ExtResource("1_uf3du")
+metadata/_custom_type_script = "uid://iwuurfit7130"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=509375237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04579568, 0)
+shape = SubResource("BoxShape3D_72haa")
+
+[node name="InteractionComponent" parent="." unique_id=1156491162 node_paths=PackedStringArray("obj_ref") instance=ExtResource("2_uf3du")]
+obj_ref = NodePath("..")
+description = "Primary: Carry | Secondary: Throw"
+
+[node name="papers" parent="." unique_id=2039374614 instance=ExtResource("2_06soq")]

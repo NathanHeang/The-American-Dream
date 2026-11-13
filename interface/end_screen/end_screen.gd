@@ -5,11 +5,11 @@ extends Control
 @onready var title_screen_music: AudioStreamPlayer = %TitleScreenMusic
 
 func _ready()->void:
-	title.text = "END OF DAY "+ str(System.time / 86400 + 1)
+	#title.text = "END OF DAY "+ str(System.time / 86400 + 1)
 	if System.money < System.required_money:
-		message.text = "You didn't earn enough money..."
+		message.text = "You didn't work hard enough... You were promptly fired and replaced by robots."
 	else:
-		message.text = "You earned enough money to survive the day!"
+		message.text = "You made enough profit to survive!"
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 func _on_return_button_down() -> void:

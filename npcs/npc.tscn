@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qv2q6m208dhh"]
 
 [ext_resource type="Script" uid="uid://geo0uxea7pt0" path="res://npcs/wandering_npc.gd" id="1_2xp5l"]
+[ext_resource type="Texture2D" uid="uid://dok0k7h52wt8k" path="res://npcs/textures/noob.png" id="2_cqejd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4apfu"]
 
@@ -10,15 +11,13 @@ script = ExtResource("1_2xp5l")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=151256720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-centered = false
-offset = Vector2(0, -0.75)
-pixel_size = 0.0075
+pixel_size = 0.00625
 billboard = 2
 shaded = true
 double_sided = false
+texture = ExtResource("2_cqejd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1272038689]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_4apfu")
 
 [node name="ChangeDirection" type="Timer" parent="." unique_id=384813663]

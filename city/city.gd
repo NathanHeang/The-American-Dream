@@ -1,6 +1,7 @@
 extends Node3D
 class_name City
 
+const WIFE = preload("res://city/parts/office/wife.tscn")
 const NPC = preload("res://npcs/npc.tscn")
 const OFFICE = preload("res://city/parts/office/office.tscn")
 const ROAD = preload("res://city/parts/road/road.tscn")
@@ -17,16 +18,20 @@ signal city_generated()
 func _ready() -> void:
 	add_to_group("City")
 	generate_city()
-	#populate_city()
+	populate_city()
 	
 func populate_city()->void:
+	var wife:Node3D = WIFE.instantiate()
+	wife.global_position = Vector3i(home_pos.x*part_size+2, 4, home_pos.y*part_size+2)
+	add_child(wife)
 	for x in size.x:
 		for y in size.y:
-			var part:CityPart = city[x][y]
-			if part is Road and randi_range(0, 2) == 1:
-				var npc:RigidBody3D = NPC.instantiate()
-				npc.position = Vector3(x*part_size+randf_range(-part_size/2.0, part_size/2.0), 20, y*part_size+randf_range(-part_size/2.0, part_size/2.0))
-				add_child(npc)
+			if randi_range(0, 3) == 1:
+				var part:CityPart = city[x][y]
+				if part is Road:
+					var npc:RigidBody3D = NPC.instantiate()
+					npc.position = Vector3(x*part_size+randf_range(-part_size/2.0, part_size/2.0), 20, y*part_size+randf_range(-part_size/2.0, part_size/2.0))
+					add_child(npc)
 				
 func generate_city() -> void:
 	var office_pos = Vector2i(size.x/2, size.y/2)

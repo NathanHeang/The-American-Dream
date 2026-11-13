@@ -319,6 +319,20 @@ show_on_questions = true
 texture = ExtResource("7_bvq12")
 metadata/_edit_layout_mode = 1
 
+[node name="Label" type="Label" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/NextIndicator" unique_id=700854586]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "E to continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel" unique_id=19378309]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.188235)
