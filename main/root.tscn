@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://qtulwlyrupbe" path="res://interface/interface.gd" id="6_o1hu8"]
 [ext_resource type="PackedScene" uid="uid://behi4aqcwfho6" path="res://interface/pause_menu/pause_menu.tscn" id="8_s472e"]
 [ext_resource type="PackedScene" uid="uid://baxy4m65bx1n1" path="res://interface/computer/monitor_ui.tscn" id="9_4vlnp"]
-[ext_resource type="PackedScene" uid="uid://bnpaixan81sje" path="res://dialogue/dialogue_handler.tscn" id="9_b0ecn"]
 [ext_resource type="PackedScene" uid="uid://cckbqyvt4f2d8" path="res://objects/elevator/elevator_ui.tscn" id="9_y1rx7"]
 [ext_resource type="PackedScene" uid="uid://ckv43aclwk4yi" path="res://interface/time_hud/time_hud.tscn" id="10_h2wah"]
 [ext_resource type="PackedScene" uid="uid://da38xepouds6u" path="res://interface/balance_hud/balance_hud.tscn" id="11_nd8au"]
@@ -31,14 +30,25 @@ shader_parameter/twinkle_speed = 2.0
 
 [sub_resource type="Sky" id="Sky_8t54v"]
 sky_material = SubResource("ShaderMaterial_yu4kh")
+radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_28aoi"]
 background_mode = 2
 background_energy_multiplier = 1.2
 sky = SubResource("Sky_8t54v")
 reflected_light_source = 2
-ssao_intensity = 10.4
+ssao_enabled = true
+ssao_radius = 2.0
+ssao_intensity = 12.0
+ssao_detail = 0.2
+glow_enabled = true
+glow_intensity = 3.0
+fog_mode = 1
 fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
+fog_density = 1.0
+fog_depth_begin = 500.0
+fog_depth_end = 1500.0
+adjustment_contrast = 5.275
 
 [node name="Root" type="Node" unique_id=256912048]
 
@@ -64,7 +74,7 @@ night_sky_color_2 = Color(0.18566525, 0.20150667, 0.32072333, 1)
 
 [node name="City" type="Node3D" parent="World/Map" unique_id=1594716732]
 script = ExtResource("4_f5dlx")
-size = Vector2i(48, 48)
+size = Vector2i(64, 64)
 
 [node name="Player" parent="World" unique_id=1039902304 instance=ExtResource("5_0n2ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
@@ -97,11 +107,6 @@ offset_bottom = 25.0
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-
-[node name="DialogueHandler" parent="Interface" unique_id=412039055 instance=ExtResource("9_b0ecn")]
-visible = false
-z_index = 500
-y_sort_enabled = true
 
 [node name="Hud" type="Control" parent="Interface" unique_id=95498926]
 layout_mode = 3

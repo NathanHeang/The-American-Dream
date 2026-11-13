@@ -51,7 +51,7 @@ func generate_city() -> void:
 				part = ROAD.instantiate()
 			elif x == 0 or x == size.x or y == 0 or y == size.y:
 				part = BUILDING.instantiate()
-			elif x < 4 or x > size.x-4 or y < 4 or y > size.y-4:
+			elif x < 2 or x > size.x-2 or y < 2 or y > size.y-2:
 				part = ROAD.instantiate()
 			else:
 				part = CityPartLibrary.get_random().instantiate()
