@@ -4,7 +4,7 @@ class_name Poster
 const path := "res://posters"
 
 func choose_random()->void:
-	var files:PackedStringArray = DirAccess.get_files_at(path)
+	var files:PackedStringArray = ResourceLoader.list_directory(path)
 	var texture_name:String = files[files.size() * randf()]
 	if ".import" in texture_name or ".gd" in texture_name:
 		choose_random()

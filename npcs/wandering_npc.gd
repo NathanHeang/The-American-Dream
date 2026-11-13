@@ -12,10 +12,10 @@ const path := "res://npcs/textures/"
 @onready var sprite: Sprite3D = $Sprite3D
 
 func choose_random()->void:
-	var files:PackedStringArray = DirAccess.get_files_at(path)
+	var files:PackedStringArray = ResourceLoader.list_directory(path)
 	var texture_name:String = files[files.size() * randf()]
 	if ".import" in texture_name or texture_name in blacklist:
-		choose_random()
+		queue_free()
 	else:
 		sprite.texture = load("%s/%s" % [path, texture_name])
 

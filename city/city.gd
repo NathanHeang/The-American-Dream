@@ -34,7 +34,7 @@ func populate_city()->void:
 					add_child(npc)
 				
 func generate_city() -> void:
-	var office_pos = Vector2i(size.x/2, size.y/2)
+	var office_pos = Vector2i(3*size.x/4, 3*size.y/4)
 	for x in size.x:
 		city.append([])
 		for y in size.y:

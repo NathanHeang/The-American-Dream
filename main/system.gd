@@ -25,7 +25,7 @@ var time_string:String:
 	get():
 		var mins = int(time / 60) % 60
 		var hr = int(time / 3600) % 24
-		return "November %2d - %02d:%02d" % [day, hr, mins]
+		return "November %2d - %02d:%02d" % [day, hr if hr <= 12 else hr-12, mins]
 		
 var mouse_mode:Input.MouseMode = Input.MOUSE_MODE_HIDDEN:
 	set(new):
@@ -47,9 +47,9 @@ var is_in_menu:bool:
 var started:bool = false
 var required_money:float = randi_range(150, 300)
 
-func _process(_dt: float) -> void:
+func _process(dt: float) -> void:
 	if started:
-		time+=2
+		time+=max(dt, 1)
 		if time >= 61200:
 			end_day()
 

@@ -4,14 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://dok0k7h52wt8k" path="res://npcs/textures/noob.png" id="2_cqejd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4apfu"]
+radius = 1.0
+height = 3.0
 
 [node name="NPC" type="RigidBody3D" unique_id=1446500269]
 axis_lock_angular_y = true
 script = ExtResource("1_2xp5l")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=151256720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-pixel_size = 0.00625
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+pixel_size = 0.0065
 billboard = 2
 shaded = true
 double_sided = false

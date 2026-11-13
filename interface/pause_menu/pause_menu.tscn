@@ -67,12 +67,16 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Resume" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=136825928]
+z_index = 4096
+z_as_relative = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Resume"
 
 [node name="Return" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=2015566803]
+z_index = 4096
+z_as_relative = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
@@ -93,6 +97,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="VolumeSelect" type="HSlider" parent="PanelContainer/HBoxContainer/VBoxContainer/VolumeContainer2/Panel" unique_id=1009077616]
+z_index = 4096
+z_as_relative = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

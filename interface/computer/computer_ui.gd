@@ -25,6 +25,9 @@ func toggle(state = null)->void:
 	System.mouse_mode = Input.MOUSE_MODE_HIDDEN if visible else Input.MOUSE_MODE_CAPTURED
 	var plr:Player = get_tree().get_first_node_in_group("plr")
 	plr.controllable = not visible
+	var head:Node3D = plr.get_node("%Head")
+	if head:
+		head.rotation.x = plr.min_vertical_look_direction
 	var interface = get_tree().get_first_node_in_group("interface")
 	if interface:
 		var balance_ui = interface.get_node("%Balance")
@@ -113,16 +116,82 @@ var dictionary = [
 	"cd",
 	"mkdir",
 	"rm",
-	"0",
-	"1",
-	"2",
-	"3",
-	"4",
-	"5",
-	"6",
-	"7",
-	"8",
-	"9"
+	"captcha",
+	"bot",
+	"artificial",
+	"tear",
+	"shred",
+	"note",
+	"meeting",
+	"digital",
+	"screen",
+	"escape",
+	"ternary",
+	"addition",
+	"subtraction",
+	"comparison",
+	"condition",
+	"vector",
+	"position",
+	"scale",
+	"profit",
+	"rich",
+	"empire",
+	"structure",
+	"flowchart",
+	"presentation",
+	"mistake",
+	"error",
+	"warning",
+	"english",
+	"lesson",
+	"security",
+	"cyber",
+	"apply",
+	"determination",
+	"logic",
+	"skycorp",
+	"tiasystems",
+	"lie",
+	"conference",
+	"trainee",
+	"intern",
+	"unpaid",
+	"minimum",
+	"wage",
+	"referral",
+	"suspension",
+	"fired",
+	"impending",
+	"doom",
+	"complicated",
+	"simple",
+	"stupid",
+	"keep",
+	"repeat",
+	"don't",
+	"yourself",
+	"contact",
+	"management",
+	"higher ups",
+	"circumstances",
+	"proceed",
+	"crunchy",
+	"nutshell",
+	"doctor",
+	"vagabond",
+	"vagrant",
+	"counting",
+	"streets",
+	"skyscraper",
+	"home",
+	"2009",
+	"generated",
+	"friday",
+	"monday",
+	"cleanup",
+	"file",
+	"explorer"
 ]
 func randomize_goal()->void:
 	var goal = ""
@@ -143,11 +212,11 @@ func _on_input_text_changed() -> void:
 		else:
 			break
 	if new_last_match > last_match:
-		var plr:Player = get_tree().get_first_node_in_group("plr")
-		var papers:Papers = PAPERS.instantiate()
-		papers.value = 5*(new_last_match - last_match)
-		papers.global_position = plr.global_position + Vector3(-2, 1, 2)
-		get_tree().current_scene.add_child(papers)
 		last_match = new_last_match
 	if a == b:
+		var plr:Player = get_tree().get_first_node_in_group("plr")
+		var papers:Papers = PAPERS.instantiate()
+		papers.value = 3*(last_match)
+		papers.global_position = plr.global_position + Vector3(-2, 1, 2)
+		get_tree().current_scene.add_child(papers)
 		randomize_goal()

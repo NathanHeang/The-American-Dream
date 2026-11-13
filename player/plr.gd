@@ -45,6 +45,7 @@ var wish_dir:Vector3 = Vector3.ZERO
 var controllable:bool = true:
 	set(new):
 		wish_dir = Vector3.ZERO
+		controllable = new
 
 var speed:float:
 	get():
