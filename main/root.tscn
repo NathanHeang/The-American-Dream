@@ -39,9 +39,6 @@ sky = SubResource("Sky_8t54v")
 reflected_light_source = 2
 ssao_enabled = true
 ssao_detail = 0.2
-ssil_enabled = true
-sdfgi_enabled = true
-glow_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.18961693, 0.20254536, 0.22265625, 1)
 fog_density = 1.0
@@ -77,7 +74,7 @@ night_sky_color_2 = Color(0.18566525, 0.20150667, 0.32072333, 1)
 
 [node name="City" type="Node3D" parent="World/Map" unique_id=1594716732]
 script = ExtResource("4_f5dlx")
-size = Vector2i(48, 48)
+size = Vector2i(24, 24)
 
 [node name="Player" parent="World" unique_id=1039902304 instance=ExtResource("5_0n2ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)

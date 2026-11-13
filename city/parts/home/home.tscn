@@ -51,6 +51,9 @@ mesh = SubResource("BoxMesh_mxwup")
 [node name="CollisionShape3D2" parent="Door/Pivot/Door" parent_id_path=PackedInt32Array(250909130, 747983424) index="1" unique_id=826236426]
 shape = SubResource("BoxShape3D_nmo76")
 
+[node name="InteractionComponent" parent="Door/Pivot/Door" parent_id_path=PackedInt32Array(250909130, 747983424) index="2" unique_id=1156491162]
+description = "Hold left click and drag down!"
+
 [node name="House" type="StaticBody3D" parent="." unique_id=737565643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.625)
 

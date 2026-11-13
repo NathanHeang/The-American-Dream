@@ -79,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1739189727]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715573, 0, -0.08715573, 0.9961947, 0, 0, 0)
 cull_mask = 1048573
 current = true
 

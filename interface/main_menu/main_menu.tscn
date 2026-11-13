@@ -70,41 +70,36 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8t54v")
 
 [node name="TitleScreen" type="Control" parent="InnerBackground" unique_id=1397074319]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Icon" type="TextureRect" parent="InnerBackground/TitleScreen" unique_id=1566484819]
 unique_name_in_owner = true
 material = ExtResource("3_hm0ms")
+clip_contents = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 136.0
-offset_top = -258.0
-offset_right = 904.0
-offset_bottom = 510.0
+offset_left = -384.0
+offset_top = -768.0
+offset_right = 384.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 texture = ExtResource("4_7piqx")
 stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InnerBackground/TitleScreen" unique_id=2104580251]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -32.0
-offset_right = 1056.0
-offset_bottom = 510.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_right = 1072.0
+offset_bottom = 542.0
 theme_override_constants/separation = 256
 alignment = 1
 
@@ -113,11 +108,13 @@ custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+theme_override_constants/click_margin = 24
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("5_rkwbc")
 theme_override_styles/pressed = ExtResource("6_qt2eg")
 theme_override_styles/hover = ExtResource("6_qt2eg")
+action_mode = 0
 text = "Wake Up"
 
 [node name="Quit" type="Button" parent="InnerBackground/TitleScreen/HBoxContainer" unique_id=2015566803]
@@ -125,11 +122,13 @@ custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+theme_override_constants/click_margin = 24
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("5_rkwbc")
 theme_override_styles/pressed = ExtResource("6_qt2eg")
 theme_override_styles/hover = ExtResource("6_qt2eg")
+action_mode = 0
 text = "Give Up"
 
 [node name="TitleScreenMusic" type="AudioStreamPlayer" parent="InnerBackground/TitleScreen" unique_id=82386520]
@@ -171,6 +170,7 @@ custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+theme_override_constants/click_margin = 24
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("5_rkwbc")
@@ -183,6 +183,7 @@ custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+theme_override_constants/click_margin = 24
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = ExtResource("5_rkwbc")

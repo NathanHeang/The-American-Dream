@@ -4,6 +4,9 @@ signal balance_changed(old, new)
 signal time_changed(old, new)
 signal transition_midpoint()
 
+var on_computer:bool = false
+@onready var exited_computer: Timer = %ExitedComputer
+
 const TRANSITION = preload("res://transitions/transition.tscn")
 const END_SCREEN = preload("res://interface/end_screen/end_screen.tscn")
 
@@ -81,3 +84,7 @@ func _on_event() -> void:
 	event_timer.wait_time = randf_range(2.0, 3.0)
 	if a == false:
 		a = true
+
+
+func _on_exited_computer_timeout() -> void:
+	on_computer = false

@@ -21,13 +21,19 @@ func _ready() -> void:
 			)
 
 func toggle(state = null)->void:
+	if state or not visible:
+		if System.on_computer:
+			return
+		System.on_computer = true
+	else:
+		System.exited_computer.start()
 	visible = state if state else not visible
 	System.mouse_mode = Input.MOUSE_MODE_HIDDEN if visible else Input.MOUSE_MODE_CAPTURED
 	var plr:Player = get_tree().get_first_node_in_group("plr")
 	plr.controllable = not visible
 	var head:Node3D = plr.get_node("%Head")
 	if head:
-		head.rotation.x = plr.min_vertical_look_direction
+		head.rotation.x = -90
 	var interface = get_tree().get_first_node_in_group("interface")
 	if interface:
 		var balance_ui = interface.get_node("%Balance")
@@ -216,7 +222,7 @@ func _on_input_text_changed() -> void:
 	if a == b:
 		var plr:Player = get_tree().get_first_node_in_group("plr")
 		var papers:Papers = PAPERS.instantiate()
-		papers.value = 3*(last_match)
+		papers.value = last_match
 		papers.global_position = plr.global_position + Vector3(-2, 1, 2)
 		get_tree().current_scene.add_child(papers)
 		randomize_goal()

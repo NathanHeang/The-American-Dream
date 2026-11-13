@@ -219,22 +219,6 @@ size_flags_vertical = 3
 split_offsets = PackedInt32Array(125)
 split_offset = 125
 
-[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer" unique_id=1257508974]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer/Panel" unique_id=2109297988]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer/Panel/VBoxContainer" unique_id=365510886]
-layout_mode = 2
-text = "main.py"
-alignment = 0
-
 [node name="Control" type="Control" parent="PanelContainer/VBoxContainer/WindowContainer/Editor/SplitContainer" unique_id=1579146112]
 layout_mode = 2
 
@@ -286,9 +270,10 @@ layout_mode = 2
 theme_override_constants/separation = 24
 
 [node name="Power" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer" unique_id=396737837]
-z_index = 15
+z_index = 4096
 z_as_relative = false
 layout_mode = 2
+theme_override_constants/click_margin = 8
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")
@@ -320,9 +305,10 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="Mail" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/WindowButtons" unique_id=488951479 node_paths=PackedStringArray("window")]
-z_index = 15
+z_index = 4096
 z_as_relative = false
 layout_mode = 2
+theme_override_constants/click_margin = 8
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")
@@ -334,9 +320,10 @@ window = NodePath("../../../../WindowContainer/Mail")
 metadata/_custom_type_script = "uid://cpyhaufoilf6r"
 
 [node name="Editor" type="Button" parent="PanelContainer/VBoxContainer/Taskbar/HBoxContainer/WindowButtons" unique_id=1034160315 node_paths=PackedStringArray("window")]
-z_index = 15
+z_index = 4096
 z_as_relative = false
 layout_mode = 2
+theme_override_constants/click_margin = 8
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_att4d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hb47q")

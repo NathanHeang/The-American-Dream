@@ -14,4 +14,8 @@ layer = 999
 [node name="EventTimer" type="Timer" parent="." unique_id=648550439]
 unique_name_in_owner = true
 
+[node name="ExitedComputer" type="Timer" parent="." unique_id=639264637]
+unique_name_in_owner = true
+
 [connection signal="timeout" from="EventTimer" to="." method="_on_event"]
+[connection signal="timeout" from="ExitedComputer" to="." method="_on_exited_computer_timeout"]
